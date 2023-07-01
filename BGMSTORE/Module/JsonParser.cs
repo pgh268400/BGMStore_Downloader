@@ -203,22 +203,22 @@ namespace BGMSTORE
                 lv.BeginUpdate();
                 lv.Items.Clear();
 
-                string[] strArray = mode.Split('|');
+                string[] mode_array = mode.Split('|');
 
                 string str1 = "";
                 string str2 = "";
 
-                if (strArray[0] == "제목")
+                if (mode_array[0] == "제목")
                     str1 = "title";
-                else if (strArray[0] == "주소")
+                else if (mode_array[0] == "주소")
                     str1 = "url";
-                else if (strArray[0] == "닉네임")
+                else if (mode_array[0] == "닉네임")
                     str1 = "nickname";
-                if (strArray[1] == "일반검색")
+                if (mode_array[1] == "일반검색")
                     str2 = "general";
-                else if (strArray[1] == "단어로 검색")
+                else if (mode_array[1] == "단어로 검색")
                     str2 = "word";
-                else if (strArray[1] == "완전일치")
+                else if (mode_array[1] == "완전일치")
                     str2 = "strict";
 
 
@@ -285,7 +285,7 @@ namespace BGMSTORE
                 lv.EndUpdate();
             }
         }
-        public async void more_load(string Mode, ListView lv, string sw)
+        public void more_load(string Mode, ListView lv, string sw)
         {
             try
             {
@@ -360,12 +360,14 @@ namespace BGMSTORE
                 lv.EndUpdate();
             }
         }
-        public async Task download_bgm_async(int[] url, string[] title, Label lb)
+        public async void download_bgm_async(int[] url, string[] title, Label lb)
         {
             count = 0;
 
-            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-            dialog.IsFolderPicker = true;
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog
+            {
+                IsFolderPicker = true
+            };
 
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
@@ -375,19 +377,17 @@ namespace BGMSTORE
                     int[] numArray = url;
                     for (int index = 0; index < numArray.Length; ++index)
                     {
-
                         int i = numArray[count];
                         lb.Text = count.ToString() + "/" + url.Length.ToString();
                         download = true;
 
-                        //string download_url = "http://dl.bgms.kr/download/" + title_id[title[index]] + "/mp3/";
                         string download_url = "https://media1.bgmstore.net/mp3/" + title_id[title[index]] + ".mp3";
 
                         string download_mode = ".mp3"; //default(ini 파일이 없는 오류방지)
 
-                        InIWriter inIWriter = new InIWriter(Application.StartupPath + "\\Configuration.ini");
+                        InIWriter iniwriter = new InIWriter(Application.StartupPath + "\\Configuration.ini");
 
-                        if (inIWriter.Read("설정", "다운로드") == "Mp3")
+                        if (iniwriter.Read("설정", "다운로드") == "Mp3")
                         {
                             download_mode = ".mp3";
                         }
@@ -453,10 +453,6 @@ namespace BGMSTORE
 
             foreach (string i in favorite_list)
             {
-
-
-
-
                 InIWriter inIWriter = new InIWriter(Application.StartupPath + "\\Configuration.ini");
 
                 string downloadmode = "/mp3/Untitled1";
@@ -509,7 +505,7 @@ namespace BGMSTORE
             }
 
         }
-        public void StopBGM()
+        public void stop_bgm()
         {
             is_player_stop = true; //일괄재생 종료
         }

@@ -218,7 +218,7 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(554, 683);
+            this.metroButton1.Location = new System.Drawing.Point(520, 683);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(36, 29);
             this.metroButton1.TabIndex = 41;
@@ -336,7 +336,7 @@
             // NowTime
             // 
             this.NowTime.AutoSize = true;
-            this.NowTime.Location = new System.Drawing.Point(7, 628);
+            this.NowTime.Location = new System.Drawing.Point(7, 619);
             this.NowTime.Name = "NowTime";
             this.NowTime.Size = new System.Drawing.Size(100, 19);
             this.NowTime.TabIndex = 31;

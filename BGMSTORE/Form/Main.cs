@@ -11,12 +11,12 @@ namespace BGMSTORE
 
     public partial class Main : MetroFramework.Forms.MetroForm
     {
-
         JsonParser bgm_manager = new JsonParser();
-        PlayList player_list;
+        PlayList player_list = null;
         InIWriter ini_writer = new InIWriter(Application.StartupPath + "\\Configuration.ini");
         List<string> column_list = new List<string>();
         WMPLib.WindowsMediaPlayer player = new WMPLib.WindowsMediaPlayer();
+
         public string next = ""; //실행해야할 다음곡 데이터 가져옴
         public string data = "";
 
@@ -102,7 +102,6 @@ namespace BGMSTORE
                 ini_writer.Write("BGM", "NEWEST_VOTED", "5");
                 ini_writer.Write("BGM", "RANDOM", "5");
                 ini_writer.Write("BGM", "WEEKLY_BEST_COMPOSITION", "20");
-
             }
         }
 
@@ -165,9 +164,6 @@ namespace BGMSTORE
                 playtime.Text = "00:00";
                 playctime.Text = "00:00";
 
-
-
-
                 playbar.Enabled = false;
 
                 if (PlayList.play == true)
@@ -187,7 +183,7 @@ namespace BGMSTORE
                     }
                     else
                     {
-                        StopPlay();
+                        stop_play();
                     }
 
 
@@ -293,10 +289,6 @@ namespace BGMSTORE
 
         }
 
-        private void FindSome()
-        {
-            bgm_manager.find_bgm(listView1, SearchTitle.Text, SearchOptionA.Text + "|" + SearchOptionB.Text);
-        }
 
         private void btn_Search_Click_1(object sender, EventArgs e)
         {
@@ -337,37 +329,37 @@ namespace BGMSTORE
 
         private void btn_Download_Click(object sender, EventArgs e)
         {
-            if (listView1.CheckedItems.Count != 0)
-            {
-
-                if (MessageBox.Show("선택하신 음악은 " + listView1.CheckedItems.Count + "개 입니다." + Environment.NewLine + "다운로드를 진행하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                {
-                    int idx = 0;
-                    int[] i = new int[listView1.CheckedItems.Count];
-                    string[] context = new string[listView1.CheckedItems.Count];
-
-                    foreach (int indexChecked in listView1.CheckedIndices)
-                    {
-                        i[idx] = indexChecked; //리스트뷰 인덱스값을 i에 넘긴다
-                        idx++;
-                    }
-
-                    idx = 0;
-                    foreach (ListViewItem item in listView1.CheckedItems)
-                    {
-                        string input = context[idx] = item.SubItems[1].Text;
-                        idx++;
-
-                    }
-
-                    bgm_manager.download_bgm_async(i, context, Download_Count); // 인덱스값을 다시 DownloadBGM 메서드로 옮긴다.
-                }
-
-            }
-            else
+            //Early Return Pattern
+            if (listView1.CheckedItems.Count == 0)
             {
                 MessageBox.Show("다운로드할 음악을 선택해주세요", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
+
+            if (MessageBox.Show("선택하신 음악은 " + listView1.CheckedItems.Count + "개 입니다." + Environment.NewLine + "다운로드를 진행하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                int idx = 0;
+                int[] i = new int[listView1.CheckedItems.Count];
+                string[] context = new string[listView1.CheckedItems.Count];
+
+                foreach (int indexChecked in listView1.CheckedIndices)
+                {
+                    i[idx] = indexChecked; //리스트뷰 인덱스값을 i에 넘긴다
+                    idx++;
+                }
+
+                idx = 0;
+                foreach (ListViewItem item in listView1.CheckedItems)
+                {
+                    string input = context[idx] = item.SubItems[1].Text;
+                    idx++;
+
+                }
+
+                bgm_manager.download_bgm_async(i, context, Download_Count); // 인덱스값을 다시 DownloadBGM 메서드로 옮긴다.
+            }
+
+
         }
 
 
@@ -385,7 +377,7 @@ namespace BGMSTORE
 
         }
 
-        public Form DupForm(string frmtitle)
+        public Form is_dup_form(string frmtitle)
         {
             foreach (Form frm in Application.OpenForms)
                 if (frm.Name == frmtitle)
@@ -400,7 +392,7 @@ namespace BGMSTORE
         private void 설정ToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
 
-            if (DupForm("OptionPage") == null)
+            if (is_dup_form("OptionPage") == null)
             {
                 OptionPage opt = new OptionPage();
                 opt.Show();
@@ -483,7 +475,7 @@ namespace BGMSTORE
 
         private void 설정ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (DupForm("OptionPage") == null)
+            if (is_dup_form("OptionPage") == null)
             {
                 OptionPage opt = new OptionPage();
                 opt.Show();
@@ -498,7 +490,7 @@ namespace BGMSTORE
         {
             if (bgm_manager.play == true)
             {
-                bgm_manager.StopBGM();
+                bgm_manager.stop_bgm();
             }
         }
 
@@ -558,7 +550,7 @@ namespace BGMSTORE
 
         private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (DupForm("About") == null)
+            if (is_dup_form("About") == null)
             {
                 About sfrm = new About();
                 sfrm.Show();
@@ -567,7 +559,7 @@ namespace BGMSTORE
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (DupForm("About") == null) //창이 이미 떠있지 않으면
+            if (is_dup_form("About") == null) //창이 이미 떠있지 않으면
             {
                 About sfrm = new About();
                 sfrm.Show();
@@ -627,13 +619,13 @@ namespace BGMSTORE
             {
 
                 PlayList.play = false;
-                StopPlay();
+                stop_play();
 
 
             }
             else
             {
-                StopPlay();
+                stop_play();
             }
 
         }
@@ -666,7 +658,7 @@ namespace BGMSTORE
 
         }
 
-        public void StopPlay()
+        public void stop_play()
         {
             player.controls.stop();
             player.close();
