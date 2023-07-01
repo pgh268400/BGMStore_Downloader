@@ -1,0 +1,2709 @@
+﻿{
+  "__N_SSG": true,
+  "pageProps": {
+    "bgmDocuments": [
+      {
+        "__typename": "BgmDocument",
+        "_id": "649d11929d63230e8b0d3630",
+        "keyVal": "DUymD",
+        "user": {
+          "__typename": "User",
+          "_id": "631aaedd3ad93ea97a3d512d",
+          "email": "blue56725672@gmail.com",
+          "nickname": "oooo2",
+          "signature": null,
+          "point": 130,
+          "profileImageUrl": null,
+          "profileIconUrl": null
+        },
+        "title": "Ballrooms extravaganza",
+        "content": "붕스 광고노래",
+        "filename": "DPR IAN - Ballroom Extravaganza [320 kbps].mp3",
+        "category": "감동",
+        "upVoteCnt": 5,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649d11929d63230e8b0d3630/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 189.988571
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "649c06419d63230e8b0adcb5",
+        "keyVal": "pRiWz",
+        "user": {
+          "__typename": "User",
+          "_id": "63e89a879d63230e8b511ad6",
+          "email": "happilmad@mail.com",
+          "nickname": "WednesdaysStars.",
+          "signature": null,
+          "point": 20,
+          "profileImageUrl": null,
+          "profileIconUrl": null
+        },
+        "title": "WaLL 盧STAR - 누가봐도 합필스타! (개드립, 여유) @wednesdaysstarq",
+        "content": "표절곡: WALL-E - BNL",
+        "filename": "WALL-盧.mp3",
+        "category": "유머",
+        "upVoteCnt": 0,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649c06419d63230e8b0adcb5/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 21.681625
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "649bef769d63230e8b0aa7c9",
+        "keyVal": "2eXlb",
+        "user": {
+          "__typename": "User",
+          "_id": "63c627189d63230e8bef8bef",
+          "email": "jeonmingi302@gmail.com",
+          "nickname": "나는야초보",
+          "signature": null,
+          "point": 21,
+          "profileImageUrl": null,
+          "profileIconUrl": null
+        },
+        "title": "이브금제목이나 원본 올려주세요제발요ㅠㅠ",
+        "content": "ㅠㅠ",
+        "filename": "오붕가.m4a",
+        "category": "신남",
+        "upVoteCnt": 3,
+        "commentCnt": 1,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649bef769d63230e8b0aa7c9/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 63.3414
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "649bed649d63230e8b0aa2d6",
+        "keyVal": "4AeJr",
+        "user": {
+          "__typename": "User",
+          "_id": "63c627189d63230e8bef8bef",
+          "email": "jeonmingi302@gmail.com",
+          "nickname": "나는야초보",
+          "signature": null,
+          "point": 21,
+          "profileImageUrl": null,
+          "profileIconUrl": null
+        },
+        "title": "슬픈고양이댄스브금(원본)",
+        "content": "슬픈고양이댄스브금",
+        "filename": "Crystal_Waters_Gypsy_in_My_Mind_스피드업_.mp3",
+        "category": "유머",
+        "upVoteCnt": 2,
+        "commentCnt": 2,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649bed649d63230e8b0aa2d6/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 312.24
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "649bb53e9d63230e8b0a1a31",
+        "keyVal": "GJthi",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d179352039d2270dae19",
+          "email": "fireduck1433@gmail.com",
+          "nickname": "qpowjdjna",
+          "signature": "주로 게임BGM 올립니다",
+          "point": 7090,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d179352039d2270dae19/0.jpg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d179352039d2270dae19/1.gif"
+        },
+        "title": "영웅전설 6 공의 궤적 SC - The Merciless Savior(톤 다운 버전)(경쾌, 비장, 장엄, 애잔, 쓸쓸)",
+        "content": "최종보스 3연전 중 마지막 전투 BGM\n\n원곡 대비 톤이 낮은 버전입니다",
+        "filename": "215 The Merciless Savior(Low tone).mp3",
+        "category": "경쾌",
+        "upVoteCnt": 6,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649bb53e9d63230e8b0a1a31/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 442.540408
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "649b286d9d63230e8b08d485",
+        "keyVal": "aw36y",
+        "user": {
+          "__typename": "User",
+          "_id": "639500fa9d63230e8b64ac62",
+          "email": "hellogostzero@gmail.com",
+          "nickname": "ALON18",
+          "signature": null,
+          "point": 30,
+          "profileImageUrl": null,
+          "profileIconUrl": null
+        },
+        "title": "[DALNODO]사계절의 날개 (feat. 이내)",
+        "content": ".",
+        "filename": "달노도이내사계절날개.mp4",
+        "category": "감동",
+        "upVoteCnt": 0,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649b286d9d63230e8b08d485/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 291.3872
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "649aa7749d63230e8b0773d7",
+        "keyVal": "zpOoN",
+        "user": {
+          "__typename": "User",
+          "_id": "649aa6be9d63230e8b0772a7",
+          "email": "gkwjddlfksp@naver.com",
+          "nickname": "LUCKS",
+          "signature": null,
+          "point": 10,
+          "profileImageUrl": null,
+          "profileIconUrl": null
+        },
+        "title": "브금제목좀알려주실분",
+        "content": "유튜브에있나 찾아보려고요 바이올린만하는 버전있는분도 구합니다.",
+        "filename": "4WUfU.mp3",
+        "category": "평화",
+        "upVoteCnt": 4,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649aa7749d63230e8b0773d7/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 249.991837
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "649988209d63230e8b04c3e0",
+        "keyVal": "KIQec",
+        "user": {
+          "__typename": "User",
+          "_id": "6321cd593ad93ea97a5a4d18",
+          "email": "hyaries@gmail.com",
+          "nickname": "헬로어게인",
+          "signature": "Don't tell me why. Show me just as you are. When you know it very well, don't wait for me anymore.",
+          "point": 1010,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/6321cd593ad93ea97a5a4d18/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/6321cd593ad93ea97a5a4d18/1.gif"
+        },
+        "title": "Leaf - scars that haven't healed",
+        "content": "Leaf, 痕/kizuato, まだ癒えぬ痕/Scars that haven't healed/아직 아물지 않은 상처(자국), 1996, Game\nSC-88 MAP 오디오 랜더링\n라우드니스 레벨 -11 LUFS",
+        "filename": "kizuato2_v1-11LUFS.flac",
+        "category": "추억",
+        "upVoteCnt": 8,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649988209d63230e8b04c3e0/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 176.061688
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "64993ed69d63230e8b03f525",
+        "keyVal": "47MpU",
+        "user": {
+          "__typename": "User",
+          "_id": "64993e1e9d63230e8b03f358",
+          "email": "hyunjun3190@gmail.com",
+          "nickname": "곡이그",
+          "signature": null,
+          "point": 10,
+          "profileImageUrl": null,
+          "profileIconUrl": null
+        },
+        "title": "3호선ㄱ어야앵ㅇㄴ,ㄹ,ㅐㄴ아내ㅏㅣ엔,ㅁ",
+        "content": "ㄴ므애ㅑㅗ넝마ㅣㅠ여ㅑㄷ8랴ㅓㄴ유ㅕㅐ농9ㅔㄴㅁ윳ㅇ98ㄴ머어ㅏ뇨옴ㄴ먕ㅁ유녛ㅇ9",
+        "filename": "3호선[1].mp3",
+        "category": "유머",
+        "upVoteCnt": 8,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/64993ed69d63230e8b03f525/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 17.391746
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "6498d6029d63230e8b02f158",
+        "keyVal": "83zOZ",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d179352039d2270dae19",
+          "email": "fireduck1433@gmail.com",
+          "nickname": "qpowjdjna",
+          "signature": "주로 게임BGM 올립니다",
+          "point": 7090,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d179352039d2270dae19/0.jpg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d179352039d2270dae19/1.gif"
+        },
+        "title": "영웅전설 6 공의 궤적 SC - A Gravestone Struck by Lightning(톤 다운 버전)(심각, 긴박)",
+        "content": "최종보스 3연전 중 첫 번째 전투 BGM\n\n원곡 대비 톤이 낮은 버전입니다",
+        "filename": "212 A Gravestone Struck by Lightning(Low tone).mp3",
+        "category": "심각",
+        "upVoteCnt": 17,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6498d6029d63230e8b02f158/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 141.87102
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "64965d369d63230e8bfcf4b5",
+        "keyVal": "C7H0c",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d150352039d2270bc80f",
+          "email": "so3o_@naver.com",
+          "nickname": "ㅩㄺ",
+          "signature": null,
+          "point": 422,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d150352039d2270bc80f/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d150352039d2270bc80f/1.gif"
+        },
+        "title": "【アイドルマスター】「ガッツだぜ！！」(歌：中野有香)",
+        "content": "원곡 : ウルフルズ - ガッツだぜ！！",
+        "filename": "갓츠다제_.mp4",
+        "category": "신남",
+        "upVoteCnt": 21,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/64965d369d63230e8bfcf4b5/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 193.751
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "6495ed4a9d63230e8bfc08a7",
+        "keyVal": "3mgrq",
+        "user": {
+          "__typename": "User",
+          "_id": "6495ec729d63230e8bfc0722",
+          "email": "netherla@nate.com",
+          "nickname": "제임스딘",
+          "signature": null,
+          "point": 20,
+          "profileImageUrl": null,
+          "profileIconUrl": null
+        },
+        "title": "아니 어떤 싸가지없는 놈의 새끼가 그 따위 소리 하구 다녀",
+        "content": "투캅스 싸가지",
+        "filename": "TwoCops.mp3",
+        "category": "유머",
+        "upVoteCnt": 6,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6495ed4a9d63230e8bfc08a7/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 7.4481
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "6495a07e9d63230e8bfb5669",
+        "keyVal": "v0dgw",
+        "user": {
+          "__typename": "User",
+          "_id": "635e19173ad93ea97afc2fbc",
+          "email": "jihoo9362@gmail.com",
+          "nickname": "흰별지후",
+          "signature": "하이",
+          "point": 92,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/635e19173ad93ea97afc2fbc/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/635e19173ad93ea97afc2fbc/1.gif"
+        },
+        "title": "포켓몬스터 배틀타워(토비 폭스&게임프리크)",
+        "content": "굿",
+        "filename": "114 - Battle! (Battle Tower).mp3",
+        "category": "경쾌",
+        "upVoteCnt": 18,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6495a07e9d63230e8bfb5669/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 313.417143
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "649575749d63230e8bfaee67",
+        "keyVal": "Q4xVs",
+        "user": {
+          "__typename": "User",
+          "_id": "649574849d63230e8bfaebec",
+          "email": "kyoko1231231@gmail.com",
+          "nickname": "오늘의나는",
+          "signature": null,
+          "point": 10,
+          "profileImageUrl": null,
+          "profileIconUrl": null
+        },
+        "title": "zard 머나먼 별을 헤메이며",
+        "content": "ㅇ",
+        "filename": "遠い星を数えて (머나먼 별을 세면서) - Mbs 드라마 특구 「....mp3",
+        "category": "애절",
+        "upVoteCnt": 3,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649575749d63230e8bfaee67/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 306.782041
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "6495003e9d63230e8bf9d41a",
+        "keyVal": "ZPkC8",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d179352039d2270dae19",
+          "email": "fireduck1433@gmail.com",
+          "nickname": "qpowjdjna",
+          "signature": "주로 게임BGM 올립니다",
+          "point": 7090,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d179352039d2270dae19/0.jpg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d179352039d2270dae19/1.gif"
+        },
+        "title": "영웅전설 6 공의 궤적 SC - Outskirts of Evolution(톤 다운 버전)(심각, 웅장, 비장)",
+        "content": "최종 보스 3연전 중 2번째 전투 BGM\n\n원곡 대비 톤이 낮고 템포가 약간 느린 버전입니다",
+        "filename": "영웅전설 6 SC - Outskirts of Evolution(Low tone)(2).mp3",
+        "category": "심각",
+        "upVoteCnt": 20,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6495003e9d63230e8bf9d41a/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 212.592
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "649258669d63230e8bf3e910",
+        "keyVal": "9MmpA",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d179352039d2270dae19",
+          "email": "fireduck1433@gmail.com",
+          "nickname": "qpowjdjna",
+          "signature": "주로 게임BGM 올립니다",
+          "point": 7090,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d179352039d2270dae19/0.jpg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d179352039d2270dae19/1.gif"
+        },
+        "title": "영웅전설 6 공의 궤적 SC - Heartless Surprise Attack(톤 다운 버전)(몽환, 긴박)",
+        "content": "원곡 대비 톤이 낮은 버전입니다",
+        "filename": "116 Heartless Surprise Attack(Low tone).mp3",
+        "category": "몽환",
+        "upVoteCnt": 23,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649258669d63230e8bf3e910/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 91.506939
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "649229209d63230e8bf382ac",
+        "keyVal": "C1cwh",
+        "user": {
+          "__typename": "User",
+          "_id": "626fc1e63ad93ea97a1a1986",
+          "email": "yoons08@icloud.com",
+          "nickname": "Anaud",
+          "signature": null,
+          "point": 3850,
+          "profileImageUrl": null,
+          "profileIconUrl": null
+        },
+        "title": "보카로P와 화가가 25명 모여서 댄스 로봇 댄스 MV 어레인지 메들리",
+        "content": "https://www.youtube.com/watch?v=Vb-z6AR-2F0&t=0s",
+        "filename": "ボカロPと絵師が25人集まってダンスロボットダンスMVアレンジメドレーしてみた.mp3",
+        "category": "신남",
+        "upVoteCnt": 7,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649229209d63230e8bf382ac/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 182.044444
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "649228029d63230e8bf3807a",
+        "keyVal": "Fv8YZ",
+        "user": {
+          "__typename": "User",
+          "_id": "626fc1e63ad93ea97a1a1986",
+          "email": "yoons08@icloud.com",
+          "nickname": "Anaud",
+          "signature": null,
+          "point": 3850,
+          "profileImageUrl": null,
+          "profileIconUrl": null
+        },
+        "title": "【소리게니코카라】타타타타타타타타타타타 BEMANI 시리즈 【音ゲーニコカラ】打打打打打打打打打打／BEMANIシリーズ",
+        "content": "https://www.youtube.com/watch?v=wO0RwUZFOqc",
+        "filename": "【音ゲーニコカラ】打打打打打打打打打打／BEMANIシリーズ.mp3",
+        "category": "신남",
+        "upVoteCnt": 3,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649228029d63230e8bf3807a/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 232.338866
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "648ed9119d63230e8beb787d",
+        "keyVal": "ZlDTL",
+        "user": {
+          "__typename": "User",
+          "_id": "621fa552c5cbdd87e54d051c",
+          "email": "dhwjdgus18@gmail.com",
+          "nickname": "青蛍",
+          "signature": "ㅇㅅㅇ",
+          "point": 120,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/621fa552c5cbdd87e54d051c/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/621fa552c5cbdd87e54d051c/1.gif"
+        },
+        "title": "鳥の人 나우시카엔딩곡ㅡ하늘을나는사람 (감동, 쓸쓸)",
+        "content": "나우시카 엔딩곡",
+        "filename": "y2mate.com - 鳥の人  久石 譲  風の谷のナウシカより  Joe Hisaishi.mp3",
+        "category": "쓸쓸",
+        "upVoteCnt": 30,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648ed9119d63230e8beb787d/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 216.52898
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "648e79949d63230e8bea58d7",
+        "keyVal": "OJBkA",
+        "user": {
+          "__typename": "User",
+          "_id": "6321cd593ad93ea97a5a4d18",
+          "email": "hyaries@gmail.com",
+          "nickname": "헬로어게인",
+          "signature": "Don't tell me why. Show me just as you are. When you know it very well, don't wait for me anymore.",
+          "point": 1010,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/6321cd593ad93ea97a5a4d18/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/6321cd593ad93ea97a5a4d18/1.gif"
+        },
+        "title": "Leaf - 별자리(星座)",
+        "content": "Leaf Arrange Sound Track – NacCHU, 星座, Track 2, 2006, Game\n라우드니스 레벨 -11 LUFS\nhttps://vgmdb.net/album/6210",
+        "filename": "Track_02.flac",
+        "category": "활기",
+        "upVoteCnt": 23,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648e79949d63230e8bea58d7/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 278.346667
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "648e69ad9d63230e8bea2ef7",
+        "keyVal": "fxrKt",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d179352039d2270dae19",
+          "email": "fireduck1433@gmail.com",
+          "nickname": "qpowjdjna",
+          "signature": "주로 게임BGM 올립니다",
+          "point": 7090,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d179352039d2270dae19/0.jpg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d179352039d2270dae19/1.gif"
+        },
+        "title": "영웅전설 6 공의 궤적 SC Evolution - 다가오는 위협(톤 다운 버전)(심각, 웅장, 긴장)",
+        "content": "원제 : 迫りくる脅威\n\n원곡 대비 톤이 낮은 버전입니다",
+        "filename": "영웅전설 6 SC - 迫りくる脅威(Low tone)(3).mp3",
+        "category": "심각",
+        "upVoteCnt": 28,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648e69ad9d63230e8bea2ef7/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 172.776
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "64897adc9d63230e8bddec85",
+        "keyVal": "bwos5",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d179352039d2270dae19",
+          "email": "fireduck1433@gmail.com",
+          "nickname": "qpowjdjna",
+          "signature": "주로 게임BGM 올립니다",
+          "point": 7090,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d179352039d2270dae19/0.jpg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d179352039d2270dae19/1.gif"
+        },
+        "title": "영웅전설 6 공의 궤적 SC Evolution - 동료의 곁으로(톤 다운 버전)(비장, 웅장, 긴박)",
+        "content": "원제 : 仲間の元へ\n\n원곡 대비 톤이 낮은 버전입니다",
+        "filename": "영웅전설 6 SC Evolution - 仲間の元へ(Low tone).mp3",
+        "category": "비장",
+        "upVoteCnt": 37,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/64897adc9d63230e8bddec85/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 143.352
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "648967279d63230e8bddbb29",
+        "keyVal": "ZJl8n",
+        "user": {
+          "__typename": "User",
+          "_id": "635e19173ad93ea97afc2fbc",
+          "email": "jihoo9362@gmail.com",
+          "nickname": "흰별지후",
+          "signature": "하이",
+          "point": 92,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/635e19173ad93ea97afc2fbc/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/635e19173ad93ea97afc2fbc/1.gif"
+        },
+        "title": "전투! 에리어 제로의 포켓몬 (포켓몬스터 스칼렛 바이올렛)",
+        "content": "아 ㅋㅋㅋ",
+        "filename": "WqUxdXX95oK9NBgIFbUj4tAwHKM0IliO.mp3",
+        "category": "몽환",
+        "upVoteCnt": 33,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648967279d63230e8bddbb29/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 238.248
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "648966c89d63230e8bddba3b",
+        "keyVal": "kwB2f",
+        "user": {
+          "__typename": "User",
+          "_id": "635e19173ad93ea97afc2fbc",
+          "email": "jihoo9362@gmail.com",
+          "nickname": "흰별지후",
+          "signature": "하이",
+          "point": 92,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/635e19173ad93ea97afc2fbc/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/635e19173ad93ea97afc2fbc/1.gif"
+        },
+        "title": "에리어 제로(포켓몬스터 스칼렛 바이올렛)",
+        "content": "ㅋ",
+        "filename": "O6I1bz1I8mgY9kbklFEHzB256pqIEGuE (1).mp3",
+        "category": "몽환",
+        "upVoteCnt": 27,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648966c89d63230e8bddba3b/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 266.16
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "6488184b9d63230e8bda55c8",
+        "keyVal": "NWNwN",
+        "user": {
+          "__typename": "User",
+          "_id": "635e19173ad93ea97afc2fbc",
+          "email": "jihoo9362@gmail.com",
+          "nickname": "흰별지후",
+          "signature": "하이",
+          "point": 92,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/635e19173ad93ea97afc2fbc/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/635e19173ad93ea97afc2fbc/1.gif"
+        },
+        "title": "전투! 뮤(포켓몬스터 에메랄드)",
+        "content": "???",
+        "filename": "141 Battle! (Mew).mp3",
+        "category": "추억",
+        "upVoteCnt": 28,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6488184b9d63230e8bda55c8/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 88.006531
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "6487b8709d63230e8bd96eeb",
+        "keyVal": "H4lGX",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d1a2352039d2270fb0af",
+          "email": "hktfw@naver.com",
+          "nickname": "레인_r",
+          "signature": "",
+          "point": 5655,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/1.gif"
+        },
+        "title": "14. 전투! N (포케마스 어레인지) - 포켓몬 마스터즈 베스트 배틀 비트 컬렉션",
+        "content": "https://youtu.be/0X3_ViEzbM0",
+        "filename": "戦闘!N(ポケマスアレンジ) - 山田玄紀.mp3",
+        "category": "긴박",
+        "upVoteCnt": 21,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6487b8709d63230e8bd96eeb/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 151.222857
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "6487b7659d63230e8bd96cae",
+        "keyVal": "HSmcl",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d1a2352039d2270fb0af",
+          "email": "hktfw@naver.com",
+          "nickname": "레인_r",
+          "signature": "",
+          "point": 5655,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/1.gif"
+        },
+        "title": "15. 전투! 게치스 (포케마스 어레인지) - 포켓몬 마스터즈 베스트 배틀 비트 컬렉션",
+        "content": "https://youtu.be/0X3_ViEzbM0",
+        "filename": "戦闘!ゲーチス(ポケマスアレンジ) - 山田玄紀.mp3",
+        "category": "심각",
+        "upVoteCnt": 22,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6487b7659d63230e8bd96cae/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 154.224
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "64867e489d63230e8bd69972",
+        "keyVal": "Nnenc",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d179352039d2270dae19",
+          "email": "fireduck1433@gmail.com",
+          "nickname": "qpowjdjna",
+          "signature": "주로 게임BGM 올립니다",
+          "point": 7090,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d179352039d2270dae19/0.jpg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d179352039d2270dae19/1.gif"
+        },
+        "title": "영웅전설 6 공의 궤적 SC - Obstructive Existence(톤 다운 버전)(경쾌, 비장)",
+        "content": "원곡 대비 톤이 낮은 버전입니다",
+        "filename": "106 Obstructive Existence(Low tone).mp3",
+        "category": "경쾌",
+        "upVoteCnt": 34,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/64867e489d63230e8bd69972/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 149.446531
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "648655259d63230e8bd63e15",
+        "keyVal": "DIal5",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d150352039d2270bb696",
+          "email": "cnlwjd12@naver.com",
+          "nickname": "엉덩뜯기",
+          "signature": null,
+          "point": 430,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d150352039d2270bb696/0.jpg",
+          "profileIconUrl": null
+        },
+        "title": "온라인 웜즈 - 밀레니엄 계곡",
+        "content": "온라인 웜즈 밀레니엄 계곡",
+        "filename": "밀레니엄 계곡.mp3",
+        "category": "추억",
+        "upVoteCnt": 8,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648655259d63230e8bd63e15/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 64.574694
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "6485a3bb9d63230e8bd47316",
+        "keyVal": "I06pY",
+        "user": {
+          "__typename": "User",
+          "_id": "639500fa9d63230e8b64ac62",
+          "email": "hellogostzero@gmail.com",
+          "nickname": "ALON18",
+          "signature": null,
+          "point": 30,
+          "profileImageUrl": null,
+          "profileIconUrl": null
+        },
+        "title": "Yoasobi-아이돌 dazbee cover",
+        "content": "E",
+        "filename": "videoplayback-1.mp4",
+        "category": "신남",
+        "upVoteCnt": 7,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6485a3bb9d63230e8bd47316/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 215.063
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "648551f09d63230e8bd37b70",
+        "keyVal": "l0fGz",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d1a2352039d2270fb0af",
+          "email": "hktfw@naver.com",
+          "nickname": "레인_r",
+          "signature": "",
+          "point": 5655,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/1.gif"
+        },
+        "title": "20. 전투! 라이어 - 포켓몬 마스터즈 베스트 배틀 비트 컬렉션",
+        "content": "https://youtu.be/0X3_ViEzbM0",
+        "filename": "戦闘!ライヤー - 山田玄紀.mp3",
+        "category": "격렬",
+        "upVoteCnt": 10,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648551f09d63230e8bd37b70/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 414.040816
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "64854b699d63230e8bd366e0",
+        "keyVal": "1QGwF",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d1a2352039d2270fb0af",
+          "email": "hktfw@naver.com",
+          "nickname": "레인_r",
+          "signature": "",
+          "point": 5655,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/1.gif"
+        },
+        "title": "10. 결전! 난천 (포케마스 어레인지) - 포켓몬 마스터즈 베스트 배틀 비트 컬렉션",
+        "content": "https://youtu.be/_ewoC5r4TgQ",
+        "filename": "決戦!シロナ(ポケマスアレンジ) - 山田玄紀.mp3",
+        "category": "심각",
+        "upVoteCnt": 19,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/64854b699d63230e8bd366e0/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 333.035102
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "648532419d63230e8bd324db",
+        "keyVal": "GqMQ0",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d1a2352039d2270fb0af",
+          "email": "hktfw@naver.com",
+          "nickname": "레인_r",
+          "signature": "",
+          "point": 5655,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/1.gif"
+        },
+        "title": "18. 전투! 야생 포켓몬 Tv Anime Ver - 포켓몬스터 사운드트랙 1",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime?ima=1653",
+        "filename": "「戦闘!野生ポケモン」～Tv Anime Ver_ - 林ゆうき.mp3",
+        "category": "활기",
+        "upVoteCnt": 6,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648532419d63230e8bd324db/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 101.537956
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "64852e589d63230e8bd319e0",
+        "keyVal": "sfDXY",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d1a2352039d2270fb0af",
+          "email": "hktfw@naver.com",
+          "nickname": "레인_r",
+          "signature": "",
+          "point": 5655,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/1.gif"
+        },
+        "title": "19. 전투! 트레이너 Tv Anime Ver - 포켓몬스터 사운드트랙 1",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime?ima=1653",
+        "filename": "「戦闘!トレーナー」～Tv Anime Ver_ - 林ゆうき.mp3",
+        "category": "경쾌",
+        "upVoteCnt": 5,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/64852e589d63230e8bd319e0/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 111.072656
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "648527d89d63230e8bd309dd",
+        "keyVal": "aRpHo",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d1a2352039d2270fb0af",
+          "email": "hktfw@naver.com",
+          "nickname": "레인_r",
+          "signature": "",
+          "point": 5655,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/1.gif"
+        },
+        "title": "6. 뮤와 만나기 위해 - 포켓몬스터 사운드트랙 2",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime_vol2",
+        "filename": "ミュウとあうために - 林ゆうき.mp3",
+        "category": "쓸쓸",
+        "upVoteCnt": 0,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648527d89d63230e8bd309dd/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 127.399184
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "648527329d63230e8bd3085e",
+        "keyVal": "RPPOY",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d1a2352039d2270fb0af",
+          "email": "hktfw@naver.com",
+          "nickname": "레인_r",
+          "signature": "",
+          "point": 5655,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/1.gif"
+        },
+        "title": "13. 포켓몬 마린 애슬레틱 - 포켓몬스터 사운드트랙 2",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime_vol2",
+        "filename": "ポケモンマリンアスレチック - 林ゆうき.mp3",
+        "category": "귀여움",
+        "upVoteCnt": 0,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648527329d63230e8bd3085e/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 67.94449
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "648526099d63230e8bd3059c",
+        "keyVal": "hTagM",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d1a2352039d2270fb0af",
+          "email": "hktfw@naver.com",
+          "nickname": "레인_r",
+          "signature": "",
+          "point": 5655,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/1.gif"
+        },
+        "title": "12. 포켓몬 서커스 - 포켓몬스터 사운드트랙 2",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime_vol2",
+        "filename": "ポケモンサーカス - 林ゆうき.mp3",
+        "category": "흥겨움",
+        "upVoteCnt": 3,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648526099d63230e8bd3059c/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 78.915918
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "648525559d63230e8bd30444",
+        "keyVal": "nR973",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d1a2352039d2270fb0af",
+          "email": "hktfw@naver.com",
+          "nickname": "레인_r",
+          "signature": "",
+          "point": 5655,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/1.gif"
+        },
+        "title": "3. 시작되는 배틀 - 포켓몬스터 사운드트랙 2",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime_vol2",
+        "filename": "はじまりのバトル - 林ゆうき.mp3",
+        "category": "희망",
+        "upVoteCnt": 5,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648525559d63230e8bd30444/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 99.63102
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "6485220a9d63230e8bd2fcf7",
+        "keyVal": "Ukk9s",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d1a2352039d2270fb0af",
+          "email": "hktfw@naver.com",
+          "nickname": "레인_r",
+          "signature": "",
+          "point": 5655,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/1.gif"
+        },
+        "title": "43. 다음 공격 - 포켓몬스터 사운드트랙 2",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime_vol2",
+        "filename": "つぎのこうげき - 林ゆうき.mp3",
+        "category": "긴장",
+        "upVoteCnt": 1,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6485220a9d63230e8bd2fcf7/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 96.444082
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "648521a49d63230e8bd2fc30",
+        "keyVal": "ta5P8",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d1a2352039d2270fb0af",
+          "email": "hktfw@naver.com",
+          "nickname": "레인_r",
+          "signature": "",
+          "point": 5655,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/1.gif"
+        },
+        "title": "46. 여행길 - 포켓몬스터 사운드트랙 2",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime_vol2",
+        "filename": "たびだち - 林ゆうき.mp3",
+        "category": "아련",
+        "upVoteCnt": 0,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648521a49d63230e8bd2fc30/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 144.065306
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "6485211f9d63230e8bd2fb14",
+        "keyVal": "39yac",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d1a2352039d2270fb0af",
+          "email": "hktfw@naver.com",
+          "nickname": "레인_r",
+          "signature": "",
+          "point": 5655,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/1.gif"
+        },
+        "title": "28. 여기부터 - 포켓몬스터 사운드트랙 2",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime_vol2",
+        "filename": "ここから - 林ゆうき.mp3",
+        "category": "웅장",
+        "upVoteCnt": 0,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6485211f9d63230e8bd2fb14/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 108.251429
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "6485203b9d63230e8bd2f952",
+        "keyVal": "3Z7QW",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d1a2352039d2270fb0af",
+          "email": "hktfw@naver.com",
+          "nickname": "레인_r",
+          "signature": "",
+          "point": 5655,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/1.gif"
+        },
+        "title": "9. GO! - 포켓몬스터 사운드트랙 2",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime_vol2",
+        "filename": "09.GO!.mp3",
+        "category": "흥겨움",
+        "upVoteCnt": 1,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6485203b9d63230e8bd2f952/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 106.893061
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "64851fbd9d63230e8bd2f83d",
+        "keyVal": "T9wMS",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d1a2352039d2270fb0af",
+          "email": "hktfw@naver.com",
+          "nickname": "레인_r",
+          "signature": "",
+          "point": 5655,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/1.gif"
+        },
+        "title": "19. 전투! 트레이너 2 TV Anime Ver - 포켓몬스터 사운드트랙 2",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime_vol2",
+        "filename": "「戦闘!トレーナー2」～TV Anime Ver_ - 林ゆうき.mp3",
+        "category": "격렬",
+        "upVoteCnt": 0,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/64851fbd9d63230e8bd2f83d/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 125.753469
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "64851f1e9d63230e8bd2f6f0",
+        "keyVal": "iGFt2",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d1a2352039d2270fb0af",
+          "email": "hktfw@naver.com",
+          "nickname": "레인_r",
+          "signature": "",
+          "point": 5655,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/1.gif"
+        },
+        "title": "18. 전투! 야생 포켓몬 2 TV Anime Ver - 포켓몬스터 사운드트랙 2",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime_vol2",
+        "filename": "「戦闘!野生ポケモン2」～TV Anime Ver_ - 林ゆうき.mp3",
+        "category": "심각",
+        "upVoteCnt": 0,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/64851f1e9d63230e8bd2f6f0/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 113.580408
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "6482568d9d63230e8bcce9cf",
+        "keyVal": "07n0I",
+        "user": {
+          "__typename": "User",
+          "_id": "626fc1e63ad93ea97a1a1986",
+          "email": "yoons08@icloud.com",
+          "nickname": "Anaud",
+          "signature": null,
+          "point": 3850,
+          "profileImageUrl": null,
+          "profileIconUrl": null
+        },
+        "title": "책갈피  마후마후 영화 “너가 떨어뜨린 푸른 하늘” 주제가栞／まふまふ　映画『君が落とした青空』主題歌",
+        "content": "https://www.youtube.com/watch?v=vHm0RWaf0FE",
+        "filename": "【MV】栞／まふまふ　映画『君が落とした青空』主題歌.mp3",
+        "category": "신남",
+        "upVoteCnt": 5,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6482568d9d63230e8bcce9cf/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 266.26322
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "6482113a9d63230e8bcc7aba",
+        "keyVal": "sRd8s",
+        "user": {
+          "__typename": "User",
+          "_id": "639500fa9d63230e8b64ac62",
+          "email": "hellogostzero@gmail.com",
+          "nickname": "ALON18",
+          "signature": null,
+          "point": 30,
+          "profileImageUrl": null,
+          "profileIconUrl": null
+        },
+        "title": "메가테라 제로 - 취한 줄을 모르고",
+        "content": ".",
+        "filename": "videoplayback.mp4",
+        "category": "격렬",
+        "upVoteCnt": 13,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6482113a9d63230e8bcc7aba/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 134.954362
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "648120ae9d63230e8bca9492",
+        "keyVal": "vnTaZ",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d179352039d2270dae19",
+          "email": "fireduck1433@gmail.com",
+          "nickname": "qpowjdjna",
+          "signature": "주로 게임BGM 올립니다",
+          "point": 7090,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d179352039d2270dae19/0.jpg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d179352039d2270dae19/1.gif"
+        },
+        "title": "영웅전설 6 공의 궤적 SC - Fateful confrontation(톤 다운 버전)(쓸쓸, 격렬, 우울, 비장)",
+        "content": "원곡 대비 톤이 낮은 버전입니다",
+        "filename": "영웅전설 6 SC - Fateful Confrontation(4).mp3",
+        "category": "쓸쓸",
+        "upVoteCnt": 37,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648120ae9d63230e8bca9492/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 158.208
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "6480ebe49d63230e8bca3a54",
+        "keyVal": "P02qi",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d1a2352039d2270fb0af",
+          "email": "hktfw@naver.com",
+          "nickname": "레인_r",
+          "signature": "",
+          "point": 5655,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/1.gif"
+        },
+        "title": "9. 스카이 미라주! 톤 커넥트! - 히로가루 스카이! 프리큐어 사운드트랙 1",
+        "content": "https://www.marv.jp/titles/mc/10499/",
+        "filename": "スカイミラージュ!トーンコネクト! - 深澤恵梨香.mp3",
+        "category": "활기",
+        "upVoteCnt": 12,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6480ebe49d63230e8bca3a54/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 116.88
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "6480eb149d63230e8bca38f5",
+        "keyVal": "H4Aa8",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d1a2352039d2270fb0af",
+          "email": "hktfw@naver.com",
+          "nickname": "레인_r",
+          "signature": "",
+          "point": 5655,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/0.jpeg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/1.gif"
+        },
+        "title": "37. 프리큐어・업드래프트・샤이닝! - 히로가루 스카이! 프리큐어 사운드트랙 1",
+        "content": "https://www.marv.jp/titles/mc/10499/",
+        "filename": "プリキュア・アップドラフト・シャイニング! - 深澤恵梨香.mp3",
+        "category": "비장",
+        "upVoteCnt": 9,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6480eb149d63230e8bca38f5/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 56.16
+      },
+      {
+        "__typename": "BgmDocument",
+        "_id": "6480ac1b9d63230e8bc9c3eb",
+        "keyVal": "EnxFk",
+        "user": {
+          "__typename": "User",
+          "_id": "5bb0d190352039d2270edeb5",
+          "email": "pou3307@naver.com",
+          "nickname": "코다",
+          "signature": "50-\r\n750+\r\n1-\r\n15+\r\n\r\n\r\n실험삼아 제 곡을 다운받아 봤는데, 예전과는 다르게 올렸던 곡의 정보랑 음질이 그대로 받아지네요.\r\n혹시나 다운을 받았는데 앨범 아트가 없는 곡이라면, 브금저장소의 제한 용량에 맞추기 위해 앨범 아트를 뺀 곡이니까 (앨범 아트도 은근 용량이 큽니다...) 이상하게 생각하시지 않으셔도 됩니다.\r\n\r\n로켓 리그 x Monstercat OST Vol. 1 : http://bgmstore.net/playlists/play/lGeuN\r\n\r\n로켓 리그 x Monstercat OST Vol. 2 : https://bgmstore.net/playlists/play/QemfJ \r\n\r\n로켓 리그 x Monstercat OST Vol. 3 : http://bgmstore.net/playlists/play/jei5h\r\n\r\n로켓 리그 x Monstercat OST Vol. 4 : https://bgmstore.net/playlists/play/xyHkW\r\n\r\nDNCE : http://bgmstore.net/playlists/play/z3Bqw\r\n\r\n잔잔한 걸 좋아하시는 분들께 : http://bgmstore.net/playlists/play/3q8y7 (Apostrophe 모음)\r\n\r\n                                        http://bgmstore.net/playlists/play/ngwY0 (Christian Lindquist 모음)\r\n\r\nSnail&#039;s House : https://bgmstore.net/playlists/play/7vKfi\r\n\r\nLauv : https://bgmstore.net/playlists/play/wfYvT\r\n\r\nTokyo Machine : https://bgmstore.net/playlists/play/oL3rG\r\n\r\nPREP : https://bgmstore.net/playlists/play/ykYtc\r\n\r\nTom Misch - Geography (2018) : http://bgmstore.net/playlists/play/2KAWV\r\n\r\nHONNE - Love Me / Love Me Not (2018) : https://bgmstore.net/playlists/play/LLF6A\r\n\r\nMedasin - Irene (2018) : https://bgmstore.net/playlists/play/xexuD\r\n\r\nPuppet - LIFE IN JAPAN - EP (2018) : https://bgmstore.net/playlists/play/aI0YZ",
+          "point": 10957,
+          "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d190352039d2270edeb5/0.jpg",
+          "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d190352039d2270edeb5/1.gif"
+        },
+        "title": "Magiksolo - Christmas Shibuya (경쾌, 활기)",
+        "content": "러시아 출신 뮤지션 Magiksolo의 앨범 'Tokyo'에 수록된 일곱 번째 곡이자, 마지막 곡입니다.\n경쾌하면서 활기찬 분위기의 음악입니다.",
+        "filename": "Magiksolo - Christmas Shibuya.mp3",
+        "category": "경쾌",
+        "upVoteCnt": 16,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6480ac1b9d63230e8bc9c3eb/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 131.317556
+      }
+    ],
+    "__APOLLO_STATE__": {
+      "User:631aaedd3ad93ea97a3d512d": {
+        "__typename": "User",
+        "_id": "631aaedd3ad93ea97a3d512d",
+        "email": "blue56725672@gmail.com",
+        "nickname": "oooo2",
+        "signature": null,
+        "point": 130,
+        "profileImageUrl": null,
+        "profileIconUrl": null
+      },
+      "BgmDocument:649d11929d63230e8b0d3630": {
+        "__typename": "BgmDocument",
+        "_id": "649d11929d63230e8b0d3630",
+        "keyVal": "DUymD",
+        "user": {
+          "__ref": "User:631aaedd3ad93ea97a3d512d"
+        },
+        "title": "Ballrooms extravaganza",
+        "content": "붕스 광고노래",
+        "filename": "DPR IAN - Ballroom Extravaganza [320 kbps].mp3",
+        "category": "감동",
+        "upVoteCnt": 5,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649d11929d63230e8b0d3630/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 189.988571
+      },
+      "User:63e89a879d63230e8b511ad6": {
+        "__typename": "User",
+        "_id": "63e89a879d63230e8b511ad6",
+        "email": "happilmad@mail.com",
+        "nickname": "WednesdaysStars.",
+        "signature": null,
+        "point": 20,
+        "profileImageUrl": null,
+        "profileIconUrl": null
+      },
+      "BgmDocument:649c06419d63230e8b0adcb5": {
+        "__typename": "BgmDocument",
+        "_id": "649c06419d63230e8b0adcb5",
+        "keyVal": "pRiWz",
+        "user": {
+          "__ref": "User:63e89a879d63230e8b511ad6"
+        },
+        "title": "WaLL 盧STAR - 누가봐도 합필스타! (개드립, 여유) @wednesdaysstarq",
+        "content": "표절곡: WALL-E - BNL",
+        "filename": "WALL-盧.mp3",
+        "category": "유머",
+        "upVoteCnt": 0,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649c06419d63230e8b0adcb5/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 21.681625
+      },
+      "User:63c627189d63230e8bef8bef": {
+        "__typename": "User",
+        "_id": "63c627189d63230e8bef8bef",
+        "email": "jeonmingi302@gmail.com",
+        "nickname": "나는야초보",
+        "signature": null,
+        "point": 21,
+        "profileImageUrl": null,
+        "profileIconUrl": null
+      },
+      "BgmDocument:649bef769d63230e8b0aa7c9": {
+        "__typename": "BgmDocument",
+        "_id": "649bef769d63230e8b0aa7c9",
+        "keyVal": "2eXlb",
+        "user": {
+          "__ref": "User:63c627189d63230e8bef8bef"
+        },
+        "title": "이브금제목이나 원본 올려주세요제발요ㅠㅠ",
+        "content": "ㅠㅠ",
+        "filename": "오붕가.m4a",
+        "category": "신남",
+        "upVoteCnt": 3,
+        "commentCnt": 1,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649bef769d63230e8b0aa7c9/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 63.3414
+      },
+      "BgmDocument:649bed649d63230e8b0aa2d6": {
+        "__typename": "BgmDocument",
+        "_id": "649bed649d63230e8b0aa2d6",
+        "keyVal": "4AeJr",
+        "user": {
+          "__ref": "User:63c627189d63230e8bef8bef"
+        },
+        "title": "슬픈고양이댄스브금(원본)",
+        "content": "슬픈고양이댄스브금",
+        "filename": "Crystal_Waters_Gypsy_in_My_Mind_스피드업_.mp3",
+        "category": "유머",
+        "upVoteCnt": 2,
+        "commentCnt": 2,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649bed649d63230e8b0aa2d6/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 312.24
+      },
+      "User:5bb0d179352039d2270dae19": {
+        "__typename": "User",
+        "_id": "5bb0d179352039d2270dae19",
+        "email": "fireduck1433@gmail.com",
+        "nickname": "qpowjdjna",
+        "signature": "주로 게임BGM 올립니다",
+        "point": 7090,
+        "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d179352039d2270dae19/0.jpg",
+        "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d179352039d2270dae19/1.gif"
+      },
+      "BgmDocument:649bb53e9d63230e8b0a1a31": {
+        "__typename": "BgmDocument",
+        "_id": "649bb53e9d63230e8b0a1a31",
+        "keyVal": "GJthi",
+        "user": {
+          "__ref": "User:5bb0d179352039d2270dae19"
+        },
+        "title": "영웅전설 6 공의 궤적 SC - The Merciless Savior(톤 다운 버전)(경쾌, 비장, 장엄, 애잔, 쓸쓸)",
+        "content": "최종보스 3연전 중 마지막 전투 BGM\n\n원곡 대비 톤이 낮은 버전입니다",
+        "filename": "215 The Merciless Savior(Low tone).mp3",
+        "category": "경쾌",
+        "upVoteCnt": 6,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649bb53e9d63230e8b0a1a31/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 442.540408
+      },
+      "User:639500fa9d63230e8b64ac62": {
+        "__typename": "User",
+        "_id": "639500fa9d63230e8b64ac62",
+        "email": "hellogostzero@gmail.com",
+        "nickname": "ALON18",
+        "signature": null,
+        "point": 30,
+        "profileImageUrl": null,
+        "profileIconUrl": null
+      },
+      "BgmDocument:649b286d9d63230e8b08d485": {
+        "__typename": "BgmDocument",
+        "_id": "649b286d9d63230e8b08d485",
+        "keyVal": "aw36y",
+        "user": {
+          "__ref": "User:639500fa9d63230e8b64ac62"
+        },
+        "title": "[DALNODO]사계절의 날개 (feat. 이내)",
+        "content": ".",
+        "filename": "달노도이내사계절날개.mp4",
+        "category": "감동",
+        "upVoteCnt": 0,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649b286d9d63230e8b08d485/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 291.3872
+      },
+      "User:649aa6be9d63230e8b0772a7": {
+        "__typename": "User",
+        "_id": "649aa6be9d63230e8b0772a7",
+        "email": "gkwjddlfksp@naver.com",
+        "nickname": "LUCKS",
+        "signature": null,
+        "point": 10,
+        "profileImageUrl": null,
+        "profileIconUrl": null
+      },
+      "BgmDocument:649aa7749d63230e8b0773d7": {
+        "__typename": "BgmDocument",
+        "_id": "649aa7749d63230e8b0773d7",
+        "keyVal": "zpOoN",
+        "user": {
+          "__ref": "User:649aa6be9d63230e8b0772a7"
+        },
+        "title": "브금제목좀알려주실분",
+        "content": "유튜브에있나 찾아보려고요 바이올린만하는 버전있는분도 구합니다.",
+        "filename": "4WUfU.mp3",
+        "category": "평화",
+        "upVoteCnt": 4,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649aa7749d63230e8b0773d7/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 249.991837
+      },
+      "User:6321cd593ad93ea97a5a4d18": {
+        "__typename": "User",
+        "_id": "6321cd593ad93ea97a5a4d18",
+        "email": "hyaries@gmail.com",
+        "nickname": "헬로어게인",
+        "signature": "Don't tell me why. Show me just as you are. When you know it very well, don't wait for me anymore.",
+        "point": 1010,
+        "profileImageUrl": "https://files.bgmstore.net/images/user/6321cd593ad93ea97a5a4d18/0.jpeg",
+        "profileIconUrl": "https://files.bgmstore.net/images/user/6321cd593ad93ea97a5a4d18/1.gif"
+      },
+      "BgmDocument:649988209d63230e8b04c3e0": {
+        "__typename": "BgmDocument",
+        "_id": "649988209d63230e8b04c3e0",
+        "keyVal": "KIQec",
+        "user": {
+          "__ref": "User:6321cd593ad93ea97a5a4d18"
+        },
+        "title": "Leaf - scars that haven't healed",
+        "content": "Leaf, 痕/kizuato, まだ癒えぬ痕/Scars that haven't healed/아직 아물지 않은 상처(자국), 1996, Game\nSC-88 MAP 오디오 랜더링\n라우드니스 레벨 -11 LUFS",
+        "filename": "kizuato2_v1-11LUFS.flac",
+        "category": "추억",
+        "upVoteCnt": 8,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649988209d63230e8b04c3e0/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 176.061688
+      },
+      "User:64993e1e9d63230e8b03f358": {
+        "__typename": "User",
+        "_id": "64993e1e9d63230e8b03f358",
+        "email": "hyunjun3190@gmail.com",
+        "nickname": "곡이그",
+        "signature": null,
+        "point": 10,
+        "profileImageUrl": null,
+        "profileIconUrl": null
+      },
+      "BgmDocument:64993ed69d63230e8b03f525": {
+        "__typename": "BgmDocument",
+        "_id": "64993ed69d63230e8b03f525",
+        "keyVal": "47MpU",
+        "user": {
+          "__ref": "User:64993e1e9d63230e8b03f358"
+        },
+        "title": "3호선ㄱ어야앵ㅇㄴ,ㄹ,ㅐㄴ아내ㅏㅣ엔,ㅁ",
+        "content": "ㄴ므애ㅑㅗ넝마ㅣㅠ여ㅑㄷ8랴ㅓㄴ유ㅕㅐ농9ㅔㄴㅁ윳ㅇ98ㄴ머어ㅏ뇨옴ㄴ먕ㅁ유녛ㅇ9",
+        "filename": "3호선[1].mp3",
+        "category": "유머",
+        "upVoteCnt": 8,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/64993ed69d63230e8b03f525/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 17.391746
+      },
+      "BgmDocument:6498d6029d63230e8b02f158": {
+        "__typename": "BgmDocument",
+        "_id": "6498d6029d63230e8b02f158",
+        "keyVal": "83zOZ",
+        "user": {
+          "__ref": "User:5bb0d179352039d2270dae19"
+        },
+        "title": "영웅전설 6 공의 궤적 SC - A Gravestone Struck by Lightning(톤 다운 버전)(심각, 긴박)",
+        "content": "최종보스 3연전 중 첫 번째 전투 BGM\n\n원곡 대비 톤이 낮은 버전입니다",
+        "filename": "212 A Gravestone Struck by Lightning(Low tone).mp3",
+        "category": "심각",
+        "upVoteCnt": 17,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6498d6029d63230e8b02f158/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 141.87102
+      },
+      "User:5bb0d150352039d2270bc80f": {
+        "__typename": "User",
+        "_id": "5bb0d150352039d2270bc80f",
+        "email": "so3o_@naver.com",
+        "nickname": "ㅩㄺ",
+        "signature": null,
+        "point": 422,
+        "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d150352039d2270bc80f/0.jpeg",
+        "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d150352039d2270bc80f/1.gif"
+      },
+      "BgmDocument:64965d369d63230e8bfcf4b5": {
+        "__typename": "BgmDocument",
+        "_id": "64965d369d63230e8bfcf4b5",
+        "keyVal": "C7H0c",
+        "user": {
+          "__ref": "User:5bb0d150352039d2270bc80f"
+        },
+        "title": "【アイドルマスター】「ガッツだぜ！！」(歌：中野有香)",
+        "content": "원곡 : ウルフルズ - ガッツだぜ！！",
+        "filename": "갓츠다제_.mp4",
+        "category": "신남",
+        "upVoteCnt": 21,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/64965d369d63230e8bfcf4b5/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 193.751
+      },
+      "User:6495ec729d63230e8bfc0722": {
+        "__typename": "User",
+        "_id": "6495ec729d63230e8bfc0722",
+        "email": "netherla@nate.com",
+        "nickname": "제임스딘",
+        "signature": null,
+        "point": 20,
+        "profileImageUrl": null,
+        "profileIconUrl": null
+      },
+      "BgmDocument:6495ed4a9d63230e8bfc08a7": {
+        "__typename": "BgmDocument",
+        "_id": "6495ed4a9d63230e8bfc08a7",
+        "keyVal": "3mgrq",
+        "user": {
+          "__ref": "User:6495ec729d63230e8bfc0722"
+        },
+        "title": "아니 어떤 싸가지없는 놈의 새끼가 그 따위 소리 하구 다녀",
+        "content": "투캅스 싸가지",
+        "filename": "TwoCops.mp3",
+        "category": "유머",
+        "upVoteCnt": 6,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6495ed4a9d63230e8bfc08a7/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 7.4481
+      },
+      "User:635e19173ad93ea97afc2fbc": {
+        "__typename": "User",
+        "_id": "635e19173ad93ea97afc2fbc",
+        "email": "jihoo9362@gmail.com",
+        "nickname": "흰별지후",
+        "signature": "하이",
+        "point": 92,
+        "profileImageUrl": "https://files.bgmstore.net/images/user/635e19173ad93ea97afc2fbc/0.jpeg",
+        "profileIconUrl": "https://files.bgmstore.net/images/user/635e19173ad93ea97afc2fbc/1.gif"
+      },
+      "BgmDocument:6495a07e9d63230e8bfb5669": {
+        "__typename": "BgmDocument",
+        "_id": "6495a07e9d63230e8bfb5669",
+        "keyVal": "v0dgw",
+        "user": {
+          "__ref": "User:635e19173ad93ea97afc2fbc"
+        },
+        "title": "포켓몬스터 배틀타워(토비 폭스&게임프리크)",
+        "content": "굿",
+        "filename": "114 - Battle! (Battle Tower).mp3",
+        "category": "경쾌",
+        "upVoteCnt": 18,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6495a07e9d63230e8bfb5669/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 313.417143
+      },
+      "User:649574849d63230e8bfaebec": {
+        "__typename": "User",
+        "_id": "649574849d63230e8bfaebec",
+        "email": "kyoko1231231@gmail.com",
+        "nickname": "오늘의나는",
+        "signature": null,
+        "point": 10,
+        "profileImageUrl": null,
+        "profileIconUrl": null
+      },
+      "BgmDocument:649575749d63230e8bfaee67": {
+        "__typename": "BgmDocument",
+        "_id": "649575749d63230e8bfaee67",
+        "keyVal": "Q4xVs",
+        "user": {
+          "__ref": "User:649574849d63230e8bfaebec"
+        },
+        "title": "zard 머나먼 별을 헤메이며",
+        "content": "ㅇ",
+        "filename": "遠い星を数えて (머나먼 별을 세면서) - Mbs 드라마 특구 「....mp3",
+        "category": "애절",
+        "upVoteCnt": 3,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649575749d63230e8bfaee67/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 306.782041
+      },
+      "BgmDocument:6495003e9d63230e8bf9d41a": {
+        "__typename": "BgmDocument",
+        "_id": "6495003e9d63230e8bf9d41a",
+        "keyVal": "ZPkC8",
+        "user": {
+          "__ref": "User:5bb0d179352039d2270dae19"
+        },
+        "title": "영웅전설 6 공의 궤적 SC - Outskirts of Evolution(톤 다운 버전)(심각, 웅장, 비장)",
+        "content": "최종 보스 3연전 중 2번째 전투 BGM\n\n원곡 대비 톤이 낮고 템포가 약간 느린 버전입니다",
+        "filename": "영웅전설 6 SC - Outskirts of Evolution(Low tone)(2).mp3",
+        "category": "심각",
+        "upVoteCnt": 20,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6495003e9d63230e8bf9d41a/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 212.592
+      },
+      "BgmDocument:649258669d63230e8bf3e910": {
+        "__typename": "BgmDocument",
+        "_id": "649258669d63230e8bf3e910",
+        "keyVal": "9MmpA",
+        "user": {
+          "__ref": "User:5bb0d179352039d2270dae19"
+        },
+        "title": "영웅전설 6 공의 궤적 SC - Heartless Surprise Attack(톤 다운 버전)(몽환, 긴박)",
+        "content": "원곡 대비 톤이 낮은 버전입니다",
+        "filename": "116 Heartless Surprise Attack(Low tone).mp3",
+        "category": "몽환",
+        "upVoteCnt": 23,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649258669d63230e8bf3e910/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 91.506939
+      },
+      "User:626fc1e63ad93ea97a1a1986": {
+        "__typename": "User",
+        "_id": "626fc1e63ad93ea97a1a1986",
+        "email": "yoons08@icloud.com",
+        "nickname": "Anaud",
+        "signature": null,
+        "point": 3850,
+        "profileImageUrl": null,
+        "profileIconUrl": null
+      },
+      "BgmDocument:649229209d63230e8bf382ac": {
+        "__typename": "BgmDocument",
+        "_id": "649229209d63230e8bf382ac",
+        "keyVal": "C1cwh",
+        "user": {
+          "__ref": "User:626fc1e63ad93ea97a1a1986"
+        },
+        "title": "보카로P와 화가가 25명 모여서 댄스 로봇 댄스 MV 어레인지 메들리",
+        "content": "https://www.youtube.com/watch?v=Vb-z6AR-2F0&t=0s",
+        "filename": "ボカロPと絵師が25人集まってダンスロボットダンスMVアレンジメドレーしてみた.mp3",
+        "category": "신남",
+        "upVoteCnt": 7,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649229209d63230e8bf382ac/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 182.044444
+      },
+      "BgmDocument:649228029d63230e8bf3807a": {
+        "__typename": "BgmDocument",
+        "_id": "649228029d63230e8bf3807a",
+        "keyVal": "Fv8YZ",
+        "user": {
+          "__ref": "User:626fc1e63ad93ea97a1a1986"
+        },
+        "title": "【소리게니코카라】타타타타타타타타타타타 BEMANI 시리즈 【音ゲーニコカラ】打打打打打打打打打打／BEMANIシリーズ",
+        "content": "https://www.youtube.com/watch?v=wO0RwUZFOqc",
+        "filename": "【音ゲーニコカラ】打打打打打打打打打打／BEMANIシリーズ.mp3",
+        "category": "신남",
+        "upVoteCnt": 3,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/649228029d63230e8bf3807a/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 232.338866
+      },
+      "User:621fa552c5cbdd87e54d051c": {
+        "__typename": "User",
+        "_id": "621fa552c5cbdd87e54d051c",
+        "email": "dhwjdgus18@gmail.com",
+        "nickname": "青蛍",
+        "signature": "ㅇㅅㅇ",
+        "point": 120,
+        "profileImageUrl": "https://files.bgmstore.net/images/user/621fa552c5cbdd87e54d051c/0.jpeg",
+        "profileIconUrl": "https://files.bgmstore.net/images/user/621fa552c5cbdd87e54d051c/1.gif"
+      },
+      "BgmDocument:648ed9119d63230e8beb787d": {
+        "__typename": "BgmDocument",
+        "_id": "648ed9119d63230e8beb787d",
+        "keyVal": "ZlDTL",
+        "user": {
+          "__ref": "User:621fa552c5cbdd87e54d051c"
+        },
+        "title": "鳥の人 나우시카엔딩곡ㅡ하늘을나는사람 (감동, 쓸쓸)",
+        "content": "나우시카 엔딩곡",
+        "filename": "y2mate.com - 鳥の人  久石 譲  風の谷のナウシカより  Joe Hisaishi.mp3",
+        "category": "쓸쓸",
+        "upVoteCnt": 30,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648ed9119d63230e8beb787d/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 216.52898
+      },
+      "BgmDocument:648e79949d63230e8bea58d7": {
+        "__typename": "BgmDocument",
+        "_id": "648e79949d63230e8bea58d7",
+        "keyVal": "OJBkA",
+        "user": {
+          "__ref": "User:6321cd593ad93ea97a5a4d18"
+        },
+        "title": "Leaf - 별자리(星座)",
+        "content": "Leaf Arrange Sound Track – NacCHU, 星座, Track 2, 2006, Game\n라우드니스 레벨 -11 LUFS\nhttps://vgmdb.net/album/6210",
+        "filename": "Track_02.flac",
+        "category": "활기",
+        "upVoteCnt": 23,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648e79949d63230e8bea58d7/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 278.346667
+      },
+      "BgmDocument:648e69ad9d63230e8bea2ef7": {
+        "__typename": "BgmDocument",
+        "_id": "648e69ad9d63230e8bea2ef7",
+        "keyVal": "fxrKt",
+        "user": {
+          "__ref": "User:5bb0d179352039d2270dae19"
+        },
+        "title": "영웅전설 6 공의 궤적 SC Evolution - 다가오는 위협(톤 다운 버전)(심각, 웅장, 긴장)",
+        "content": "원제 : 迫りくる脅威\n\n원곡 대비 톤이 낮은 버전입니다",
+        "filename": "영웅전설 6 SC - 迫りくる脅威(Low tone)(3).mp3",
+        "category": "심각",
+        "upVoteCnt": 28,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648e69ad9d63230e8bea2ef7/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 172.776
+      },
+      "BgmDocument:64897adc9d63230e8bddec85": {
+        "__typename": "BgmDocument",
+        "_id": "64897adc9d63230e8bddec85",
+        "keyVal": "bwos5",
+        "user": {
+          "__ref": "User:5bb0d179352039d2270dae19"
+        },
+        "title": "영웅전설 6 공의 궤적 SC Evolution - 동료의 곁으로(톤 다운 버전)(비장, 웅장, 긴박)",
+        "content": "원제 : 仲間の元へ\n\n원곡 대비 톤이 낮은 버전입니다",
+        "filename": "영웅전설 6 SC Evolution - 仲間の元へ(Low tone).mp3",
+        "category": "비장",
+        "upVoteCnt": 37,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/64897adc9d63230e8bddec85/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 143.352
+      },
+      "BgmDocument:648967279d63230e8bddbb29": {
+        "__typename": "BgmDocument",
+        "_id": "648967279d63230e8bddbb29",
+        "keyVal": "ZJl8n",
+        "user": {
+          "__ref": "User:635e19173ad93ea97afc2fbc"
+        },
+        "title": "전투! 에리어 제로의 포켓몬 (포켓몬스터 스칼렛 바이올렛)",
+        "content": "아 ㅋㅋㅋ",
+        "filename": "WqUxdXX95oK9NBgIFbUj4tAwHKM0IliO.mp3",
+        "category": "몽환",
+        "upVoteCnt": 33,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648967279d63230e8bddbb29/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 238.248
+      },
+      "BgmDocument:648966c89d63230e8bddba3b": {
+        "__typename": "BgmDocument",
+        "_id": "648966c89d63230e8bddba3b",
+        "keyVal": "kwB2f",
+        "user": {
+          "__ref": "User:635e19173ad93ea97afc2fbc"
+        },
+        "title": "에리어 제로(포켓몬스터 스칼렛 바이올렛)",
+        "content": "ㅋ",
+        "filename": "O6I1bz1I8mgY9kbklFEHzB256pqIEGuE (1).mp3",
+        "category": "몽환",
+        "upVoteCnt": 27,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648966c89d63230e8bddba3b/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 266.16
+      },
+      "BgmDocument:6488184b9d63230e8bda55c8": {
+        "__typename": "BgmDocument",
+        "_id": "6488184b9d63230e8bda55c8",
+        "keyVal": "NWNwN",
+        "user": {
+          "__ref": "User:635e19173ad93ea97afc2fbc"
+        },
+        "title": "전투! 뮤(포켓몬스터 에메랄드)",
+        "content": "???",
+        "filename": "141 Battle! (Mew).mp3",
+        "category": "추억",
+        "upVoteCnt": 28,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6488184b9d63230e8bda55c8/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 88.006531
+      },
+      "User:5bb0d1a2352039d2270fb0af": {
+        "__typename": "User",
+        "_id": "5bb0d1a2352039d2270fb0af",
+        "email": "hktfw@naver.com",
+        "nickname": "레인_r",
+        "signature": "",
+        "point": 5655,
+        "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/0.jpeg",
+        "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d1a2352039d2270fb0af/1.gif"
+      },
+      "BgmDocument:6487b8709d63230e8bd96eeb": {
+        "__typename": "BgmDocument",
+        "_id": "6487b8709d63230e8bd96eeb",
+        "keyVal": "H4lGX",
+        "user": {
+          "__ref": "User:5bb0d1a2352039d2270fb0af"
+        },
+        "title": "14. 전투! N (포케마스 어레인지) - 포켓몬 마스터즈 베스트 배틀 비트 컬렉션",
+        "content": "https://youtu.be/0X3_ViEzbM0",
+        "filename": "戦闘!N(ポケマスアレンジ) - 山田玄紀.mp3",
+        "category": "긴박",
+        "upVoteCnt": 21,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6487b8709d63230e8bd96eeb/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 151.222857
+      },
+      "BgmDocument:6487b7659d63230e8bd96cae": {
+        "__typename": "BgmDocument",
+        "_id": "6487b7659d63230e8bd96cae",
+        "keyVal": "HSmcl",
+        "user": {
+          "__ref": "User:5bb0d1a2352039d2270fb0af"
+        },
+        "title": "15. 전투! 게치스 (포케마스 어레인지) - 포켓몬 마스터즈 베스트 배틀 비트 컬렉션",
+        "content": "https://youtu.be/0X3_ViEzbM0",
+        "filename": "戦闘!ゲーチス(ポケマスアレンジ) - 山田玄紀.mp3",
+        "category": "심각",
+        "upVoteCnt": 22,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6487b7659d63230e8bd96cae/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 154.224
+      },
+      "BgmDocument:64867e489d63230e8bd69972": {
+        "__typename": "BgmDocument",
+        "_id": "64867e489d63230e8bd69972",
+        "keyVal": "Nnenc",
+        "user": {
+          "__ref": "User:5bb0d179352039d2270dae19"
+        },
+        "title": "영웅전설 6 공의 궤적 SC - Obstructive Existence(톤 다운 버전)(경쾌, 비장)",
+        "content": "원곡 대비 톤이 낮은 버전입니다",
+        "filename": "106 Obstructive Existence(Low tone).mp3",
+        "category": "경쾌",
+        "upVoteCnt": 34,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/64867e489d63230e8bd69972/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 149.446531
+      },
+      "User:5bb0d150352039d2270bb696": {
+        "__typename": "User",
+        "_id": "5bb0d150352039d2270bb696",
+        "email": "cnlwjd12@naver.com",
+        "nickname": "엉덩뜯기",
+        "signature": null,
+        "point": 430,
+        "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d150352039d2270bb696/0.jpg",
+        "profileIconUrl": null
+      },
+      "BgmDocument:648655259d63230e8bd63e15": {
+        "__typename": "BgmDocument",
+        "_id": "648655259d63230e8bd63e15",
+        "keyVal": "DIal5",
+        "user": {
+          "__ref": "User:5bb0d150352039d2270bb696"
+        },
+        "title": "온라인 웜즈 - 밀레니엄 계곡",
+        "content": "온라인 웜즈 밀레니엄 계곡",
+        "filename": "밀레니엄 계곡.mp3",
+        "category": "추억",
+        "upVoteCnt": 8,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648655259d63230e8bd63e15/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 64.574694
+      },
+      "BgmDocument:6485a3bb9d63230e8bd47316": {
+        "__typename": "BgmDocument",
+        "_id": "6485a3bb9d63230e8bd47316",
+        "keyVal": "I06pY",
+        "user": {
+          "__ref": "User:639500fa9d63230e8b64ac62"
+        },
+        "title": "Yoasobi-아이돌 dazbee cover",
+        "content": "E",
+        "filename": "videoplayback-1.mp4",
+        "category": "신남",
+        "upVoteCnt": 7,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6485a3bb9d63230e8bd47316/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 215.063
+      },
+      "BgmDocument:648551f09d63230e8bd37b70": {
+        "__typename": "BgmDocument",
+        "_id": "648551f09d63230e8bd37b70",
+        "keyVal": "l0fGz",
+        "user": {
+          "__ref": "User:5bb0d1a2352039d2270fb0af"
+        },
+        "title": "20. 전투! 라이어 - 포켓몬 마스터즈 베스트 배틀 비트 컬렉션",
+        "content": "https://youtu.be/0X3_ViEzbM0",
+        "filename": "戦闘!ライヤー - 山田玄紀.mp3",
+        "category": "격렬",
+        "upVoteCnt": 10,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648551f09d63230e8bd37b70/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 414.040816
+      },
+      "BgmDocument:64854b699d63230e8bd366e0": {
+        "__typename": "BgmDocument",
+        "_id": "64854b699d63230e8bd366e0",
+        "keyVal": "1QGwF",
+        "user": {
+          "__ref": "User:5bb0d1a2352039d2270fb0af"
+        },
+        "title": "10. 결전! 난천 (포케마스 어레인지) - 포켓몬 마스터즈 베스트 배틀 비트 컬렉션",
+        "content": "https://youtu.be/_ewoC5r4TgQ",
+        "filename": "決戦!シロナ(ポケマスアレンジ) - 山田玄紀.mp3",
+        "category": "심각",
+        "upVoteCnt": 19,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/64854b699d63230e8bd366e0/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 333.035102
+      },
+      "BgmDocument:648532419d63230e8bd324db": {
+        "__typename": "BgmDocument",
+        "_id": "648532419d63230e8bd324db",
+        "keyVal": "GqMQ0",
+        "user": {
+          "__ref": "User:5bb0d1a2352039d2270fb0af"
+        },
+        "title": "18. 전투! 야생 포켓몬 Tv Anime Ver - 포켓몬스터 사운드트랙 1",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime?ima=1653",
+        "filename": "「戦闘!野生ポケモン」～Tv Anime Ver_ - 林ゆうき.mp3",
+        "category": "활기",
+        "upVoteCnt": 6,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648532419d63230e8bd324db/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 101.537956
+      },
+      "BgmDocument:64852e589d63230e8bd319e0": {
+        "__typename": "BgmDocument",
+        "_id": "64852e589d63230e8bd319e0",
+        "keyVal": "sfDXY",
+        "user": {
+          "__ref": "User:5bb0d1a2352039d2270fb0af"
+        },
+        "title": "19. 전투! 트레이너 Tv Anime Ver - 포켓몬스터 사운드트랙 1",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime?ima=1653",
+        "filename": "「戦闘!トレーナー」～Tv Anime Ver_ - 林ゆうき.mp3",
+        "category": "경쾌",
+        "upVoteCnt": 5,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/64852e589d63230e8bd319e0/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 111.072656
+      },
+      "BgmDocument:648527d89d63230e8bd309dd": {
+        "__typename": "BgmDocument",
+        "_id": "648527d89d63230e8bd309dd",
+        "keyVal": "aRpHo",
+        "user": {
+          "__ref": "User:5bb0d1a2352039d2270fb0af"
+        },
+        "title": "6. 뮤와 만나기 위해 - 포켓몬스터 사운드트랙 2",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime_vol2",
+        "filename": "ミュウとあうために - 林ゆうき.mp3",
+        "category": "쓸쓸",
+        "upVoteCnt": 0,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648527d89d63230e8bd309dd/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 127.399184
+      },
+      "BgmDocument:648527329d63230e8bd3085e": {
+        "__typename": "BgmDocument",
+        "_id": "648527329d63230e8bd3085e",
+        "keyVal": "RPPOY",
+        "user": {
+          "__ref": "User:5bb0d1a2352039d2270fb0af"
+        },
+        "title": "13. 포켓몬 마린 애슬레틱 - 포켓몬스터 사운드트랙 2",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime_vol2",
+        "filename": "ポケモンマリンアスレチック - 林ゆうき.mp3",
+        "category": "귀여움",
+        "upVoteCnt": 0,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648527329d63230e8bd3085e/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 67.94449
+      },
+      "BgmDocument:648526099d63230e8bd3059c": {
+        "__typename": "BgmDocument",
+        "_id": "648526099d63230e8bd3059c",
+        "keyVal": "hTagM",
+        "user": {
+          "__ref": "User:5bb0d1a2352039d2270fb0af"
+        },
+        "title": "12. 포켓몬 서커스 - 포켓몬스터 사운드트랙 2",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime_vol2",
+        "filename": "ポケモンサーカス - 林ゆうき.mp3",
+        "category": "흥겨움",
+        "upVoteCnt": 3,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648526099d63230e8bd3059c/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 78.915918
+      },
+      "BgmDocument:648525559d63230e8bd30444": {
+        "__typename": "BgmDocument",
+        "_id": "648525559d63230e8bd30444",
+        "keyVal": "nR973",
+        "user": {
+          "__ref": "User:5bb0d1a2352039d2270fb0af"
+        },
+        "title": "3. 시작되는 배틀 - 포켓몬스터 사운드트랙 2",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime_vol2",
+        "filename": "はじまりのバトル - 林ゆうき.mp3",
+        "category": "희망",
+        "upVoteCnt": 5,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648525559d63230e8bd30444/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 99.63102
+      },
+      "BgmDocument:6485220a9d63230e8bd2fcf7": {
+        "__typename": "BgmDocument",
+        "_id": "6485220a9d63230e8bd2fcf7",
+        "keyVal": "Ukk9s",
+        "user": {
+          "__ref": "User:5bb0d1a2352039d2270fb0af"
+        },
+        "title": "43. 다음 공격 - 포켓몬스터 사운드트랙 2",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime_vol2",
+        "filename": "つぎのこうげき - 林ゆうき.mp3",
+        "category": "긴장",
+        "upVoteCnt": 1,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6485220a9d63230e8bd2fcf7/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 96.444082
+      },
+      "BgmDocument:648521a49d63230e8bd2fc30": {
+        "__typename": "BgmDocument",
+        "_id": "648521a49d63230e8bd2fc30",
+        "keyVal": "ta5P8",
+        "user": {
+          "__ref": "User:5bb0d1a2352039d2270fb0af"
+        },
+        "title": "46. 여행길 - 포켓몬스터 사운드트랙 2",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime_vol2",
+        "filename": "たびだち - 林ゆうき.mp3",
+        "category": "아련",
+        "upVoteCnt": 0,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648521a49d63230e8bd2fc30/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 144.065306
+      },
+      "BgmDocument:6485211f9d63230e8bd2fb14": {
+        "__typename": "BgmDocument",
+        "_id": "6485211f9d63230e8bd2fb14",
+        "keyVal": "39yac",
+        "user": {
+          "__ref": "User:5bb0d1a2352039d2270fb0af"
+        },
+        "title": "28. 여기부터 - 포켓몬스터 사운드트랙 2",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime_vol2",
+        "filename": "ここから - 林ゆうき.mp3",
+        "category": "웅장",
+        "upVoteCnt": 0,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6485211f9d63230e8bd2fb14/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 108.251429
+      },
+      "BgmDocument:6485203b9d63230e8bd2f952": {
+        "__typename": "BgmDocument",
+        "_id": "6485203b9d63230e8bd2f952",
+        "keyVal": "3Z7QW",
+        "user": {
+          "__ref": "User:5bb0d1a2352039d2270fb0af"
+        },
+        "title": "9. GO! - 포켓몬스터 사운드트랙 2",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime_vol2",
+        "filename": "09.GO!.mp3",
+        "category": "흥겨움",
+        "upVoteCnt": 1,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6485203b9d63230e8bd2f952/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 106.893061
+      },
+      "BgmDocument:64851fbd9d63230e8bd2f83d": {
+        "__typename": "BgmDocument",
+        "_id": "64851fbd9d63230e8bd2f83d",
+        "keyVal": "T9wMS",
+        "user": {
+          "__ref": "User:5bb0d1a2352039d2270fb0af"
+        },
+        "title": "19. 전투! 트레이너 2 TV Anime Ver - 포켓몬스터 사운드트랙 2",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime_vol2",
+        "filename": "「戦闘!トレーナー2」～TV Anime Ver_ - 林ゆうき.mp3",
+        "category": "격렬",
+        "upVoteCnt": 0,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/64851fbd9d63230e8bd2f83d/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 125.753469
+      },
+      "BgmDocument:64851f1e9d63230e8bd2f6f0": {
+        "__typename": "BgmDocument",
+        "_id": "64851f1e9d63230e8bd2f6f0",
+        "keyVal": "iGFt2",
+        "user": {
+          "__ref": "User:5bb0d1a2352039d2270fb0af"
+        },
+        "title": "18. 전투! 야생 포켓몬 2 TV Anime Ver - 포켓몬스터 사운드트랙 2",
+        "content": "https://www.110107.com/s/oto/page/pokemon_anime_vol2",
+        "filename": "「戦闘!野生ポケモン2」～TV Anime Ver_ - 林ゆうき.mp3",
+        "category": "심각",
+        "upVoteCnt": 0,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/64851f1e9d63230e8bd2f6f0/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 113.580408
+      },
+      "BgmDocument:6482568d9d63230e8bcce9cf": {
+        "__typename": "BgmDocument",
+        "_id": "6482568d9d63230e8bcce9cf",
+        "keyVal": "07n0I",
+        "user": {
+          "__ref": "User:626fc1e63ad93ea97a1a1986"
+        },
+        "title": "책갈피  마후마후 영화 “너가 떨어뜨린 푸른 하늘” 주제가栞／まふまふ　映画『君が落とした青空』主題歌",
+        "content": "https://www.youtube.com/watch?v=vHm0RWaf0FE",
+        "filename": "【MV】栞／まふまふ　映画『君が落とした青空』主題歌.mp3",
+        "category": "신남",
+        "upVoteCnt": 5,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6482568d9d63230e8bcce9cf/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 266.26322
+      },
+      "BgmDocument:6482113a9d63230e8bcc7aba": {
+        "__typename": "BgmDocument",
+        "_id": "6482113a9d63230e8bcc7aba",
+        "keyVal": "sRd8s",
+        "user": {
+          "__ref": "User:639500fa9d63230e8b64ac62"
+        },
+        "title": "메가테라 제로 - 취한 줄을 모르고",
+        "content": ".",
+        "filename": "videoplayback.mp4",
+        "category": "격렬",
+        "upVoteCnt": 13,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6482113a9d63230e8bcc7aba/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 134.954362
+      },
+      "BgmDocument:648120ae9d63230e8bca9492": {
+        "__typename": "BgmDocument",
+        "_id": "648120ae9d63230e8bca9492",
+        "keyVal": "vnTaZ",
+        "user": {
+          "__ref": "User:5bb0d179352039d2270dae19"
+        },
+        "title": "영웅전설 6 공의 궤적 SC - Fateful confrontation(톤 다운 버전)(쓸쓸, 격렬, 우울, 비장)",
+        "content": "원곡 대비 톤이 낮은 버전입니다",
+        "filename": "영웅전설 6 SC - Fateful Confrontation(4).mp3",
+        "category": "쓸쓸",
+        "upVoteCnt": 37,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/648120ae9d63230e8bca9492/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 158.208
+      },
+      "BgmDocument:6480ebe49d63230e8bca3a54": {
+        "__typename": "BgmDocument",
+        "_id": "6480ebe49d63230e8bca3a54",
+        "keyVal": "P02qi",
+        "user": {
+          "__ref": "User:5bb0d1a2352039d2270fb0af"
+        },
+        "title": "9. 스카이 미라주! 톤 커넥트! - 히로가루 스카이! 프리큐어 사운드트랙 1",
+        "content": "https://www.marv.jp/titles/mc/10499/",
+        "filename": "スカイミラージュ!トーンコネクト! - 深澤恵梨香.mp3",
+        "category": "활기",
+        "upVoteCnt": 12,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6480ebe49d63230e8bca3a54/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 116.88
+      },
+      "BgmDocument:6480eb149d63230e8bca38f5": {
+        "__typename": "BgmDocument",
+        "_id": "6480eb149d63230e8bca38f5",
+        "keyVal": "H4Aa8",
+        "user": {
+          "__ref": "User:5bb0d1a2352039d2270fb0af"
+        },
+        "title": "37. 프리큐어・업드래프트・샤이닝! - 히로가루 스카이! 프리큐어 사운드트랙 1",
+        "content": "https://www.marv.jp/titles/mc/10499/",
+        "filename": "プリキュア・アップドラフト・シャイニング! - 深澤恵梨香.mp3",
+        "category": "비장",
+        "upVoteCnt": 9,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6480eb149d63230e8bca38f5/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 56.16
+      },
+      "User:5bb0d190352039d2270edeb5": {
+        "__typename": "User",
+        "_id": "5bb0d190352039d2270edeb5",
+        "email": "pou3307@naver.com",
+        "nickname": "코다",
+        "signature": "50-\r\n750+\r\n1-\r\n15+\r\n\r\n\r\n실험삼아 제 곡을 다운받아 봤는데, 예전과는 다르게 올렸던 곡의 정보랑 음질이 그대로 받아지네요.\r\n혹시나 다운을 받았는데 앨범 아트가 없는 곡이라면, 브금저장소의 제한 용량에 맞추기 위해 앨범 아트를 뺀 곡이니까 (앨범 아트도 은근 용량이 큽니다...) 이상하게 생각하시지 않으셔도 됩니다.\r\n\r\n로켓 리그 x Monstercat OST Vol. 1 : http://bgmstore.net/playlists/play/lGeuN\r\n\r\n로켓 리그 x Monstercat OST Vol. 2 : https://bgmstore.net/playlists/play/QemfJ \r\n\r\n로켓 리그 x Monstercat OST Vol. 3 : http://bgmstore.net/playlists/play/jei5h\r\n\r\n로켓 리그 x Monstercat OST Vol. 4 : https://bgmstore.net/playlists/play/xyHkW\r\n\r\nDNCE : http://bgmstore.net/playlists/play/z3Bqw\r\n\r\n잔잔한 걸 좋아하시는 분들께 : http://bgmstore.net/playlists/play/3q8y7 (Apostrophe 모음)\r\n\r\n                                        http://bgmstore.net/playlists/play/ngwY0 (Christian Lindquist 모음)\r\n\r\nSnail&#039;s House : https://bgmstore.net/playlists/play/7vKfi\r\n\r\nLauv : https://bgmstore.net/playlists/play/wfYvT\r\n\r\nTokyo Machine : https://bgmstore.net/playlists/play/oL3rG\r\n\r\nPREP : https://bgmstore.net/playlists/play/ykYtc\r\n\r\nTom Misch - Geography (2018) : http://bgmstore.net/playlists/play/2KAWV\r\n\r\nHONNE - Love Me / Love Me Not (2018) : https://bgmstore.net/playlists/play/LLF6A\r\n\r\nMedasin - Irene (2018) : https://bgmstore.net/playlists/play/xexuD\r\n\r\nPuppet - LIFE IN JAPAN - EP (2018) : https://bgmstore.net/playlists/play/aI0YZ",
+        "point": 10957,
+        "profileImageUrl": "https://files.bgmstore.net/images/user/5bb0d190352039d2270edeb5/0.jpg",
+        "profileIconUrl": "https://files.bgmstore.net/images/user/5bb0d190352039d2270edeb5/1.gif"
+      },
+      "BgmDocument:6480ac1b9d63230e8bc9c3eb": {
+        "__typename": "BgmDocument",
+        "_id": "6480ac1b9d63230e8bc9c3eb",
+        "keyVal": "EnxFk",
+        "user": {
+          "__ref": "User:5bb0d190352039d2270edeb5"
+        },
+        "title": "Magiksolo - Christmas Shibuya (경쾌, 활기)",
+        "content": "러시아 출신 뮤지션 Magiksolo의 앨범 'Tokyo'에 수록된 일곱 번째 곡이자, 마지막 곡입니다.\n경쾌하면서 활기찬 분위기의 음악입니다.",
+        "filename": "Magiksolo - Christmas Shibuya.mp3",
+        "category": "경쾌",
+        "upVoteCnt": 16,
+        "commentCnt": 0,
+        "isProcessing": false,
+        "queueJobProgress": null,
+        "albumartImageUrl": "https://files.bgmstore.net/images/albumart/6480ac1b9d63230e8bc9c3eb/0.jpeg",
+        "isComposition": false,
+        "ccl": null,
+        "duration": 131.317556
+      },
+      "ROOT_QUERY": {
+        "__typename": "Query",
+        "bgmDocuments({\"limit\":50,\"page\":0,\"separator\":\"NEWEST_ALL\"})": [
+          {
+            "__ref": "BgmDocument:649d11929d63230e8b0d3630"
+          },
+          {
+            "__ref": "BgmDocument:649c06419d63230e8b0adcb5"
+          },
+          {
+            "__ref": "BgmDocument:649bef769d63230e8b0aa7c9"
+          },
+          {
+            "__ref": "BgmDocument:649bed649d63230e8b0aa2d6"
+          },
+          {
+            "__ref": "BgmDocument:649bb53e9d63230e8b0a1a31"
+          },
+          {
+            "__ref": "BgmDocument:649b286d9d63230e8b08d485"
+          },
+          {
+            "__ref": "BgmDocument:649aa7749d63230e8b0773d7"
+          },
+          {
+            "__ref": "BgmDocument:649988209d63230e8b04c3e0"
+          },
+          {
+            "__ref": "BgmDocument:64993ed69d63230e8b03f525"
+          },
+          {
+            "__ref": "BgmDocument:6498d6029d63230e8b02f158"
+          },
+          {
+            "__ref": "BgmDocument:64965d369d63230e8bfcf4b5"
+          },
+          {
+            "__ref": "BgmDocument:6495ed4a9d63230e8bfc08a7"
+          },
+          {
+            "__ref": "BgmDocument:6495a07e9d63230e8bfb5669"
+          },
+          {
+            "__ref": "BgmDocument:649575749d63230e8bfaee67"
+          },
+          {
+            "__ref": "BgmDocument:6495003e9d63230e8bf9d41a"
+          },
+          {
+            "__ref": "BgmDocument:649258669d63230e8bf3e910"
+          },
+          {
+            "__ref": "BgmDocument:649229209d63230e8bf382ac"
+          },
+          {
+            "__ref": "BgmDocument:649228029d63230e8bf3807a"
+          },
+          {
+            "__ref": "BgmDocument:648ed9119d63230e8beb787d"
+          },
+          {
+            "__ref": "BgmDocument:648e79949d63230e8bea58d7"
+          },
+          {
+            "__ref": "BgmDocument:648e69ad9d63230e8bea2ef7"
+          },
+          {
+            "__ref": "BgmDocument:64897adc9d63230e8bddec85"
+          },
+          {
+            "__ref": "BgmDocument:648967279d63230e8bddbb29"
+          },
+          {
+            "__ref": "BgmDocument:648966c89d63230e8bddba3b"
+          },
+          {
+            "__ref": "BgmDocument:6488184b9d63230e8bda55c8"
+          },
+          {
+            "__ref": "BgmDocument:6487b8709d63230e8bd96eeb"
+          },
+          {
+            "__ref": "BgmDocument:6487b7659d63230e8bd96cae"
+          },
+          {
+            "__ref": "BgmDocument:64867e489d63230e8bd69972"
+          },
+          {
+            "__ref": "BgmDocument:648655259d63230e8bd63e15"
+          },
+          {
+            "__ref": "BgmDocument:6485a3bb9d63230e8bd47316"
+          },
+          {
+            "__ref": "BgmDocument:648551f09d63230e8bd37b70"
+          },
+          {
+            "__ref": "BgmDocument:64854b699d63230e8bd366e0"
+          },
+          {
+            "__ref": "BgmDocument:648532419d63230e8bd324db"
+          },
+          {
+            "__ref": "BgmDocument:64852e589d63230e8bd319e0"
+          },
+          {
+            "__ref": "BgmDocument:648527d89d63230e8bd309dd"
+          },
+          {
+            "__ref": "BgmDocument:648527329d63230e8bd3085e"
+          },
+          {
+            "__ref": "BgmDocument:648526099d63230e8bd3059c"
+          },
+          {
+            "__ref": "BgmDocument:648525559d63230e8bd30444"
+          },
+          {
+            "__ref": "BgmDocument:6485220a9d63230e8bd2fcf7"
+          },
+          {
+            "__ref": "BgmDocument:648521a49d63230e8bd2fc30"
+          },
+          {
+            "__ref": "BgmDocument:6485211f9d63230e8bd2fb14"
+          },
+          {
+            "__ref": "BgmDocument:6485203b9d63230e8bd2f952"
+          },
+          {
+            "__ref": "BgmDocument:64851fbd9d63230e8bd2f83d"
+          },
+          {
+            "__ref": "BgmDocument:64851f1e9d63230e8bd2f6f0"
+          },
+          {
+            "__ref": "BgmDocument:6482568d9d63230e8bcce9cf"
+          },
+          {
+            "__ref": "BgmDocument:6482113a9d63230e8bcc7aba"
+          },
+          {
+            "__ref": "BgmDocument:648120ae9d63230e8bca9492"
+          },
+          {
+            "__ref": "BgmDocument:6480ebe49d63230e8bca3a54"
+          },
+          {
+            "__ref": "BgmDocument:6480eb149d63230e8bca38f5"
+          },
+          {
+            "__ref": "BgmDocument:6480ac1b9d63230e8bc9c3eb"
+          }
+        ]
+      }
+    },
+    "initialState": {
+      "appState": {
+        "theme": "light",
+        "expandBgmDocumentCategory": false,
+        "showNavBarAccount": false,
+        "showNavBarChat": false,
+        "showNavBarNotification": false,
+        "showNavBarTotalMenu": false,
+        "user": null
+      },
+      "playerState": {
+        "isPlaying": false,
+        "loading": false,
+        "skip": false,
+        "repeat": "repeat-off",
+        "isShuffle": true,
+        "playlist": false,
+        "volume": 1,
+        "document": null,
+        "documents": null
+      },
+      "userState": {
+        "user": null
+      }
+    }
+  }
+}
