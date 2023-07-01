@@ -133,6 +133,7 @@ namespace BGMSTORE
             JToken jtoken = jobject["pageProps"]["bgmDocuments"]; //result 의 값 가져오기
 
             lv.BeginUpdate(); //리스트뷰 업데이트 시작
+            lv.Items.Clear();
             foreach (JToken jt in jtoken)
             {
                 string category = jt["category"].ToString();
@@ -374,11 +375,13 @@ namespace BGMSTORE
                     int[] numArray = url;
                     for (int index = 0; index < numArray.Length; ++index)
                     {
+
                         int i = numArray[count];
                         lb.Text = count.ToString() + "/" + url.Length.ToString();
                         download = true;
 
-                        string download_url = "http://dl.bgms.kr/download/" + title_id[title[index]] + "/mp3/";
+                        //string download_url = "http://dl.bgms.kr/download/" + title_id[title[index]] + "/mp3/";
+                        string download_url = "https://media1.bgmstore.net/mp3/" + title_id[title[index]] + ".mp3";
 
                         string download_mode = ".mp3"; //default(ini 파일이 없는 오류방지)
 
@@ -392,7 +395,6 @@ namespace BGMSTORE
                         {
                             download_mode = ".mp4";
                         }
-
 
                         webclient.DownloadFileAsync(new Uri(download_url), selected + "\\" + title[count] + download_mode);
                         download = true;

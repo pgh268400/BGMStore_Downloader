@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Dtafalonso-Android-Lollipop-Downloads.ico</ApplicationIcon>
+    <ApplicationIcon>lolipop-download.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -104,10 +104,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="About.cs">
+    <Compile Include="Form\About.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="About.Designer.cs">
+    <Compile Include="Form\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
     <Compile Include="Module\BGM.cs" />
@@ -115,48 +115,48 @@
     <Compile Include="Module\JsonParser.cs" />
     <Compile Include="Module\InIWriter.cs" />
     <Compile Include="Module\JsonType.cs" />
-    <Compile Include="Main.cs">
+    <Compile Include="Form\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
+    <Compile Include="Form\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="OptionPage.cs">
+    <Compile Include="Form\OptionPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OptionPage.Designer.cs">
+    <Compile Include="Form\OptionPage.Designer.cs">
       <DependentUpon>OptionPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="PatchLog.cs">
+    <Compile Include="Form\PatchLog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PatchLog.Designer.cs">
+    <Compile Include="Form\PatchLog.Designer.cs">
       <DependentUpon>PatchLog.cs</DependentUpon>
     </Compile>
-    <Compile Include="PlayList.cs">
+    <Compile Include="Form\PlayList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PlayList.Designer.cs">
+    <Compile Include="Form\PlayList.Designer.cs">
       <DependentUpon>PlayList.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Module\Sorter.cs" />
-    <EmbeddedResource Include="About.resx">
+    <EmbeddedResource Include="Form\About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
+    <EmbeddedResource Include="Form\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="OptionPage.resx">
+    <EmbeddedResource Include="Form\OptionPage.resx">
       <DependentUpon>OptionPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PatchLog.resx">
+    <EmbeddedResource Include="Form\PatchLog.resx">
       <DependentUpon>PatchLog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="PlayList.resx">
+    <EmbeddedResource Include="Form\PlayList.resx">
       <DependentUpon>PlayList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -187,8 +187,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Dtafalonso-Android-Lollipop-Downloads.ico" />
-    <Content Include="letter-f-initial-logo_8586-21.jpg" />
+    <Content Include="lolipop-download.ico" />
+    <Content Include="letter-f-logo.jpg" />
     <None Include="Resources\plist.png" />
     <None Include="Resources\playlist_play_black_192x192.png" />
   </ItemGroup>

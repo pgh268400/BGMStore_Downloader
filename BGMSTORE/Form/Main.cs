@@ -230,7 +230,7 @@ namespace BGMSTORE
                         }
                         else //Mp4면
                         {
-                            string url = "http://dl.bgms.kr/download/" + data + "/mp4/Untitled1";
+                            string url = "https://media1.bgmstore.net/mp4/" + data + "/mp4/Untitled1";
                             //WMP.URL = url;
                         }
                     }

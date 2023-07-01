@@ -3,13 +3,9 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BGMSTORE
@@ -63,7 +59,7 @@ namespace BGMSTORE
             //comboBox1.SelectedIndex = 0;
 
             GetJsonList();
-           
+
             //FTP ftp = new FTP();
             //ftp.Upload("MusicList\\02년 추억의 BGM.json");
             //ftp.Download();
@@ -448,12 +444,12 @@ namespace BGMSTORE
 
                 }
             }
-            
+
         }
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
-           
+
             GetJsonList();
         }
 
@@ -494,7 +490,7 @@ namespace BGMSTORE
 
         private void metroTabControl1_Click(object sender, EventArgs e)
         {
-           
+
 
         }
 
@@ -517,9 +513,9 @@ namespace BGMSTORE
             }
             selectt.Text = pcombo.Text;
             pcount.Text = count.ToString();
-            }
+        }
 
-            private void metroTextBox1_Click(object sender, EventArgs e)
+        private void metroTextBox1_Click(object sender, EventArgs e)
         {
             if (nick.Text == "익명의 닝겐")
             {
@@ -532,19 +528,19 @@ namespace BGMSTORE
             if (title.Text == "익명의 BGM")
             {
                 title.Clear();
-              
+
             }
         }
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
-            
+
 
             FTP ftp = new FTP();
 
             using (StreamReader r = new StreamReader(Application.StartupPath + "\\MusicList\\" + selectt.Text + ".json"))
             {
-                string json = r.ReadToEnd(); 
+                string json = r.ReadToEnd();
                 JArray jObject = JArray.Parse(json);
                 JToken jToken = jObject; //Jtoken 으로 변경
 
@@ -588,11 +584,11 @@ namespace BGMSTORE
                 JObject origin = JObject.Parse(ftp.download());
                 JArray musiclist2 = new JArray();
 
-              
+
                 JToken JTOKEN = origin["data"]["getPlaylists"]; //FTP 에있는 데이터 가져오기
                 JToken JTOKEN2 = BaseData["data"]["getPlaylists"]; //방금생성한 Json 가져오기
 
-                foreach(var str in JTOKEN)
+                foreach (var str in JTOKEN)
                 {
                     MessageBox.Show(str.ToString());
                 }
@@ -602,9 +598,9 @@ namespace BGMSTORE
 
                 ftp.upload("music.json", musiclist2.ToString());
             }
-            
 
-   
+
+
 
         }
 
