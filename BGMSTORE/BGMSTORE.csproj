@@ -110,10 +110,8 @@
     <Compile Include="Form\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
-    <Compile Include="Module\BGM.cs" />
-    <Compile Include="Module\BGMManager.cs" />
     <Compile Include="Module\FTP.cs" />
-    <Compile Include="Module\JsonParser.cs" />
+    <Compile Include="Module\BGMManager.cs" />
     <Compile Include="Module\InIWriter.cs" />
     <Compile Include="Module\JsonType.cs" />
     <Compile Include="Form\Main.cs">

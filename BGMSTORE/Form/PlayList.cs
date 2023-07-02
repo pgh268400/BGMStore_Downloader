@@ -12,7 +12,7 @@ namespace BGMSTORE
 {
     public partial class PlayList : MetroFramework.Forms.MetroForm
     {
-        JsonParser jsonParser = new JsonParser();
+        BGMManager jsonParser = new BGMManager();
         Main main;
         public static Dictionary<string, string> titleid = new Dictionary<string, string>();  //브금의 제목과 KeyVal을 담을 딕셔너리
         List<string> name = new List<string>(); //JSON 읽기
@@ -183,7 +183,7 @@ namespace BGMSTORE
 
         private async void add_play_list(string text)
         {
-            JsonParser jsonParser = new JsonParser();
+            BGMManager jsonParser = new BGMManager();
             JObject jObject = JObject.Parse(jsonParser.get_play_list()); //문자를 객체화
             JToken jToken = jObject["data"]["getPlaylists"];
 
@@ -351,12 +351,12 @@ namespace BGMSTORE
 
         private void btn_AllCheck_Click(object sender, EventArgs e)
         {
-            jsonParser.check_all(plist, true);
+            //jsonParser.check_all_data_listview(plist, true);
         }
 
         private void btn_NoCheck_Click(object sender, EventArgs e)
         {
-            jsonParser.check_all(plist, false);
+            //jsonParser.check_all_data_listview(plist, false);
         }
 
         private void btn_Moreload_Click(object sender, EventArgs e)

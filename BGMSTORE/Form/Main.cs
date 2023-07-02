@@ -7,13 +7,15 @@ using System.Windows.Forms;
 
 namespace BGMSTORE
 {
-
-
     public partial class Main : MetroFramework.Forms.MetroForm
     {
-        JsonParser bgm_manager = new JsonParser();
+        //Member Variable-----------------------------------------------------------------------------
+        BGMManager bgm_manager = new BGMManager();
         PlayList player_list = null;
-        InIWriter ini_writer = new InIWriter(Application.StartupPath + "\\Configuration.ini");
+
+        private static string ini_path = Path.Combine(Application.StartupPath, "Configuration.ini");
+        InIWriter ini_writer = new InIWriter(ini_path);
+
         List<string> column_list = new List<string>();
         WMPLib.WindowsMediaPlayer player = new WMPLib.WindowsMediaPlayer();
 
@@ -21,6 +23,7 @@ namespace BGMSTORE
         public string data = "";
 
         public string current_version = "0.0.4";
+        //----------------------------------------------------------------------------------------
 
         public Main()
         {
@@ -72,14 +75,14 @@ namespace BGMSTORE
             set_default_combobox(); //콤보박스 기본값 설정하기
 
             // 기본 이벤트 추가
-            bgm_manager.SProgress += BGMMANAGER_SProgress;
+            bgm_manager.sprogress += BGMMANAGER_SProgress;
             listView1.DoubleClick += ListView1_DoubleClick;
             player.PlayStateChange += Player_PlayStateChange;
             player.PositionChange += Player_PositionChange;
             //----------------------------------
 
             //데이터 불러오기
-            bgm_manager.get_bgm_data(listView1);
+            bgm_manager.get_main_bgm_data(listView1);
 
             timer1.Enabled = true;
 
@@ -96,7 +99,7 @@ namespace BGMSTORE
 
         private void write_default_ini()
         {
-            if (File.Exists(Application.StartupPath + "\\Configuration.ini") == false)
+            if (File.Exists(ini_path) == false)
             {
                 ini_writer.Write("설정", "다운로드", "Mp3");
                 ini_writer.Write("설정", "더블클릭", "music");
@@ -262,14 +265,34 @@ namespace BGMSTORE
 
 
 
+        public void check_all_data_listview(ListView lv, bool val)
+        {
+            if (val)
+            {
+                for (int index = 0; index <= lv.Items.Count - 1; ++index)
+                {
+                    if (!lv.Items[index].Checked)
+                        lv.Items[index].Checked = true;
+                }
+            }
+            else
+            {
+                for (int index = 0; index <= lv.Items.Count - 1; ++index)
+                {
+                    if (lv.Items[index].Checked)
+                        lv.Items[index].Checked = false;
+                }
+            }
+        }
+
         private void btn_AllCheck_Click(object sender, EventArgs e)
         {
-            bgm_manager.check_all(listView1, true);
+            check_all_data_listview(listView1, true);
         }
 
         private void btn_NoCheck_Click(object sender, EventArgs e)
         {
-            bgm_manager.check_all(listView1, false);
+            check_all_data_listview(listView1, false);
         }
 
 
@@ -278,7 +301,7 @@ namespace BGMSTORE
         {
             if (string.IsNullOrWhiteSpace(SearchTitle.Text))
             {
-                bgm_manager.get_bgm_data(listView1);
+                bgm_manager.get_main_bgm_data(listView1);
             }
             else
             {
@@ -288,26 +311,27 @@ namespace BGMSTORE
 
         private void btn_Moreload_Click(object sender, EventArgs e)
         {
-
+            // 검색어가 없는 상태서 더보기를 누르면 모든 카테고리를 불러오고 그 중 일부를 추가로 리스트에 추가함
             if (string.IsNullOrWhiteSpace(SearchTitle.Text))
             {
-                bgm_manager.more_load("메인", listView1, "none");
+                bgm_manager.more_load(BGMManager.Mode.Main, listView1, "none");
             }
+            // 검색을 한 상태일 경우 (검색어가 입력된 상태일 경우) 검색어를 기준으로 더 불러옴
             else
             {
-                bgm_manager.more_load("검색", listView1, SearchTitle.Text);
+                bgm_manager.more_load(BGMManager.Mode.Search, listView1, SearchTitle.Text);
             }
         }
 
 
         private void btn_AllCheck_Click_1(object sender, EventArgs e)
         {
-            bgm_manager.check_all(listView1, true);
+            check_all_data_listview(listView1, true);
         }
 
         private void btn_NoCheck_Click_1(object sender, EventArgs e)
         {
-            bgm_manager.check_all(listView1, false);
+            check_all_data_listview(listView1, false);
         }
 
 
