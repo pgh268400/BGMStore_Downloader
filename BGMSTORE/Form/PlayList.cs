@@ -41,7 +41,7 @@ namespace BGMSTORE
         {
             if (load != true)
             {
-                Get();
+                get();
                 load = true;
             }
 
@@ -58,7 +58,7 @@ namespace BGMSTORE
 
             //comboBox1.SelectedIndex = 0;
 
-            GetJsonList();
+            get_json_list();
 
             //FTP ftp = new FTP();
             //ftp.Upload("MusicList\\02년 추억의 BGM.json");
@@ -85,7 +85,7 @@ namespace BGMSTORE
 
 
 
-        private async void Get()
+        private async void get()
         {
 
 
@@ -118,7 +118,7 @@ namespace BGMSTORE
         }
 
 
-        private async void GetUserList()
+        private async void get_user_list()
         {
 
             JObject jObject = JObject.Parse(jsonParser.get_play_list()); //문자를 객체화
@@ -146,7 +146,7 @@ namespace BGMSTORE
             }
         }
 
-        public string NextPlay()
+        public string next_play()
         {
             try
             {
@@ -166,7 +166,7 @@ namespace BGMSTORE
         }
 
 
-        public void GetJsonList()
+        public void get_json_list()
         {
             pcombo.Items.Clear();
             string dirPath = Application.StartupPath + "\\MusicList\\";
@@ -181,7 +181,7 @@ namespace BGMSTORE
             }
         }
 
-        private async void AddPlayList(string text)
+        private async void add_play_list(string text)
         {
             JsonParser jsonParser = new JsonParser();
             JObject jObject = JObject.Parse(jsonParser.get_play_list()); //문자를 객체화
@@ -237,7 +237,7 @@ namespace BGMSTORE
             if (userlist.SelectedItems.Count > 0)
             {
                 string data = userlist.SelectedItems[0].Text;
-                AddPlayList(data);
+                add_play_list(data);
 
                 MessageBox.Show("나의 플레이리스트에 곡이 추가되었습니다", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -318,7 +318,7 @@ namespace BGMSTORE
                 }
             }
             MessageBox.Show("저장이 완료되었습니다", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            GetJsonList();
+            get_json_list();
         }
 
 
@@ -450,7 +450,7 @@ namespace BGMSTORE
         private void metroButton3_Click(object sender, EventArgs e)
         {
 
-            GetJsonList();
+            get_json_list();
         }
 
         private void metroButton4_Click(object sender, EventArgs e)
@@ -464,7 +464,7 @@ namespace BGMSTORE
                 pcombo.Text = "";
 
                 MessageBox.Show("삭제 완료되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                GetJsonList();
+                get_json_list();
             }
         }
 

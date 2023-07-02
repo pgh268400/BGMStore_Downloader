@@ -356,6 +356,7 @@
             // 
             // SearchOptionA
             // 
+            this.SearchOptionA.Enabled = false;
             this.SearchOptionA.FormattingEnabled = true;
             this.SearchOptionA.ItemHeight = 23;
             this.SearchOptionA.Items.AddRange(new object[] {
@@ -410,6 +411,7 @@
             // 
             // SearchOptionB
             // 
+            this.SearchOptionB.Enabled = false;
             this.SearchOptionB.FormattingEnabled = true;
             this.SearchOptionB.ItemHeight = 23;
             this.SearchOptionB.Items.AddRange(new object[] {

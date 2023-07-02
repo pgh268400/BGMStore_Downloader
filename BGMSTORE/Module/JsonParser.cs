@@ -18,7 +18,7 @@ using System.Windows.Forms;
 
 namespace BGMSTORE
 {
-    public delegate void SetProgressBar(int ProgressValue);
+    public delegate void set_progress_bar(int progess_val);
     internal class JsonParser
     {
         public List<string> list = new List<string>(); //메인리스트의 코드를 담을 리스트 ex) /view/abcde
@@ -42,7 +42,7 @@ namespace BGMSTORE
         public int count = 0;
 
 
-        public event SetProgressBar SProgress;
+        public event set_progress_bar SProgress;
 
         public JsonParser()
         {
@@ -312,7 +312,7 @@ namespace BGMSTORE
                     str2 = "strict";
                     */
 
-                string JsonSearch = "{\"operationName\":\"getDocuments\",\"variables\":{\"seperator\":\"SEARCH\",\"cnt\":30,\"searchQuery\":\"" + sw + "\",\"searchQueryType\":\"general\",\"page\":" + load_count + "},\"query\":\"query getDocuments($seperator: String!, $cnt: Int, $searchQuery: String, $searchQueryType: String, $page: Int, $userId: String, $_id: String, $documents: String) {\n  getDocuments(seperator: $seperator, cnt: $cnt, searchQuery: $searchQuery, searchQueryType: $searchQueryType, page: $page, userId: $userId, _id: $_id, documents: $documents) {\n    _id\n    documentNum\n    keyVal\n    user {\n      _id\n      member_num\n      nickname\n      __typename\n    }\n    title\n    content\n    tags\n    filename\n    category\n    voteCnt\n    votedIp\n    commentCnt\n    downloadCnt\n    isValid\n    fileHashMp3\n    fileHashMp4\n    hasAlbumart\n    isComposition\n    copyrightInfo {\n      ownComposition\n      ownLicense\n      isPublicLicense\n      __typename\n    }\n    duration\n    bgmSource\n    ipAddr\n    updatedAt\n    createdAt\n    __typename\n  }\n}\n\"}";
+                string json_search = "{\"operationName\":\"getDocuments\",\"variables\":{\"seperator\":\"SEARCH\",\"cnt\":30,\"searchQuery\":\"" + sw + "\",\"searchQueryType\":\"general\",\"page\":" + load_count + "},\"query\":\"query getDocuments($seperator: String!, $cnt: Int, $searchQuery: String, $searchQueryType: String, $page: Int, $userId: String, $_id: String, $documents: String) {\n  getDocuments(seperator: $seperator, cnt: $cnt, searchQuery: $searchQuery, searchQueryType: $searchQueryType, page: $page, userId: $userId, _id: $_id, documents: $documents) {\n    _id\n    documentNum\n    keyVal\n    user {\n      _id\n      member_num\n      nickname\n      __typename\n    }\n    title\n    content\n    tags\n    filename\n    category\n    voteCnt\n    votedIp\n    commentCnt\n    downloadCnt\n    isValid\n    fileHashMp3\n    fileHashMp4\n    hasAlbumart\n    isComposition\n    copyrightInfo {\n      ownComposition\n      ownLicense\n      isPublicLicense\n      __typename\n    }\n    duration\n    bgmSource\n    ipAddr\n    updatedAt\n    createdAt\n    __typename\n  }\n}\n\"}";
                 string jsonbgm = get_json("https://bgmstore.net/v1");
                 JObject jObject = JObject.Parse(jsonbgm); //문자를 객체화
                 JToken jToken = jObject["data"]["getDocuments"]; //result 의 값 가져오기
@@ -374,10 +374,10 @@ namespace BGMSTORE
                 string selected = dialog.FileName;
                 try
                 {
-                    int[] numArray = url;
-                    for (int index = 0; index < numArray.Length; ++index)
+                    int[] num_array = url; //C#에서도 얕은 복사?
+                    for (int index = 0; index < num_array.Length; ++index)
                     {
-                        int i = numArray[count];
+                        int i = num_array[count];
                         lb.Text = count.ToString() + "/" + url.Length.ToString();
                         download = true;
 
@@ -427,9 +427,11 @@ namespace BGMSTORE
             SProgress(0);
             is_downloader_stop = true;
         }
-        public void check_all(ListView lv, bool T)
+
+
+        public void check_all(ListView lv, bool val)
         {
-            if (T)
+            if (val)
             {
                 for (int index = 0; index <= lv.Items.Count - 1; ++index)
                 {
@@ -455,18 +457,18 @@ namespace BGMSTORE
             {
                 InIWriter inIWriter = new InIWriter(Application.StartupPath + "\\Configuration.ini");
 
-                string downloadmode = "/mp3/Untitled1";
+                string download_mode = "/mp3/Untitled1";
                 if (inIWriter.Read("설정", "미리듣기") == "Mp3")
                 {
-                    downloadmode = "/mp3/Untitled1";
+                    download_mode = "/mp3/Untitled1";
                 }
                 else //Mp4면
                 {
-                    downloadmode = "/mp4/Untitled1";
+                    download_mode = "/mp4/Untitled1";
                 }
 
 
-                string url = "http://dl.bgms.kr/download/" + i.Replace("/view/", "") + downloadmode;
+                string url = "http://dl.bgms.kr/download/" + i.Replace("/view/", "") + download_mode;
                 wmp.URL = url;
                 play = true;
 

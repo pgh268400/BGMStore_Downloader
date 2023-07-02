@@ -20,13 +20,17 @@ namespace BGMSTORE
         public string next = ""; //실행해야할 다음곡 데이터 가져옴
         public string data = "";
 
+        public string current_version = "0.0.4";
+
         public Main()
         {
             InitializeComponent();
         }
 
+        // 메인폼 실행시 업데이트 체크용도로 사용하는 함수
         private void update_check()
         {
+            //pastebin 에 가서 요청을 보낸 후 응답 데이터를 string 값으로 저장
             var update_check_url = "https://pastebin.com/raw/mQBQX95E";
             var web_client = new WebClient();
             var html = web_client.DownloadString(update_check_url);
@@ -34,9 +38,10 @@ namespace BGMSTORE
             var doc = new HtmlAgilityPack.HtmlDocument();
             doc.LoadHtml(html);
 
-            var response = doc.DocumentNode.InnerText;
+            //여기서 응답 데이터가 response에 담김
+            string response = doc.DocumentNode.InnerText;
 
-            if (!response.Contains("0.0.4"))
+            if (!response.Contains(current_version))
             {
                 if (MessageBox.Show("업데이트가 발견되었습니다 사이트로 이동하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
@@ -54,7 +59,6 @@ namespace BGMSTORE
                 else
                 {
                     this.Close();
-
                 }
             }
         }
@@ -65,7 +69,7 @@ namespace BGMSTORE
 
             update_check(); //assert() 처럼 업데이트 조건이 만족되지 않으면 폼을 종료시키는 기능이 있다.
             write_default_ini(); //기본 INI 쓰기
-            set_default_combobox(); //콤보박스 기본 설정하기
+            set_default_combobox(); //콤보박스 기본값 설정하기
 
             // 기본 이벤트 추가
             bgm_manager.SProgress += BGMMANAGER_SProgress;
@@ -115,8 +119,6 @@ namespace BGMSTORE
             // 검색 초기 설정 [인덱스, 수정불가]
         }
 
-
-
         private void BGMMANAGER_SProgress(int ProgressValue)
         {
             this.progressBar1.Value = ProgressValue;
@@ -155,7 +157,6 @@ namespace BGMSTORE
         {
             if ((WMPLib.WMPPlayState)NewState == WMPLib.WMPPlayState.wmppsStopped)
             {
-
                 MediaPlay.Enabled = false;
                 //StopPlay(); //재생 종료
 
@@ -169,7 +170,7 @@ namespace BGMSTORE
                 if (PlayList.play == true)
                 { //일괄재생 중이면
 
-                    string url = player_list.NextPlay();
+                    string url = player_list.next_play();
                     if (url != "finish")
                     {
                         player = new WMPLib.WindowsMediaPlayer();
@@ -185,9 +186,6 @@ namespace BGMSTORE
                     {
                         stop_play();
                     }
-
-
-
                 }
 
             }
@@ -247,9 +245,6 @@ namespace BGMSTORE
 
         }
 
-
-
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             NowTime.Text = DateTime.Now.ToString("HH:mm:ss");
@@ -261,7 +256,7 @@ namespace BGMSTORE
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             //프로그램 종료시 크롬드라이버 종료
-            // BGMMANAGER.driver.Close();
+            //BGMMANAGER.driver.Close();
             //BGMMANAGER.driver.Quit();
         }
 
@@ -277,17 +272,6 @@ namespace BGMSTORE
             bgm_manager.check_all(listView1, false);
         }
 
-
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void 설정ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
 
 
         private void btn_Search_Click_1(object sender, EventArgs e)
@@ -377,10 +361,10 @@ namespace BGMSTORE
 
         }
 
-        public Form is_dup_form(string frmtitle)
+        public Form is_dup_form(string form_title)
         {
             foreach (Form frm in Application.OpenForms)
-                if (frm.Name == frmtitle)
+                if (frm.Name == form_title)
                     return frm;
 
             return null;
@@ -695,10 +679,6 @@ namespace BGMSTORE
                     {
                         MessageBox.Show("이미 존재합니다");
                     }
-
-
-
-
                 }
             }
         }
