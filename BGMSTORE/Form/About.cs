@@ -17,7 +17,7 @@ namespace BGMSTORE
         private void label7_Click(object sender, EventArgs e)
 
         {
-            System.Diagnostics.Process.Start("https://blog.naver.com/pgh268400");
+            System.Diagnostics.Process.Start("https://pgh268400.tistory.com/");
 
         }
 

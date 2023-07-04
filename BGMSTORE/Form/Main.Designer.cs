@@ -55,7 +55,7 @@
             this.playbar = new MetroFramework.Controls.MetroTrackBar();
             this.btn_Random = new MetroFramework.Controls.MetroTile();
             this.NowTime = new MetroFramework.Controls.MetroLabel();
-            this.Download_Count = new System.Windows.Forms.Label();
+            this.download_count = new System.Windows.Forms.Label();
             this.SearchOptionA = new MetroFramework.Controls.MetroComboBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.장르 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -199,7 +199,7 @@
             this.MainPanel.Controls.Add(this.playbar);
             this.MainPanel.Controls.Add(this.btn_Random);
             this.MainPanel.Controls.Add(this.NowTime);
-            this.MainPanel.Controls.Add(this.Download_Count);
+            this.MainPanel.Controls.Add(this.download_count);
             this.MainPanel.Controls.Add(this.SearchOptionA);
             this.MainPanel.Controls.Add(this.listView1);
             this.MainPanel.Controls.Add(this.SearchOptionB);
@@ -345,14 +345,14 @@
             // 
             // Download_Count
             // 
-            this.Download_Count.AutoSize = true;
-            this.Download_Count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
-            this.Download_Count.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Download_Count.Location = new System.Drawing.Point(264, 593);
-            this.Download_Count.Name = "Download_Count";
-            this.Download_Count.Size = new System.Drawing.Size(28, 16);
-            this.Download_Count.TabIndex = 25;
-            this.Download_Count.Text = "0/0";
+            this.download_count.AutoSize = true;
+            this.download_count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
+            this.download_count.Font = new System.Drawing.Font("나눔고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.download_count.Location = new System.Drawing.Point(264, 593);
+            this.download_count.Name = "download_count";
+            this.download_count.Size = new System.Drawing.Size(28, 16);
+            this.download_count.TabIndex = 25;
+            this.download_count.Text = "0/0";
             // 
             // SearchOptionA
             // 
@@ -503,7 +503,7 @@
             this.btn_AllCheck.TabIndex = 28;
             this.btn_AllCheck.Text = "모두체크";
             this.btn_AllCheck.UseSelectable = true;
-            this.btn_AllCheck.Click += new System.EventHandler(this.btn_AllCheck_Click_1);
+            this.btn_AllCheck.Click += new System.EventHandler(this.btn_AllCheck_Click);
             // 
             // btn_NoCheck
             // 
@@ -515,7 +515,7 @@
             this.btn_NoCheck.TabIndex = 29;
             this.btn_NoCheck.Text = "모두체크해제";
             this.btn_NoCheck.UseSelectable = true;
-            this.btn_NoCheck.Click += new System.EventHandler(this.btn_NoCheck_Click_1);
+            this.btn_NoCheck.Click += new System.EventHandler(this.btn_NoCheck_Click);
             // 
             // progressBar1
             // 
@@ -580,7 +580,7 @@
         private MetroFramework.Controls.MetroTrackBar playbar;
         private MetroFramework.Controls.MetroTile btn_Random;
         private MetroFramework.Controls.MetroLabel NowTime;
-        private System.Windows.Forms.Label Download_Count;
+        private System.Windows.Forms.Label download_count;
         private MetroFramework.Controls.MetroComboBox SearchOptionA;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader 장르;

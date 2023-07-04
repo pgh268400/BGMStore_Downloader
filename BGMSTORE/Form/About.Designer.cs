@@ -111,9 +111,9 @@
             this.label7.ForeColor = System.Drawing.Color.Red;
             this.label7.Location = new System.Drawing.Point(166, 83);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(224, 17);
+            this.label7.Size = new System.Drawing.Size(199, 17);
             this.label7.TabIndex = 8;
-            this.label7.Text = "https://blog.naver.com/pgh268400";
+            this.label7.Text = "https://pgh268400.tistory.com/";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8

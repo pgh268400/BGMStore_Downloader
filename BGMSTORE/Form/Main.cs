@@ -122,9 +122,9 @@ namespace BGMSTORE
             // 검색 초기 설정 [인덱스, 수정불가]
         }
 
-        private void BGMMANAGER_SProgress(int ProgressValue)
+        private void BGMMANAGER_SProgress(int progress_value)
         {
-            this.progressBar1.Value = ProgressValue;
+            this.progressBar1.Value = progress_value;
         }
 
         public void play_mp3_from_url(string url, string title)
@@ -134,7 +134,6 @@ namespace BGMSTORE
             {
                 player.close();
                 player.controls.play();
-
             }
             else
             {
@@ -156,9 +155,9 @@ namespace BGMSTORE
             playctime.Text = player.controls.currentPositionString;
         }
 
-        private void Player_PlayStateChange(int NewState)
+        private void Player_PlayStateChange(int new_state)
         {
-            if ((WMPLib.WMPPlayState)NewState == WMPLib.WMPPlayState.wmppsStopped)
+            if ((WMPLib.WMPPlayState)new_state == WMPLib.WMPPlayState.wmppsStopped)
             {
                 MediaPlay.Enabled = false;
                 //StopPlay(); //재생 종료
@@ -170,14 +169,16 @@ namespace BGMSTORE
 
                 playbar.Enabled = false;
 
-                if (PlayList.play == true)
+                if (PlayList.is_play)
                 { //일괄재생 중이면
 
                     string url = player_list.next_play();
                     if (url != "finish")
                     {
-                        player = new WMPLib.WindowsMediaPlayer();
-                        player.URL = url;
+                        player = new WMPLib.WindowsMediaPlayer
+                        {
+                            URL = url
+                        };
                         player.controls.play();
                         playtext.Text = PlayList.CurrentPlay;
 
@@ -192,7 +193,7 @@ namespace BGMSTORE
                 }
 
             }
-            else if ((WMPLib.WMPPlayState)NewState == WMPLib.WMPPlayState.wmppsPlaying)
+            else if ((WMPLib.WMPPlayState)new_state == WMPLib.WMPPlayState.wmppsPlaying)
             {
                 playbar.Maximum = (int)(player.currentMedia.duration);
 
@@ -210,62 +211,44 @@ namespace BGMSTORE
 
         private void ListView1_DoubleClick(object sender, EventArgs e)
         {
+            // 더블클릭을 해도 선택한 아이템이 없으면 그냥 종료
+            if (listView1.SelectedItems.Count <= 0)
+                return;
 
-            if (listView1.SelectedItems.Count > 0)
+            string data = bgm_manager.title_id[listView1.SelectedItems[0].SubItems[1].Text];
+
+            if (ini_writer.Read("설정", "더블클릭") == "music")
             {
-                string data = bgm_manager.title_id[listView1.SelectedItems[0].SubItems[1].Text];
-
-                if (ini_writer.Read("설정", "더블클릭") == "music")
+                if (bgm_manager.is_play)
                 {
-                    if (!bgm_manager.play == true)
+                    if (ini_writer.Read("설정", "미리듣기") == "Mp3")
                     {
-                        if (ini_writer.Read("설정", "미리듣기") == "Mp3")
-                        {
-                            string url = "https://media1.bgmstore.net/mp3/" + data + ".mp3";
-                            //MessageBox.Show(url);
-                            play_mp3_from_url(url, listView1.SelectedItems[0].SubItems[1].Text);
-                        }
-                        else //Mp4면
-                        {
-                            string url = "https://media1.bgmstore.net/mp4/" + data + "/mp4/Untitled1";
-                            //WMP.URL = url;
-                        }
+                        string url = "https://media1.bgmstore.net/mp3/" + data + ".mp3";
+                        play_mp3_from_url(url, listView1.SelectedItems[0].SubItems[1].Text);
                     }
-                    else
+                    else //Mp4면
                     {
-                        MessageBox.Show("일괄 재생중에는 미리듣기 기능을 활용할 수 없습니다." + Environment.NewLine + "일괄재생을 종료하신후 시도하세요", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        string url = "https://media1.bgmstore.net/mp4/" + data + "/mp4/Untitled1";
+                        //WMP.URL = url;
                     }
-
                 }
-                else //사이트 이동이면(site)
+                else
                 {
-                    System.Diagnostics.Process.Start("https://bgmstore.net/" + data);
+                    MessageBox.Show("일괄 재생중에는 미리듣기 기능을 활용할 수 없습니다." + Environment.NewLine + "일괄재생을 종료하신후 시도하세요", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-
+            }
+            else //사이트 이동이면(site)
+            {
+                System.Diagnostics.Process.Start("https://bgmstore.net/" + data);
             }
 
 
+
+
+
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            NowTime.Text = DateTime.Now.ToString("HH:mm:ss");
-        }
-
-
-
-
-        private void Main_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            //프로그램 종료시 크롬드라이버 종료
-            //BGMMANAGER.driver.Close();
-            //BGMMANAGER.driver.Quit();
-        }
-
-
-
-        public void check_all_data_listview(ListView lv, bool val)
+        public void listview_check_all_data(ListView lv, bool val)
         {
             if (val)
             {
@@ -285,16 +268,6 @@ namespace BGMSTORE
             }
         }
 
-        private void btn_AllCheck_Click(object sender, EventArgs e)
-        {
-            check_all_data_listview(listView1, true);
-        }
-
-        private void btn_NoCheck_Click(object sender, EventArgs e)
-        {
-            check_all_data_listview(listView1, false);
-        }
-
 
 
         private void btn_Search_Click_1(object sender, EventArgs e)
@@ -305,7 +278,7 @@ namespace BGMSTORE
             }
             else
             {
-                bgm_manager.find_bgm(listView1, SearchTitle.Text, SearchOptionA.Text + "|" + SearchOptionB.Text);
+                bgm_manager.search_bgm(listView1, SearchTitle.Text, SearchOptionA.Text + "|" + SearchOptionB.Text);
             }
         }
 
@@ -324,14 +297,14 @@ namespace BGMSTORE
         }
 
 
-        private void btn_AllCheck_Click_1(object sender, EventArgs e)
+        private void btn_AllCheck_Click(object sender, EventArgs e)
         {
-            check_all_data_listview(listView1, true);
+            listview_check_all_data(listView1, true);
         }
 
-        private void btn_NoCheck_Click_1(object sender, EventArgs e)
+        private void btn_NoCheck_Click(object sender, EventArgs e)
         {
-            check_all_data_listview(listView1, false);
+            listview_check_all_data(listView1, false);
         }
 
 
@@ -347,24 +320,34 @@ namespace BGMSTORE
             if (MessageBox.Show("선택하신 음악은 " + listView1.CheckedItems.Count + "개 입니다." + Environment.NewLine + "다운로드를 진행하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 int idx = 0;
-                int[] i = new int[listView1.CheckedItems.Count];
-                string[] context = new string[listView1.CheckedItems.Count];
+                int[] download_idxs = new int[listView1.CheckedItems.Count];
+                string[] titles = new string[listView1.CheckedItems.Count];
 
-                foreach (int indexChecked in listView1.CheckedIndices)
+                //체크된 항목들의 인덱스를 콜렉션으로 가져옴 == listView1.CheckedIndices
+                foreach (int checked_idx in listView1.CheckedIndices)
                 {
-                    i[idx] = indexChecked; //리스트뷰 인덱스값을 i에 넘긴다
+                    download_idxs[idx] = checked_idx; //리스트뷰 인덱스값을 i에 넘긴다
                     idx++;
                 }
 
                 idx = 0;
                 foreach (ListViewItem item in listView1.CheckedItems)
                 {
-                    string input = context[idx] = item.SubItems[1].Text;
+                    titles[idx] = item.SubItems[1].Text;
                     idx++;
-
                 }
 
-                bgm_manager.download_bgm_async(i, context, Download_Count); // 인덱스값을 다시 DownloadBGM 메서드로 옮긴다.
+                foreach (var item in download_idxs)
+                {
+                    Console.WriteLine(item);
+                }
+
+                foreach (var item in titles)
+                {
+                    Console.WriteLine(item);
+                }
+
+                bgm_manager.download_bgm_async(download_idxs, titles, download_count); // 인덱스값을 다시 DownloadBGM 메서드로 옮긴다.
             }
 
 
@@ -378,12 +361,6 @@ namespace BGMSTORE
         }
 
 
-
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
         public Form is_dup_form(string form_title)
         {
@@ -435,7 +412,7 @@ namespace BGMSTORE
 
                     }
 
-                    bgm_manager.download_bgm_async(i, context, Download_Count); // 인덱스값을 다시 DownloadBGM 메서드로 옮긴다.
+                    bgm_manager.download_bgm_async(i, context, download_count); // 인덱스값을 다시 DownloadBGM 메서드로 옮긴다.
                 }
 
 
@@ -490,17 +467,6 @@ namespace BGMSTORE
             }
         }
 
-
-
-
-
-        private void toolStripMenuItem4_Click(object sender, EventArgs e)
-        {
-            if (bgm_manager.play == true)
-            {
-                bgm_manager.stop_bgm();
-            }
-        }
 
         private void 사이트열기ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -604,11 +570,6 @@ namespace BGMSTORE
             playctime.Text = player.controls.currentPositionString;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pause_Click(object sender, EventArgs e)
         {
 
@@ -623,10 +584,10 @@ namespace BGMSTORE
         private void stop_Click(object sender, EventArgs e)
         {
 
-            if (PlayList.play == true)
+            if (PlayList.is_play == true)
             {
 
-                PlayList.play = false;
+                PlayList.is_play = false;
                 stop_play();
 
 
@@ -709,7 +670,7 @@ namespace BGMSTORE
 
         private void btn_Random_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("미구현입니다.");
         }
 
         private void playtime_Click(object sender, EventArgs e)

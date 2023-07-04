@@ -18,22 +18,22 @@ using System.Windows.Forms;
 namespace BGMSTORE
 {
     public delegate void set_progress_bar(int progess_val);
+
     class BGMManager
     {
-        public List<string> list = new List<string>(); //메인리스트의 코드를 담을 리스트 ex) /view/abcde
-        public Dictionary<string, string> title_id = new Dictionary<string, string>();  //브금의 제목과 KeyVal을 담을 딕셔너리
-        public List<string> favorite_list = new List<string>();  //서브리스트의 코드를 담을 리스트
+        public Dictionary<string, string> title_id = new Dictionary<string, string>(); //브금의 제목과 KeyVal을 담을 딕셔너리
+        public List<string> favorite_list = new List<string>(); //서브리스트의 코드를 담을 리스트
         private WebClient web_client = new WebClient();
 
         private static string config_path = Path.Combine(Application.StartupPath, "Configuration.ini");
-        InIWriter iniwriter = new InIWriter(config_path);
+        InIWriter ini_writer = new InIWriter(config_path);
 
         int load_count = 1; //다음(Next) 불러오기 Page 카운트 변수
 
 
         // 일괄재생, 다운로드 설정
-        public bool download = false;
-        public bool play = false;
+        public bool is_download = false; //다운로드가 진행중인지
+        public bool is_play = false;
         public bool is_player_stop = false;
         public bool is_downloader_stop = false;
 
@@ -47,9 +47,11 @@ namespace BGMSTORE
 
         public event set_progress_bar sprogress;
 
+        //Constructor
         public BGMManager()
         {
-            web_client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(WebClient_DownloadProgressChanged1);
+            web_client.DownloadProgressChanged +=
+                new DownloadProgressChangedEventHandler(WebClient_DownloadProgressChanged1);
             web_client.DownloadFileCompleted += new AsyncCompletedEventHandler(WebClient_DownloadFileCompleted);
         }
 
@@ -57,26 +59,29 @@ namespace BGMSTORE
         {
             sprogress(e.ProgressPercentage);
         }
+
         private void WebClient_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {
-            download = false;
+            is_download = false;
         }
 
-        static public string get_json(string url)
+        public static string get_json(string url)
         {
-            ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(AcceptAllCertifications);
+            ServicePointManager.ServerCertificateValidationCallback =
+                new RemoteCertificateValidationCallback(AcceptAllCertifications);
             string result = "";
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 
             request.Method = "GET";
             request.Timeout = 30 * 1000;
-            request.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36";
+            request.UserAgent =
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36";
             request.ContentType = "application/json";
             request.Referer = "https://bgmstore.net";
 
-            var httpResponse = request.GetResponse();
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            var http_response = request.GetResponse();
+            using (var streamReader = new StreamReader(http_response.GetResponseStream()))
             {
                 result = streamReader.ReadToEnd();
             }
@@ -84,16 +89,18 @@ namespace BGMSTORE
             return result;
         }
 
-        static public string post_json(string url, string post_data)
+        public static string post_json(string url, string post_data)
         {
-            ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(AcceptAllCertifications);
+            ServicePointManager.ServerCertificateValidationCallback =
+                new RemoteCertificateValidationCallback(AcceptAllCertifications);
             string result = "";
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 
             request.Method = "POST";
             request.Timeout = 30 * 1000;
-            request.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36";
+            request.UserAgent =
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36";
             request.ContentType = "application/json";
             request.Referer = "https://bgmstore.net";
 
@@ -114,14 +121,14 @@ namespace BGMSTORE
             return result;
         }
 
-        private static bool AcceptAllCertifications(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
+        private static bool AcceptAllCertifications(object sender, X509Certificate certificate, X509Chain chain,
+            SslPolicyErrors sslPolicyErrors)
         {
             return true;
         }
 
         public void get_main_bgm_data(ListView lv)
         {
-            //is_main_window = true; //메인 검색을 수행한다 = 검색하지 않은 메인 윈도우 상태이다
 
             load_count = 1; //로드카운트 초기화
 
@@ -136,8 +143,8 @@ namespace BGMSTORE
 
             title_id.Clear();
 
-            string song_result = get_json("https://bgmstore.net/_next/data/NRby6RQn-S2B-4dIMnJZC/index.json");
-            JObject jobject = JObject.Parse(song_result); //문자를 객체화
+            string result = get_json("https://bgmstore.net/_next/data/NRby6RQn-S2B-4dIMnJZC/index.json");
+            JObject jobject = JObject.Parse(result); //문자를 객체화
             JToken jtoken = jobject["pageProps"]["bgmDocuments"]; //result 의 값 가져오기
 
             lv.BeginUpdate(); //리스트뷰 업데이트 시작
@@ -169,12 +176,15 @@ namespace BGMSTORE
                     lv.Items.Add(listViewItem);
                 }
             }
+
             lv.EndUpdate(); //리스트뷰 업데이트 완료
         }
+
         public string get_play_list()
         {
             //새로운 BGM
-            string EVER_BEST = "{\"operationName\":\"getPlaylists\",\"variables\":{\"seperator\":\"EVER_BEST\",\"cnt\":18,\"page\":0},\"query\":\"query getPlaylists($seperator: String!, $cnt: Int, $page: Int) {\n  getPlaylists(seperator: $seperator, cnt: $cnt, page: $page) {\n    _id\n    title\n    content\n    documents {\n      _id\n      documentNum\n      keyVal\n      user {\n        _id\n        member_num\n        nickname\n        __typename\n      }\n      title\n      content\n      tags\n      filename\n      category\n      voteCnt\n      votedIp\n      commentCnt\n      downloadCnt\n      isValid\n      fileHashMp3\n      fileHashMp4\n      hasAlbumart\n      isComposition\n      copyrightInfo {\n        ownComposition\n        ownLicense\n        isPublicLicense\n        __typename\n      }\n      duration\n      bgmSource\n      ipAddr\n      updatedAt\n      createdAt\n      __typename\n    }\n    user {\n      _id\n      email\n      nickname\n      profileImagePath\n      profileIconPath\n      signature\n      point\n      level\n      isValid\n      ipAddr\n      followsCnt\n      followersCnt\n      token\n      updatedAt\n      createdAt\n      __typename\n    }\n    voteCnt\n    commentCnt\n    isPublic\n    updatedAt\n    createdAt\n    __typename\n  }\n}\n\"}";
+            string EVER_BEST =
+                "{\"operationName\":\"getPlaylists\",\"variables\":{\"seperator\":\"EVER_BEST\",\"cnt\":18,\"page\":0},\"query\":\"query getPlaylists($seperator: String!, $cnt: Int, $page: Int) {\n  getPlaylists(seperator: $seperator, cnt: $cnt, page: $page) {\n    _id\n    title\n    content\n    documents {\n      _id\n      documentNum\n      keyVal\n      user {\n        _id\n        member_num\n        nickname\n        __typename\n      }\n      title\n      content\n      tags\n      filename\n      category\n      voteCnt\n      votedIp\n      commentCnt\n      downloadCnt\n      isValid\n      fileHashMp3\n      fileHashMp4\n      hasAlbumart\n      isComposition\n      copyrightInfo {\n        ownComposition\n        ownLicense\n        isPublicLicense\n        __typename\n      }\n      duration\n      bgmSource\n      ipAddr\n      updatedAt\n      createdAt\n      __typename\n    }\n    user {\n      _id\n      email\n      nickname\n      profileImagePath\n      profileIconPath\n      signature\n      point\n      level\n      isValid\n      ipAddr\n      followsCnt\n      followersCnt\n      token\n      updatedAt\n      createdAt\n      __typename\n    }\n    voteCnt\n    commentCnt\n    isPublic\n    updatedAt\n    createdAt\n    __typename\n  }\n}\n\"}";
             string Result = "";
 
             string json_bgm = get_json("https://bgmstore.net/v1");
@@ -183,12 +193,12 @@ namespace BGMSTORE
 
             return json_bgm; //JSON 자체를 넘긴다.
         }
+
         public bool find_item(ListView lv, string text)
         {
             if (lv.Items.Count == 0)
             {
                 return false;
-
             }
             else
             {
@@ -202,14 +212,12 @@ namespace BGMSTORE
         }
 
 
-        public void find_bgm(ListView lv, string keyword, string mode)
+        public void search_bgm(ListView lv, string keyword, string mode)
         {
-            //is_main_window = false; //브금 검색을 수행한다 = 검색 상태에 있음
             load_count = 1; //로드카운트 초기화
 
             try
             {
-
                 lv.BeginUpdate();
                 lv.Items.Clear();
 
@@ -287,13 +295,15 @@ namespace BGMSTORE
 
             catch (Exception ex)
             {
-                MessageBox.Show("오류가 발생하였습니다" + Environment.NewLine + ex.ToString(), "알림", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("오류가 발생하였습니다" + Environment.NewLine + ex.ToString(), "알림", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
             }
             finally
             {
                 lv.EndUpdate();
             }
         }
+
         public enum Mode
         {
             Main,
@@ -351,6 +361,7 @@ namespace BGMSTORE
                             lv.Items.Add(listViewItem);
                         }
                     }
+
                     lv.Refresh();
                     load_count++;
                 }
@@ -371,6 +382,7 @@ namespace BGMSTORE
 
 
         }
+
         public async void download_bgm_async(int[] url, string[] title, Label lb)
         {
             count = 0;
@@ -380,68 +392,70 @@ namespace BGMSTORE
                 IsFolderPicker = true
             };
 
-            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
-            {
-                string selected = dialog.FileName;
-                try
-                {
-                    int[] num_array = url; //C#에서도 얕은 복사?
-                    for (int index = 0; index < num_array.Length; ++index)
-                    {
-                        int i = num_array[count];
-                        lb.Text = count.ToString() + "/" + url.Length.ToString();
-                        download = true;
-
-                        string download_url = "https://media1.bgmstore.net/mp3/" + title_id[title[index]] + ".mp3";
-
-                        string download_mode = ".mp3"; //default(ini 파일이 없는 오류방지)
-
-                        InIWriter iniwriter = new InIWriter(Application.StartupPath + "\\Configuration.ini");
-
-                        if (iniwriter.Read("설정", "다운로드") == "Mp3")
-                        {
-                            download_mode = ".mp3";
-                        }
-                        else //Mp4면
-                        {
-                            download_mode = ".mp4";
-                        }
-
-                        web_client.DownloadFileAsync(new Uri(download_url), selected + "\\" + title[count] + download_mode);
-                        download = true;
-                        while (download)
-                        {
-                            await Task.Delay(1000);
-                        }
-                        count++;
-                        if (url.Length == count)
-                        {
-                            lb.Text = count.ToString() + "/" + url.Length.ToString();
-                            int num2 = (int)MessageBox.Show("다운로드가 완료되었습니다", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString(), "알림", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                }
-            }
-            else
+            if (dialog.ShowDialog() != CommonFileDialogResult.Ok)
             {
                 MessageBox.Show("취소되었습니다", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+
+            string selected_file = dialog.FileName;
+
+            try
+            {
+                int[] num_array = url; //C#에서도 얕은 복사?
+                for (int index = 0; index < num_array.Length; ++index)
+                {
+                    lb.Text = count.ToString() + "/" + url.Length.ToString();
+                    is_download = true;
+
+                    string download_url = "https://media1.bgmstore.net/mp3/" + title_id[title[index]] + ".mp3";
+
+                    string download_mode = ".mp3"; //default(ini 파일이 없는 오류방지)
+
+                    InIWriter iniwriter = new InIWriter(Application.StartupPath + "\\Configuration.ini");
+
+                    if (iniwriter.Read("설정", "다운로드") == "Mp3")
+                    {
+                        download_mode = ".mp3";
+                    }
+                    else //Mp4면
+                    {
+                        download_mode = ".mp4";
+                    }
+
+                    web_client.DownloadFileAsync(new Uri(download_url), selected_file + "\\" + title[count] + download_mode);
+                    is_download = true;
+                    while (is_download)
+                    {
+                        await Task.Delay(1000);
+                    }
+
+                    count++;
+                    if (url.Length == count)
+                    {
+                        lb.Text = count.ToString() + "/" + url.Length.ToString();
+                        MessageBox.Show("다운로드가 완료되었습니다", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "알림", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
+
+
         public void download_cancle()
         {
             web_client.Dispose();
-            download = false;
+            is_download = false;
             sprogress(0);
             is_downloader_stop = true;
         }
 
 
         public async void play_bgm_async(AxWMPLib.AxWindowsMediaPlayer wmp)
-
         {
             int count = 0;
 
@@ -462,12 +476,12 @@ namespace BGMSTORE
 
                 string url = "http://dl.bgms.kr/download/" + i.Replace("/view/", "") + download_mode;
                 wmp.URL = url;
-                play = true;
+                is_play = true;
 
 
-                while (play) // Play = true
+                while (is_play) // Play = true
                 {
-                    if (is_player_stop == true)
+                    if (is_player_stop)
                     {
                         break;
                     }
@@ -480,10 +494,10 @@ namespace BGMSTORE
                 }
 
 
-                if (is_player_stop == true)
+                if (is_player_stop)
                 {
                     wmp.Ctlcontrols.stop();
-                    play = false;
+                    is_play = false;
                     is_player_stop = false;
                     break;
                 }
@@ -493,7 +507,7 @@ namespace BGMSTORE
                 if (favorite_list.Count == count)
                 {
                     MessageBox.Show("재생이 끝났습니다");
-                    play = false;
+                    is_play = false;
 
                 }
             }

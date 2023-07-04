@@ -31,7 +31,7 @@ namespace BGMSTORE
             main = m;
         }
 
-        public static bool play = false;
+        public static bool is_play = false;
 
 
 
@@ -244,15 +244,6 @@ namespace BGMSTORE
             }
         }
 
-        private void btn_AllCheck_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_NoCheck_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void listView2_DoubleClick(object sender, EventArgs e)
         {
@@ -264,7 +255,7 @@ namespace BGMSTORE
                 string url = "https://mp31.bgms.kr/pds/mp3/" + data + ".mp3";
 
                 main.play_mp3_from_url(url, plist.SelectedItems[0].SubItems[1].Text);
-                play = true;
+                is_play = true;
 
                 idx = plist.SelectedIndices[0];
                 CurrentPlay = plist.Items[idx].SubItems[1].Text;
