@@ -1,6 +1,5 @@
 ﻿using BGMSTORE.Module;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Net;
@@ -15,13 +14,7 @@ namespace BGMSTORE
         PlayList player_list = null;
         InIWriter ini_writer = new InIWriter(Utility.config_path);
 
-        List<string> column_list = new List<string>();
         WMPLib.WindowsMediaPlayer player = new WMPLib.WindowsMediaPlayer();
-
-        public string next = ""; //실행해야할 다음곡 데이터 가져옴
-        public string data = "";
-
-
         //----------------------------------------------------------------------------------------
 
         public Main()
@@ -77,6 +70,7 @@ namespace BGMSTORE
             //더블 버퍼링 활성화로 리스트뷰 깜빡임 최소화
             listView1.DoubleBuffered(true);
 
+
             //webBrowser1.Navigate("http://go.gagalive.kr/d/~~~new_musicmaster&fonttype=%EB%82%98%EB%88%94%EA%B3%A0%EB%94%95&fontcolor=00000&fontlarge=true&position=2");
 
             update_check(); //assert() 처럼 업데이트 조건이 만족되지 않으면 폼을 종료시키는 기능이 있다.
@@ -123,11 +117,11 @@ namespace BGMSTORE
 
         private void set_default_combobox()
         {
-            SearchOptionA.SelectedIndex = 0;
-            SearchOptionB.SelectedIndex = 0;
+            search_option_a.SelectedIndex = 0;
+            search_option_b.SelectedIndex = 0;
 
-            SearchOptionA.DropDownStyle = ComboBoxStyle.DropDownList;
-            SearchOptionB.DropDownStyle = ComboBoxStyle.DropDownList;
+            search_option_a.DropDownStyle = ComboBoxStyle.DropDownList;
+            search_option_b.DropDownStyle = ComboBoxStyle.DropDownList;
             // 검색 초기 설정 [인덱스, 수정불가]
         }
 
@@ -156,12 +150,15 @@ namespace BGMSTORE
                 title = title.Substring(0, title_limit);
                 title += "...";
             }
+
+            //UI 초기화
             playtext.Text = title;
+            playctime.Text = "00:00";
         }
 
         private void Player_PositionChange(double oldPosition, double newPosition)
         {
-            playctime.Text = player.controls.currentPositionString;
+            //playctime.Text = player.controls.currentPositionString;
         }
 
         private void Player_PlayStateChange(int new_state)
@@ -210,7 +207,7 @@ namespace BGMSTORE
                 MediaPlay.Enabled = true;
                 playtime.Text = player.currentMedia.durationString;
 
-                playbar.Value = playbar.Minimum;
+                //playbar.Value = playbar.Minimum;
 
             }
         }
@@ -254,27 +251,27 @@ namespace BGMSTORE
 
         private void btn_Search_Click_1(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(SearchTitle.Text))
+            if (string.IsNullOrWhiteSpace(txt_search.Text))
             {
                 bgm_manager.get_main_data(listView1);
             }
             else
             {
-                bgm_manager.search_bgm(listView1, SearchTitle.Text, SearchOptionA.Text + "|" + SearchOptionB.Text);
+                bgm_manager.search_bgm(listView1, txt_search.Text, search_option_a.Text + "|" + search_option_b.Text);
             }
         }
 
         private void btn_Moreload_Click(object sender, EventArgs e)
         {
             // 검색어가 없는 상태서 더보기를 누르면 모든 카테고리를 불러오고 그 중 일부를 추가로 리스트에 추가함
-            if (string.IsNullOrWhiteSpace(SearchTitle.Text))
+            if (string.IsNullOrWhiteSpace(txt_search.Text))
             {
                 bgm_manager.more_load(Mode.Main, listView1, "none");
             }
             // 검색을 한 상태일 경우 (검색어가 입력된 상태일 경우) 검색어를 기준으로 더 불러옴
             else
             {
-                bgm_manager.more_load(Mode.Search, listView1, SearchTitle.Text);
+                bgm_manager.more_load(Mode.Search, listView1, txt_search.Text);
             }
         }
 
@@ -486,6 +483,7 @@ namespace BGMSTORE
 
         private void metroTrackBar1_Scroll(object sender, ScrollEventArgs e)
         {
+            Console.WriteLine(player.controls.currentPosition);
             try
             {
                 MediaPlay.Enabled = false; //잠시 동기화 타이머를 멈춘다
@@ -503,13 +501,15 @@ namespace BGMSTORE
 
         private void MediaPlay_Tick(object sender, EventArgs e)
         {
-            playbar.Value = (int)player.controls.currentPosition; //트랙바의 값과 플레이어의 재생시간을 일치 시킨다.
-            playctime.Text = player.controls.currentPositionString;
+            playbar.Value = (int)player.controls.currentPosition; //트랙바의 값과 플레이어의 재생시간을 일치 시킨다
+
+            if (player.controls.currentPositionString.Trim() != "")
+                playctime.Text = player.controls.currentPositionString;
+
         }
 
         private void pause_Click(object sender, EventArgs e)
         {
-
             player.controls.pause();
         }
 
@@ -619,13 +619,18 @@ namespace BGMSTORE
         private void metroButton1_Click(object sender, EventArgs e)
         {
             slidedown.Enabled = true;
-
         }
 
         private void slidedown_Tick(object sender, EventArgs e)
         {
             if (this.Width >= 958) slidedown.Enabled = false;
             else this.Width += 30;
+        }
+
+        private void playbar_ValueChanged(object sender, EventArgs e)
+        {
+            //int value = playbar.Value;
+            //Console.WriteLine("TrackBar Value: " + value);
         }
     }
 }

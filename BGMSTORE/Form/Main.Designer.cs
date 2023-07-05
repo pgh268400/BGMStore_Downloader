@@ -53,22 +53,22 @@
             this.playtime = new MetroFramework.Controls.MetroLabel();
             this.playtext = new MetroFramework.Controls.MetroLabel();
             this.playbar = new MetroFramework.Controls.MetroTrackBar();
-            this.btn_Random = new MetroFramework.Controls.MetroTile();
+            this.btn_random = new MetroFramework.Controls.MetroTile();
             this.NowTime = new MetroFramework.Controls.MetroLabel();
             this.download_count = new System.Windows.Forms.Label();
-            this.SearchOptionA = new MetroFramework.Controls.MetroComboBox();
+            this.search_option_a = new MetroFramework.Controls.MetroComboBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.장르 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.제목 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.재생시간 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.추천수 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.SearchOptionB = new MetroFramework.Controls.MetroComboBox();
-            this.SearchTitle = new MetroFramework.Controls.MetroTextBox();
-            this.btn_Search = new MetroFramework.Controls.MetroButton();
-            this.btn_Moreload = new MetroFramework.Controls.MetroTile();
-            this.btn_Download = new MetroFramework.Controls.MetroTile();
-            this.btn_AllCheck = new MetroFramework.Controls.MetroTile();
-            this.btn_NoCheck = new MetroFramework.Controls.MetroTile();
+            this.search_option_b = new MetroFramework.Controls.MetroComboBox();
+            this.txt_search = new MetroFramework.Controls.MetroTextBox();
+            this.btn_search = new MetroFramework.Controls.MetroButton();
+            this.btn_more_load = new MetroFramework.Controls.MetroTile();
+            this.btn_download = new MetroFramework.Controls.MetroTile();
+            this.btn_allcheck = new MetroFramework.Controls.MetroTile();
+            this.btn_nocheck = new MetroFramework.Controls.MetroTile();
             this.progressBar1 = new MetroFramework.Controls.MetroProgressBar();
             this.MediaPlay = new System.Windows.Forms.Timer(this.components);
             this.slidedown = new System.Windows.Forms.Timer(this.components);
@@ -197,18 +197,18 @@
             this.MainPanel.Controls.Add(this.playtime);
             this.MainPanel.Controls.Add(this.playtext);
             this.MainPanel.Controls.Add(this.playbar);
-            this.MainPanel.Controls.Add(this.btn_Random);
+            this.MainPanel.Controls.Add(this.btn_random);
             this.MainPanel.Controls.Add(this.NowTime);
             this.MainPanel.Controls.Add(this.download_count);
-            this.MainPanel.Controls.Add(this.SearchOptionA);
+            this.MainPanel.Controls.Add(this.search_option_a);
             this.MainPanel.Controls.Add(this.listView1);
-            this.MainPanel.Controls.Add(this.SearchOptionB);
-            this.MainPanel.Controls.Add(this.SearchTitle);
-            this.MainPanel.Controls.Add(this.btn_Search);
-            this.MainPanel.Controls.Add(this.btn_Moreload);
-            this.MainPanel.Controls.Add(this.btn_Download);
-            this.MainPanel.Controls.Add(this.btn_AllCheck);
-            this.MainPanel.Controls.Add(this.btn_NoCheck);
+            this.MainPanel.Controls.Add(this.search_option_b);
+            this.MainPanel.Controls.Add(this.txt_search);
+            this.MainPanel.Controls.Add(this.btn_search);
+            this.MainPanel.Controls.Add(this.btn_more_load);
+            this.MainPanel.Controls.Add(this.btn_download);
+            this.MainPanel.Controls.Add(this.btn_allcheck);
+            this.MainPanel.Controls.Add(this.btn_nocheck);
             this.MainPanel.Controls.Add(this.progressBar1);
             this.MainPanel.Location = new System.Drawing.Point(3, 6);
             this.MainPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -319,19 +319,20 @@
             this.playbar.TabIndex = 33;
             this.playbar.Text = "metroTrackBar1";
             this.playbar.Value = 0;
+            this.playbar.ValueChanged += new System.EventHandler(this.playbar_ValueChanged);
             this.playbar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.metroTrackBar1_Scroll);
             // 
-            // btn_Random
+            // btn_random
             // 
-            this.btn_Random.ActiveControl = null;
-            this.btn_Random.Location = new System.Drawing.Point(454, 529);
-            this.btn_Random.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Random.Name = "btn_Random";
-            this.btn_Random.Size = new System.Drawing.Size(101, 46);
-            this.btn_Random.TabIndex = 32;
-            this.btn_Random.Text = "랜덤 BGM";
-            this.btn_Random.UseSelectable = true;
-            this.btn_Random.Click += new System.EventHandler(this.btn_Random_Click);
+            this.btn_random.ActiveControl = null;
+            this.btn_random.Location = new System.Drawing.Point(454, 529);
+            this.btn_random.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_random.Name = "btn_random";
+            this.btn_random.Size = new System.Drawing.Size(101, 46);
+            this.btn_random.TabIndex = 32;
+            this.btn_random.Text = "랜덤 BGM";
+            this.btn_random.UseSelectable = true;
+            this.btn_random.Click += new System.EventHandler(this.btn_Random_Click);
             // 
             // NowTime
             // 
@@ -355,20 +356,20 @@
             this.download_count.TabIndex = 25;
             this.download_count.Text = "0/0";
             // 
-            // SearchOptionA
+            // search_option_a
             // 
-            this.SearchOptionA.Enabled = false;
-            this.SearchOptionA.FormattingEnabled = true;
-            this.SearchOptionA.ItemHeight = 23;
-            this.SearchOptionA.Items.AddRange(new object[] {
+            this.search_option_a.Enabled = false;
+            this.search_option_a.FormattingEnabled = true;
+            this.search_option_a.ItemHeight = 23;
+            this.search_option_a.Items.AddRange(new object[] {
             "제목",
             "주소"});
-            this.SearchOptionA.Location = new System.Drawing.Point(7, 6);
-            this.SearchOptionA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.SearchOptionA.Name = "SearchOptionA";
-            this.SearchOptionA.Size = new System.Drawing.Size(79, 29);
-            this.SearchOptionA.TabIndex = 18;
-            this.SearchOptionA.UseSelectable = true;
+            this.search_option_a.Location = new System.Drawing.Point(7, 6);
+            this.search_option_a.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.search_option_a.Name = "search_option_a";
+            this.search_option_a.Size = new System.Drawing.Size(79, 29);
+            this.search_option_a.TabIndex = 18;
+            this.search_option_a.UseSelectable = true;
             // 
             // listView1
             // 
@@ -410,113 +411,113 @@
             this.추천수.Tag = "Numeric";
             this.추천수.Text = "추천수";
             // 
-            // SearchOptionB
+            // search_option_b
             // 
-            this.SearchOptionB.Enabled = false;
-            this.SearchOptionB.FormattingEnabled = true;
-            this.SearchOptionB.ItemHeight = 23;
-            this.SearchOptionB.Items.AddRange(new object[] {
+            this.search_option_b.Enabled = false;
+            this.search_option_b.FormattingEnabled = true;
+            this.search_option_b.ItemHeight = 23;
+            this.search_option_b.Items.AddRange(new object[] {
             "일반검색",
             "단어로 검색",
             "완전일치"});
-            this.SearchOptionB.Location = new System.Drawing.Point(91, 6);
-            this.SearchOptionB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.SearchOptionB.Name = "SearchOptionB";
-            this.SearchOptionB.Size = new System.Drawing.Size(90, 29);
-            this.SearchOptionB.TabIndex = 19;
-            this.SearchOptionB.UseSelectable = true;
+            this.search_option_b.Location = new System.Drawing.Point(91, 6);
+            this.search_option_b.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.search_option_b.Name = "search_option_b";
+            this.search_option_b.Size = new System.Drawing.Size(90, 29);
+            this.search_option_b.TabIndex = 19;
+            this.search_option_b.UseSelectable = true;
             // 
-            // SearchTitle
-            // 
-            // 
+            // txt_search
             // 
             // 
-            this.SearchTitle.CustomButton.Image = null;
-            this.SearchTitle.CustomButton.Location = new System.Drawing.Point(264, 2);
-            this.SearchTitle.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.SearchTitle.CustomButton.Name = "";
-            this.SearchTitle.CustomButton.Size = new System.Drawing.Size(19, 19);
-            this.SearchTitle.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.SearchTitle.CustomButton.TabIndex = 1;
-            this.SearchTitle.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.SearchTitle.CustomButton.UseSelectable = true;
-            this.SearchTitle.CustomButton.Visible = false;
-            this.SearchTitle.Lines = new string[0];
-            this.SearchTitle.Location = new System.Drawing.Point(186, 6);
-            this.SearchTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.SearchTitle.MaxLength = 32767;
-            this.SearchTitle.Name = "SearchTitle";
-            this.SearchTitle.PasswordChar = '\0';
-            this.SearchTitle.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.SearchTitle.SelectedText = "";
-            this.SearchTitle.SelectionLength = 0;
-            this.SearchTitle.SelectionStart = 0;
-            this.SearchTitle.ShortcutsEnabled = true;
-            this.SearchTitle.Size = new System.Drawing.Size(286, 24);
-            this.SearchTitle.TabIndex = 20;
-            this.SearchTitle.UseSelectable = true;
-            this.SearchTitle.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.SearchTitle.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.SearchTitle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTitle_KeyDown);
             // 
-            // btn_Search
             // 
-            this.btn_Search.Location = new System.Drawing.Point(477, 6);
-            this.btn_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(78, 24);
-            this.btn_Search.TabIndex = 21;
-            this.btn_Search.Text = "검색";
-            this.btn_Search.UseSelectable = true;
-            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click_1);
+            this.txt_search.CustomButton.Image = null;
+            this.txt_search.CustomButton.Location = new System.Drawing.Point(264, 2);
+            this.txt_search.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_search.CustomButton.Name = "";
+            this.txt_search.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.txt_search.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txt_search.CustomButton.TabIndex = 1;
+            this.txt_search.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txt_search.CustomButton.UseSelectable = true;
+            this.txt_search.CustomButton.Visible = false;
+            this.txt_search.Lines = new string[0];
+            this.txt_search.Location = new System.Drawing.Point(186, 6);
+            this.txt_search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_search.MaxLength = 32767;
+            this.txt_search.Name = "txt_search";
+            this.txt_search.PasswordChar = '\0';
+            this.txt_search.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_search.SelectedText = "";
+            this.txt_search.SelectionLength = 0;
+            this.txt_search.SelectionStart = 0;
+            this.txt_search.ShortcutsEnabled = true;
+            this.txt_search.Size = new System.Drawing.Size(286, 24);
+            this.txt_search.TabIndex = 20;
+            this.txt_search.UseSelectable = true;
+            this.txt_search.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txt_search.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchTitle_KeyDown);
             // 
-            // btn_Moreload
+            // btn_search
             // 
-            this.btn_Moreload.ActiveControl = null;
-            this.btn_Moreload.Location = new System.Drawing.Point(7, 529);
-            this.btn_Moreload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Moreload.Name = "btn_Moreload";
-            this.btn_Moreload.Size = new System.Drawing.Size(105, 46);
-            this.btn_Moreload.TabIndex = 27;
-            this.btn_Moreload.Text = "더보기 (NEXT)";
-            this.btn_Moreload.UseSelectable = true;
-            this.btn_Moreload.Click += new System.EventHandler(this.btn_Moreload_Click);
+            this.btn_search.Location = new System.Drawing.Point(477, 6);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(78, 24);
+            this.btn_search.TabIndex = 21;
+            this.btn_search.Text = "검색";
+            this.btn_search.UseSelectable = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_Search_Click_1);
             // 
-            // btn_Download
+            // btn_more_load
             // 
-            this.btn_Download.ActiveControl = null;
-            this.btn_Download.Location = new System.Drawing.Point(342, 529);
-            this.btn_Download.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Download.Name = "btn_Download";
-            this.btn_Download.Size = new System.Drawing.Size(107, 46);
-            this.btn_Download.TabIndex = 30;
-            this.btn_Download.Text = "다운로드";
-            this.btn_Download.UseSelectable = true;
-            this.btn_Download.Click += new System.EventHandler(this.btn_Download_Click);
+            this.btn_more_load.ActiveControl = null;
+            this.btn_more_load.Location = new System.Drawing.Point(7, 529);
+            this.btn_more_load.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_more_load.Name = "btn_more_load";
+            this.btn_more_load.Size = new System.Drawing.Size(105, 46);
+            this.btn_more_load.TabIndex = 27;
+            this.btn_more_load.Text = "더보기 (NEXT)";
+            this.btn_more_load.UseSelectable = true;
+            this.btn_more_load.Click += new System.EventHandler(this.btn_Moreload_Click);
             // 
-            // btn_AllCheck
+            // btn_download
             // 
-            this.btn_AllCheck.ActiveControl = null;
-            this.btn_AllCheck.Location = new System.Drawing.Point(119, 529);
-            this.btn_AllCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_AllCheck.Name = "btn_AllCheck";
-            this.btn_AllCheck.Size = new System.Drawing.Size(104, 46);
-            this.btn_AllCheck.TabIndex = 28;
-            this.btn_AllCheck.Text = "모두체크";
-            this.btn_AllCheck.UseSelectable = true;
-            this.btn_AllCheck.Click += new System.EventHandler(this.btn_AllCheck_Click);
+            this.btn_download.ActiveControl = null;
+            this.btn_download.Location = new System.Drawing.Point(342, 529);
+            this.btn_download.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_download.Name = "btn_download";
+            this.btn_download.Size = new System.Drawing.Size(107, 46);
+            this.btn_download.TabIndex = 30;
+            this.btn_download.Text = "다운로드";
+            this.btn_download.UseSelectable = true;
+            this.btn_download.Click += new System.EventHandler(this.btn_Download_Click);
             // 
-            // btn_NoCheck
+            // btn_allcheck
             // 
-            this.btn_NoCheck.ActiveControl = null;
-            this.btn_NoCheck.Location = new System.Drawing.Point(232, 529);
-            this.btn_NoCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_NoCheck.Name = "btn_NoCheck";
-            this.btn_NoCheck.Size = new System.Drawing.Size(103, 46);
-            this.btn_NoCheck.TabIndex = 29;
-            this.btn_NoCheck.Text = "모두체크해제";
-            this.btn_NoCheck.UseSelectable = true;
-            this.btn_NoCheck.Click += new System.EventHandler(this.btn_NoCheck_Click);
+            this.btn_allcheck.ActiveControl = null;
+            this.btn_allcheck.Location = new System.Drawing.Point(119, 529);
+            this.btn_allcheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_allcheck.Name = "btn_allcheck";
+            this.btn_allcheck.Size = new System.Drawing.Size(104, 46);
+            this.btn_allcheck.TabIndex = 28;
+            this.btn_allcheck.Text = "모두체크";
+            this.btn_allcheck.UseSelectable = true;
+            this.btn_allcheck.Click += new System.EventHandler(this.btn_AllCheck_Click);
+            // 
+            // btn_nocheck
+            // 
+            this.btn_nocheck.ActiveControl = null;
+            this.btn_nocheck.Location = new System.Drawing.Point(232, 529);
+            this.btn_nocheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_nocheck.Name = "btn_nocheck";
+            this.btn_nocheck.Size = new System.Drawing.Size(103, 46);
+            this.btn_nocheck.TabIndex = 29;
+            this.btn_nocheck.Text = "모두체크해제";
+            this.btn_nocheck.UseSelectable = true;
+            this.btn_nocheck.Click += new System.EventHandler(this.btn_NoCheck_Click);
             // 
             // progressBar1
             // 
@@ -528,7 +529,7 @@
             // 
             // MediaPlay
             // 
-            this.MediaPlay.Interval = 1000;
+            this.MediaPlay.Interval = 10;
             this.MediaPlay.Tick += new System.EventHandler(this.MediaPlay_Tick);
             // 
             // slidedown
@@ -579,22 +580,22 @@
         private System.Windows.Forms.Label play;
         private MetroFramework.Controls.MetroLabel playtime;
         private MetroFramework.Controls.MetroTrackBar playbar;
-        private MetroFramework.Controls.MetroTile btn_Random;
+        private MetroFramework.Controls.MetroTile btn_random;
         private MetroFramework.Controls.MetroLabel NowTime;
         private System.Windows.Forms.Label download_count;
-        private MetroFramework.Controls.MetroComboBox SearchOptionA;
+        private MetroFramework.Controls.MetroComboBox search_option_a;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader 장르;
         private System.Windows.Forms.ColumnHeader 제목;
         private System.Windows.Forms.ColumnHeader 재생시간;
         private System.Windows.Forms.ColumnHeader 추천수;
-        private MetroFramework.Controls.MetroComboBox SearchOptionB;
-        private MetroFramework.Controls.MetroTextBox SearchTitle;
-        private MetroFramework.Controls.MetroButton btn_Search;
-        private MetroFramework.Controls.MetroTile btn_Moreload;
-        private MetroFramework.Controls.MetroTile btn_Download;
-        private MetroFramework.Controls.MetroTile btn_AllCheck;
-        private MetroFramework.Controls.MetroTile btn_NoCheck;
+        private MetroFramework.Controls.MetroComboBox search_option_b;
+        private MetroFramework.Controls.MetroTextBox txt_search;
+        private MetroFramework.Controls.MetroButton btn_search;
+        private MetroFramework.Controls.MetroTile btn_more_load;
+        private MetroFramework.Controls.MetroTile btn_download;
+        private MetroFramework.Controls.MetroTile btn_allcheck;
+        private MetroFramework.Controls.MetroTile btn_nocheck;
         private MetroFramework.Controls.MetroProgressBar progressBar1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem 리스트추가ToolStripMenuItem;
