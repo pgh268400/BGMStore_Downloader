@@ -18,13 +18,35 @@ namespace BGMSTORE
 {
     public delegate void set_progress_bar(int progess_val);
 
-    public enum SearchMode
+    public enum Mode
     {
         Main,
         Search
     }
 
-    class BGMManager
+    //Json 파싱 후 반환할 데이터 타입
+    public class BGMDocuments
+    {
+        // 프로퍼티 활용하여 Getter/Setter 구현하지 않아도
+        // 자동으로 쉽게 동일한 기능 구현 가능
+        public string category { get; }
+        public string title { get; }
+        public string duration { get; }
+        public string vote_cnt { get; }
+
+        public string keyVal { get; }
+
+        public BGMDocuments(string category, string title, string duration, string vote_cnt, string keyVal)
+        {
+            this.category = category;
+            this.title = title;
+            this.duration = duration;
+            this.vote_cnt = vote_cnt;
+            this.keyVal = keyVal;
+        }
+    }
+
+    public class BGMManager
     {
         public Dictionary<string, string> title_id = new Dictionary<string, string>(); //브금의 제목과 KeyVal을 담을 딕셔너리
         public List<string> favorite_list = new List<string>(); //서브리스트의 코드를 담을 리스트
@@ -134,40 +156,14 @@ namespace BGMSTORE
             */
 
             title_id.Clear();
-
-            string result = get_json("https://bgmstore.net/_next/data/NRby6RQn-S2B-4dIMnJZC/index.json");
-            JObject jobject = JObject.Parse(result); //문자를 객체화
-            JToken jtoken = jobject["pageProps"]["bgmDocuments"]; //result 의 값 가져오기
-
             lv.BeginUpdate(); //리스트뷰 업데이트 시작
             lv.Items.Clear();
-            foreach (JToken jt in jtoken)
-            {
-                string category = jt["category"].ToString();
-                string title = jt["title"].ToString();
 
-                //107.4 (origin) -> 1:40(duration) 형태로 변환
-                string origin_duration = jt["duration"].ToString();
-                double seconds = double.Parse(origin_duration);
-                var time_span = TimeSpan.FromSeconds(seconds);
-                string duration = $"{time_span.Minutes}:{time_span.Seconds}";
+            string json_data = get_json("https://bgmstore.net/_next/data/NRby6RQn-S2B-4dIMnJZC/index.json");
 
-
-                string vote_cnt = jt["upVoteCnt"].ToString();
-
-                string[] items = { category, title, duration, vote_cnt };
-                ListViewItem listViewItem = new ListViewItem(items);
-
-                listViewItem.ForeColor = ColorTranslator.FromHtml("#4285F4");
-                listViewItem.SubItems[2].ForeColor = ColorTranslator.FromHtml("#4285F4");
-                listViewItem.UseItemStyleForSubItems = false;
-
-                if (Utility.find_item(lv, items[1]) == false)
-                {
-                    title_id.Add(jt["title"].ToString(), jt["keyVal"].ToString());
-                    lv.Items.Add(listViewItem);
-                }
-            }
+            var bgm_data = bgm_parse_from_json(json_data, Mode.Main);
+            //받아온 데이터 리스트뷰에 삽입
+            add_bgm_data_to_listview(bgm_data, lv);
 
             lv.EndUpdate(); //리스트뷰 업데이트 완료
         }
@@ -189,6 +185,40 @@ namespace BGMSTORE
         }
 
 
+
+
+        //브금 저장소 API 요청시 응답으로 들어오는 json_data를 인자로 받아서 파싱 후 잘 포장해 반환
+        private List<BGMDocuments> bgm_parse_from_json(string json_data, Mode mode)
+        {
+            JObject jobject = JObject.Parse(json_data); //문자를 객체화
+
+            JToken jtoken = null;
+            if (mode == Mode.Main)
+                jtoken = jobject["pageProps"]["bgmDocuments"]; //브금 메인 데이터 가져오기
+            else
+                jtoken = jobject["data"]["bgmDocuments"];
+
+
+            var result = new List<BGMDocuments>();
+            foreach (JToken jt in jtoken)
+            {
+                string category = jt["category"].ToString();
+                string title = jt["title"].ToString();
+
+                //107.4 (origin) -> 1:40(duration) 형태로 변환
+                string origin_duration = jt["duration"].ToString();
+                double seconds = double.Parse(origin_duration);
+                var time_span = TimeSpan.FromSeconds(seconds);
+                string duration = $"{time_span.Minutes}:{time_span.Seconds}";
+                string vote_cnt = jt["upVoteCnt"].ToString();
+                string keyVal = jt["keyVal"].ToString();
+
+                //string[] items = { category, title, duration, vote_cnt };
+                result.Add(new BGMDocuments(category, title, duration, vote_cnt, keyVal));
+            }
+
+            return result;
+        }
 
         public void search_bgm(ListView lv, string keyword, string mode)
         {
@@ -231,42 +261,12 @@ namespace BGMSTORE
                         ""query"": ""query bgmDocuments($separator: String!, $category: String, $limit: Int!, $page: Int!, $searchQuery: String, $searchQueryType: String, $userId: String, $isComposition: Boolean, $sortBy: String, $sortOrder: Int) {\n  bgmDocuments(\n    separator: $separator\n    category: $category\n    limit: $limit\n    page: $page\n    searchQuery: $searchQuery\n    searchQueryType: $searchQueryType\n    userId: $userId\n    isComposition: $isComposition\n    sortBy: $sortBy\n    sortOrder: $sortOrder\n  ) {\n    _id\n    keyVal\n    user {\n      _id\n      email\n      nickname\n      signature\n      point\n      profileImageUrl\n      profileIconUrl\n      __typename\n    }\n    title\n    content\n    filename\n    category\n    upVoteCnt\n    commentCnt\n    isProcessing\n    queueJobProgress\n    albumartImageUrl\n    isComposition\n    ccl\n    duration\n    __typename\n  }\n}""
                     }".Replace("SEARCHQUERY", keyword);
 
-                Console.WriteLine(post_data);
-
-                string json_bgm = post_json("https://api.bgmstore.net/graphql", post_data);
-                Console.WriteLine(json_bgm);
-
-                JObject jobject = JObject.Parse(json_bgm); //문자를 객체화
-                JToken jtoken = jobject["data"]["bgmDocuments"]; //result 의 값 가져오기
 
 
-                foreach (JToken jt in jtoken)
-                {
-                    string category = jt["category"].ToString();
-                    string title = jt["title"].ToString();
-
-                    //107.4 (origin) -> 1:40(duration) 형태로 변환
-                    string origin_duration = jt["duration"].ToString();
-                    double seconds = double.Parse(origin_duration);
-                    var time_span = TimeSpan.FromSeconds(seconds);
-                    string duration = $"{time_span.Minutes}:{time_span.Seconds}";
-
-
-                    string vote_cnt = jt["upVoteCnt"].ToString();
-
-                    string[] items = { category, title, duration, vote_cnt };
-                    ListViewItem listViewItem = new ListViewItem(items);
-
-                    listViewItem.ForeColor = ColorTranslator.FromHtml("#4285F4");
-                    listViewItem.SubItems[2].ForeColor = ColorTranslator.FromHtml("#4285F4");
-                    listViewItem.UseItemStyleForSubItems = false;
-
-                    if (Utility.find_item(lv, items[1]) == false)
-                    {
-                        title_id.Add(jt["title"].ToString(), jt["keyVal"].ToString());
-                        lv.Items.Add(listViewItem);
-                    }
-                }
+                string json_data = post_json("https://api.bgmstore.net/graphql", post_data);
+                var bgm_data = bgm_parse_from_json(json_data, Mode.Search);
+                //받아온 데이터 리스트뷰에 삽입
+                add_bgm_data_to_listview(bgm_data, lv);
             }
 
             catch (Exception ex)
@@ -280,16 +280,43 @@ namespace BGMSTORE
             }
         }
 
+        //BGM 데이터를 ListView에 반복하면서 삽입해주는 함수
+        //참고로 Class 는 설계 자체가 참조형이라 원본에 접근할 수 있다.
+        //리스트뷰를 인자로 받아서 데이터를 원본에 직접 삽입할 수 있는것도 그 이유인듯. [ListView도 Class로 설계되어 있음]
+        //List 타입도 마찬가지고. Class 자체가 객체 변수 복사시 포인터 변수를 복사해서
+        //(객체를 같이 가리키고 있는) 얕은 복사가 이루어진다고 보면 된다.
+        private void add_bgm_data_to_listview(List<BGMDocuments> bgm_data, ListView lv)
+        {
+            foreach (var bgm in bgm_data)
+            {
+                string[] items = { bgm.category, bgm.title, bgm.duration, bgm.vote_cnt };
+                ListViewItem listViewItem = new ListViewItem(items)
+                {
+                    ForeColor = ColorTranslator.FromHtml("#4285F4")
+                };
+
+                listViewItem.SubItems[2].ForeColor = ColorTranslator.FromHtml("#4285F4");
+                listViewItem.UseItemStyleForSubItems = false;
+
+                if (Utility.find_item(lv, items[1]) == false)
+                {
+                    title_id.Add(bgm.title, bgm.keyVal);
+                    lv.Items.Add(listViewItem);
+                }
+            }
+        }
 
 
         //현재 검색 페이지를 기억하고 있는 멤버 변수
         private int current_page = 0;
 
-        public void more_load(SearchMode searchMode, ListView lv, string keyword)
+        public async void more_load(Mode mode, ListView lv, string keyword)
         {
-            if (searchMode == SearchMode.Search)
+            current_page += 1;
+            if (mode == Mode.Search)
             {
-                current_page += 1;
+                //MessageBox.Show("검색 더보기");
+                Console.WriteLine("검색 더보기");
                 try
                 {
                     lv.BeginUpdate();
@@ -306,34 +333,16 @@ namespace BGMSTORE
                         ""query"": ""query bgmDocuments($separator: String!, $category: String, $limit: Int!, $page: Int!, $searchQuery: String, $searchQueryType: String, $userId: String, $isComposition: Boolean, $sortBy: String, $sortOrder: Int) {\n  bgmDocuments(\n    separator: $separator\n    category: $category\n    limit: $limit\n    page: $page\n    searchQuery: $searchQuery\n    searchQueryType: $searchQueryType\n    userId: $userId\n    isComposition: $isComposition\n    sortBy: $sortBy\n    sortOrder: $sortOrder\n  ) {\n    _id\n    keyVal\n    user {\n      _id\n      email\n      nickname\n      signature\n      point\n      profileImageUrl\n      profileIconUrl\n      __typename\n    }\n    title\n    content\n    filename\n    category\n    upVoteCnt\n    commentCnt\n    isProcessing\n    queueJobProgress\n    albumartImageUrl\n    isComposition\n    ccl\n    duration\n    __typename\n  }\n}""
                     }".Replace("SEARCHQUERY", keyword).Replace("PAGE", current_page.ToString());
 
-                    string json_bgm = post_json("https://api.bgmstore.net/graphql", post_data);
-                    JObject jobject = JObject.Parse(json_bgm); //문자를 객체화
-                    JToken jtoken = jobject["data"]["bgmDocuments"]; //result 의 값 가져오기
-
-
-                    foreach (JToken jt in jtoken)
+                    string json_data = post_json("https://api.bgmstore.net/graphql", post_data);
+                    var bgm_data = bgm_parse_from_json(json_data, Mode.Search);
+                    if (bgm_data.Count == 0)
                     {
-                        string[] items = new string[4];
-                        items[0] = jt["category"].ToString();
-                        items[1] = jt["title"].ToString();
-                        items[2] = jt["duration"].ToString();
-                        items[3] = jt["upVoteCnt"].ToString().Replace("+", "");
-
-
-
-                        ListViewItem listViewItem = new ListViewItem(items);
-
-                        listViewItem.ForeColor = ColorTranslator.FromHtml("#4285F4");
-                        listViewItem.SubItems[2].ForeColor = ColorTranslator.FromHtml("#4285F4");
-                        listViewItem.UseItemStyleForSubItems = false;
-
-                        if (Utility.find_item(lv, items[1]) == false)
-                        {
-
-                            title_id.Add(jt["title"].ToString(), jt["keyVal"].ToString());
-                            lv.Items.Add(listViewItem);
-                        }
+                        MessageBox.Show("더 이상 불러올 수 없습니다", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
                     }
+
+                    //받아온 데이터 리스트뷰에 삽입
+                    add_bgm_data_to_listview(bgm_data, lv);
 
                     lv.Refresh();
                 }
@@ -346,9 +355,161 @@ namespace BGMSTORE
                     lv.EndUpdate();
                 }
             }
-            else if (searchMode == SearchMode.Main)
+            else if (mode == Mode.Main)
             {
+                Console.WriteLine("메인 더보기");
                 //Later
+
+
+                string[] genres =
+                {
+                    "유머",
+                    "공포",
+                    "엽기",
+                    "슬픔",
+                    "감동",
+                    "평화",
+                    "희망",
+                    "애절",
+                    "신남",
+                    "쓸쓸",
+                    "동심",
+                    "우울",
+                    "좌절",
+                    "신비",
+                    "긴박",
+                    "잔잔",
+                    "격렬",
+                    "순수",
+                    "고요",
+                    "장엄",
+                    "진지",
+                    "비트",
+                    "즐거움",
+                    "합필갤",
+                    "흥겨움",
+                    "일상",
+                    "고전",
+                    "발랄",
+                    "클럽",
+                    "긴장",
+                    "비장",
+                    "한심",
+                    "초조",
+                    "흥함",
+                    "애잔",
+                    "심각",
+                    "활기",
+                    "웅장",
+                    "아련",
+                    "개드립",
+                    "몽환",
+                    "여유",
+                    "훈훈",
+                    "귀여움",
+                    "달달",
+                    "행복",
+                    "자작곡",
+                    "당당",
+                    "경쾌",
+                    "추억",
+                    "따뜻"
+                };
+
+
+                Random random = new Random();
+                int random_int = random.Next(0, genres.Length);
+
+                string selected_genre = genres[random_int];
+
+                /*
+
+                var tasks = new List<Task<string>>();
+                using (HttpClient client = new HttpClient())
+                {
+
+                    foreach (string genre in genres)
+                    {
+
+                        string post_data = @"
+                        {
+	                        ""operationName"": ""bgmDocuments"",
+	                        ""variables"": {
+		                        ""separator"": ""RANDOM"",
+		                        ""limit"": 1,
+		                        ""page"": 0,
+		                        ""category"": ""CATEGORY"",
+		                        ""searchQueryType"": ""category"",
+		                        ""isComposition"": false
+	                        },
+	                        ""query"": ""query bgmDocuments($separator: String!, $category: String, $limit: Int!, $page: Int!, $searchQuery: String, $searchQueryType: String, $userId: String, $isComposition: Boolean, $sortBy: String, $sortOrder: Int) {\n  bgmDocuments(\n    separator: $separator\n    category: $category\n    limit: $limit\n    page: $page\n    searchQuery: $searchQuery\n    searchQueryType: $searchQueryType\n    userId: $userId\n    isComposition: $isComposition\n    sortBy: $sortBy\n    sortOrder: $sortOrder\n  ) {\n    _id\n    keyVal\n    user {\n      _id\n      email\n      nickname\n      signature\n      point\n      profileImageUrl\n      profileIconUrl\n      __typename\n    }\n    title\n    content\n    filename\n    category\n    upVoteCnt\n    commentCnt\n    isProcessing\n    queueJobProgress\n    albumartImageUrl\n    isComposition\n    ccl\n    duration\n    __typename\n  }\n}""
+                        }".Replace("CATEGORY", genre);
+
+                        // POST 데이터를 생성합니다. 이 예시에서는 JSON 형식을 가정합니다.
+                        var content = new StringContent(post_data, System.Text.Encoding.UTF8, "application/json");
+
+
+                        // 비동기적으로 POST 요청을 보냅니다.
+                        Task<string> task = client.PostAsync("https://api.bgmstore.net/graphql", content)
+                            .ContinueWith(response_task =>
+                            {
+                                // 응답 결과를 문자열로 읽습니다.
+                                var response = response_task.Result;
+                                var result = response.Content.ReadAsStringAsync().Result;
+                                return result;
+                            });
+
+                        tasks.Add(task);
+                    }
+                    Console.WriteLine("작업 생성 완료");
+
+                    // 모든 Task가 완료될 때까지 기다립니다.
+                    await Task.WhenAll(tasks);
+                }
+
+                Console.WriteLine("작업 완료");
+
+                // 각 요청의 결과를 확인하고 처리합니다.
+                foreach (var task in tasks)
+                {
+                    if (task.Status == TaskStatus.RanToCompletion)
+                    {
+                        var result = task.Result;
+                        // 결과를 처리하는 로직을 추가합니다.
+                        Console.WriteLine(result);
+                    }
+                    else if (task.Status == TaskStatus.Faulted)
+                    {
+                        // 실패한 경우에 대한 처리 로직을 추가합니다.
+                        Console.WriteLine("요청이 실패했습니다.");
+                    }
+                }
+
+                */
+
+                lv.BeginUpdate();
+
+                string post_data = @"
+                        {
+	                        ""operationName"": ""bgmDocuments"",
+	                        ""variables"": {
+		                        ""separator"": ""RANDOM"",
+		                        ""limit"": 20,
+		                        ""page"": 0,
+		                        ""category"": ""CATEGORY"",
+		                        ""searchQueryType"": ""category"",
+		                        ""isComposition"": false
+	                        },
+	                        ""query"": ""query bgmDocuments($separator: String!, $category: String, $limit: Int!, $page: Int!, $searchQuery: String, $searchQueryType: String, $userId: String, $isComposition: Boolean, $sortBy: String, $sortOrder: Int) {\n  bgmDocuments(\n    separator: $separator\n    category: $category\n    limit: $limit\n    page: $page\n    searchQuery: $searchQuery\n    searchQueryType: $searchQueryType\n    userId: $userId\n    isComposition: $isComposition\n    sortBy: $sortBy\n    sortOrder: $sortOrder\n  ) {\n    _id\n    keyVal\n    user {\n      _id\n      email\n      nickname\n      signature\n      point\n      profileImageUrl\n      profileIconUrl\n      __typename\n    }\n    title\n    content\n    filename\n    category\n    upVoteCnt\n    commentCnt\n    isProcessing\n    queueJobProgress\n    albumartImageUrl\n    isComposition\n    ccl\n    duration\n    __typename\n  }\n}""
+                        }".Replace("CATEGORY", selected_genre);
+
+                string json_data = post_json("https://api.bgmstore.net/graphql", post_data);
+                var bgm_data = bgm_parse_from_json(json_data, Mode.Search);
+
+                //받아온 데이터 리스트뷰에 삽입
+                add_bgm_data_to_listview(bgm_data, lv);
+
+                lv.EndUpdate();
             }
 
 
@@ -432,7 +593,7 @@ namespace BGMSTORE
 
             foreach (string element in favorite_list)
             {
-                InIWriter inIWriter = new InIWriter(Application.StartupPath + "\\Configuration.ini");
+                InIWriter inIWriter = new InIWriter(Utility.config_path);
 
                 string download_mode = "/mp3/Untitled1";
                 if (inIWriter.Read("설정", "미리듣기") == "Mp3")

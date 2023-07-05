@@ -478,7 +478,7 @@
             this.btn_Moreload.Name = "btn_Moreload";
             this.btn_Moreload.Size = new System.Drawing.Size(105, 46);
             this.btn_Moreload.TabIndex = 27;
-            this.btn_Moreload.Text = "더보기(Next)";
+            this.btn_Moreload.Text = "더보기 (NEXT)";
             this.btn_Moreload.UseSelectable = true;
             this.btn_Moreload.Click += new System.EventHandler(this.btn_Moreload_Click);
             // 

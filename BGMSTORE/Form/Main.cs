@@ -269,12 +269,12 @@ namespace BGMSTORE
             // 검색어가 없는 상태서 더보기를 누르면 모든 카테고리를 불러오고 그 중 일부를 추가로 리스트에 추가함
             if (string.IsNullOrWhiteSpace(SearchTitle.Text))
             {
-                bgm_manager.more_load(SearchMode.Main, listView1, "none");
+                bgm_manager.more_load(Mode.Main, listView1, "none");
             }
             // 검색을 한 상태일 경우 (검색어가 입력된 상태일 경우) 검색어를 기준으로 더 불러옴
             else
             {
-                bgm_manager.more_load(SearchMode.Search, listView1, SearchTitle.Text);
+                bgm_manager.more_load(Mode.Search, listView1, SearchTitle.Text);
             }
         }
 
