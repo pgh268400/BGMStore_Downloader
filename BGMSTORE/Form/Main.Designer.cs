@@ -341,9 +341,10 @@
             this.NowTime.Size = new System.Drawing.Size(100, 19);
             this.NowTime.TabIndex = 31;
             this.NowTime.Text = "real_time_timer";
+            this.NowTime.Visible = false;
             this.NowTime.Click += new System.EventHandler(this.NowTime_Click);
             // 
-            // Download_Count
+            // download_count
             // 
             this.download_count.AutoSize = true;
             this.download_count.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));

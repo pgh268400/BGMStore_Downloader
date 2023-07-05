@@ -110,6 +110,7 @@
     <Compile Include="Form\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="Module\Extension.cs" />
     <Compile Include="Module\FTP.cs" />
     <Compile Include="Module\BGMManager.cs" />
     <Compile Include="Module\InIWriter.cs" />
@@ -138,6 +139,7 @@
     <Compile Include="Form\PlayList.Designer.cs">
       <DependentUpon>PlayList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Module\Utility.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Module\Sorter.cs" />

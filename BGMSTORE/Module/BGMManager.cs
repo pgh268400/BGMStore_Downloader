@@ -1,8 +1,7 @@
 ﻿
+using BGMSTORE.Module;
 using Microsoft.WindowsAPICodePack.Dialogs;
-
 using Newtonsoft.Json.Linq;
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,16 +18,17 @@ namespace BGMSTORE
 {
     public delegate void set_progress_bar(int progess_val);
 
+    public enum SearchMode
+    {
+        Main,
+        Search
+    }
+
     class BGMManager
     {
         public Dictionary<string, string> title_id = new Dictionary<string, string>(); //브금의 제목과 KeyVal을 담을 딕셔너리
         public List<string> favorite_list = new List<string>(); //서브리스트의 코드를 담을 리스트
         private WebClient web_client = new WebClient();
-
-        private static string config_path = Path.Combine(Application.StartupPath, "Configuration.ini");
-        InIWriter ini_writer = new InIWriter(config_path);
-
-        int load_count = 1; //다음(Next) 불러오기 Page 카운트 변수
 
 
         // 일괄재생, 다운로드 설정
@@ -43,16 +43,13 @@ namespace BGMSTORE
 
 
         public int count = 0;
-
-
         public event set_progress_bar sprogress;
 
         //Constructor
         public BGMManager()
         {
-            web_client.DownloadProgressChanged +=
-                new DownloadProgressChangedEventHandler(WebClient_DownloadProgressChanged1);
-            web_client.DownloadFileCompleted += new AsyncCompletedEventHandler(WebClient_DownloadFileCompleted);
+            web_client.DownloadProgressChanged += WebClient_DownloadProgressChanged1;
+            web_client.DownloadFileCompleted += WebClient_DownloadFileCompleted;
         }
 
         private void WebClient_DownloadProgressChanged1(object sender, DownloadProgressChangedEventArgs e)
@@ -67,8 +64,7 @@ namespace BGMSTORE
 
         public static string get_json(string url)
         {
-            ServicePointManager.ServerCertificateValidationCallback =
-                new RemoteCertificateValidationCallback(AcceptAllCertifications);
+            ServicePointManager.ServerCertificateValidationCallback = AcceptAllCertifications;
             string result = "";
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -91,8 +87,7 @@ namespace BGMSTORE
 
         public static string post_json(string url, string post_data)
         {
-            ServicePointManager.ServerCertificateValidationCallback =
-                new RemoteCertificateValidationCallback(AcceptAllCertifications);
+            ServicePointManager.ServerCertificateValidationCallback = AcceptAllCertifications;
             string result = "";
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -127,11 +122,8 @@ namespace BGMSTORE
             return true;
         }
 
-        public void get_main_bgm_data(ListView lv)
+        public void get_main_data(ListView lv)
         {
-
-            load_count = 1; //로드카운트 초기화
-
             //새로운 BGM
             /*
             string NEW = iniwriter.Read("BGM", "NEWEST");
@@ -170,7 +162,7 @@ namespace BGMSTORE
                 listViewItem.SubItems[2].ForeColor = ColorTranslator.FromHtml("#4285F4");
                 listViewItem.UseItemStyleForSubItems = false;
 
-                if (find_item(lv, items[1]) == false)
+                if (Utility.find_item(lv, items[1]) == false)
                 {
                     title_id.Add(jt["title"].ToString(), jt["keyVal"].ToString());
                     lv.Items.Add(listViewItem);
@@ -179,6 +171,8 @@ namespace BGMSTORE
 
             lv.EndUpdate(); //리스트뷰 업데이트 완료
         }
+
+
 
         public string get_play_list()
         {
@@ -194,28 +188,10 @@ namespace BGMSTORE
             return json_bgm; //JSON 자체를 넘긴다.
         }
 
-        public bool find_item(ListView lv, string text)
-        {
-            if (lv.Items.Count == 0)
-            {
-                return false;
-            }
-            else
-            {
-                if (lv.FindItemWithText(text, true, 0) != null)
-                {
-                    return true;
-                }
-
-                return false;
-            }
-        }
 
 
         public void search_bgm(ListView lv, string keyword, string mode)
         {
-            load_count = 1; //로드카운트 초기화
-
             try
             {
                 lv.BeginUpdate();
@@ -285,7 +261,7 @@ namespace BGMSTORE
                     listViewItem.SubItems[2].ForeColor = ColorTranslator.FromHtml("#4285F4");
                     listViewItem.UseItemStyleForSubItems = false;
 
-                    if (find_item(lv, items[1]) == false)
+                    if (Utility.find_item(lv, items[1]) == false)
                     {
                         title_id.Add(jt["title"].ToString(), jt["keyVal"].ToString());
                         lv.Items.Add(listViewItem);
@@ -304,17 +280,14 @@ namespace BGMSTORE
             }
         }
 
-        public enum Mode
-        {
-            Main,
-            Search
-        }
 
+
+        //현재 검색 페이지를 기억하고 있는 멤버 변수
         private int current_page = 0;
 
-        public void more_load(Mode mode, ListView lv, string keyword)
+        public void more_load(SearchMode searchMode, ListView lv, string keyword)
         {
-            if (mode == Mode.Search)
+            if (searchMode == SearchMode.Search)
             {
                 current_page += 1;
                 try
@@ -354,7 +327,7 @@ namespace BGMSTORE
                         listViewItem.SubItems[2].ForeColor = ColorTranslator.FromHtml("#4285F4");
                         listViewItem.UseItemStyleForSubItems = false;
 
-                        if (find_item(lv, items[1]) == false)
+                        if (Utility.find_item(lv, items[1]) == false)
                         {
 
                             title_id.Add(jt["title"].ToString(), jt["keyVal"].ToString());
@@ -363,19 +336,17 @@ namespace BGMSTORE
                     }
 
                     lv.Refresh();
-                    load_count++;
                 }
-                catch (Exception ex)
+                catch (Exception e)
                 {
-
-                    MessageBox.Show(ex.ToString(), "알림", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show(e.ToString(), "알림", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 finally
                 {
                     lv.EndUpdate();
                 }
             }
-            else if (mode == Mode.Main)
+            else if (searchMode == SearchMode.Main)
             {
                 //Later
             }
@@ -403,8 +374,7 @@ namespace BGMSTORE
 
             try
             {
-                int[] num_array = url; //C#에서도 얕은 복사?
-                for (int index = 0; index < num_array.Length; ++index)
+                for (int index = 0; index < url.Length; ++index)
                 {
                     lb.Text = count.ToString() + "/" + url.Length.ToString();
                     is_download = true;
@@ -445,7 +415,7 @@ namespace BGMSTORE
             }
         }
 
-
+        /*
         public void download_cancle()
         {
             web_client.Dispose();
@@ -453,13 +423,14 @@ namespace BGMSTORE
             sprogress(0);
             is_downloader_stop = true;
         }
+        */
 
 
         public async void play_bgm_async(AxWMPLib.AxWindowsMediaPlayer wmp)
         {
             int count = 0;
 
-            foreach (string i in favorite_list)
+            foreach (string element in favorite_list)
             {
                 InIWriter inIWriter = new InIWriter(Application.StartupPath + "\\Configuration.ini");
 
@@ -474,7 +445,7 @@ namespace BGMSTORE
                 }
 
 
-                string url = "http://dl.bgms.kr/download/" + i.Replace("/view/", "") + download_mode;
+                string url = "http://dl.bgms.kr/download/" + element.Replace("/view/", "") + download_mode;
                 wmp.URL = url;
                 is_play = true;
 

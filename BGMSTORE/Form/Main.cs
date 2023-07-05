@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BGMSTORE.Module;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -12,9 +13,7 @@ namespace BGMSTORE
         //Member Variable-----------------------------------------------------------------------------
         BGMManager bgm_manager = new BGMManager();
         PlayList player_list = null;
-
-        private static string ini_path = Path.Combine(Application.StartupPath, "Configuration.ini");
-        InIWriter ini_writer = new InIWriter(ini_path);
+        InIWriter ini_writer = new InIWriter(Utility.config_path);
 
         List<string> column_list = new List<string>();
         WMPLib.WindowsMediaPlayer player = new WMPLib.WindowsMediaPlayer();
@@ -22,13 +21,16 @@ namespace BGMSTORE
         public string next = ""; //실행해야할 다음곡 데이터 가져옴
         public string data = "";
 
-        public string current_version = "0.0.4";
+
         //----------------------------------------------------------------------------------------
 
         public Main()
         {
             InitializeComponent();
         }
+
+
+
 
         // 메인폼 실행시 업데이트 체크용도로 사용하는 함수
         private void update_check()
@@ -44,7 +46,7 @@ namespace BGMSTORE
             //여기서 응답 데이터가 response에 담김
             string response = doc.DocumentNode.InnerText;
 
-            if (!response.Contains(current_version))
+            if (!response.Contains(Utility.current_version))
             {
                 if (MessageBox.Show("업데이트가 발견되었습니다 사이트로 이동하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
@@ -66,8 +68,15 @@ namespace BGMSTORE
             }
         }
 
+
+        //더블버퍼링을 위한 가상함수 덮어 쓰기
+        protected virtual bool DoubleBuffered { get; set; }
+
         private void Main_Load(object sender, EventArgs e)
         {
+            //더블 버퍼링 활성화로 리스트뷰 깜빡임 최소화
+            listView1.DoubleBuffered(true);
+
             //webBrowser1.Navigate("http://go.gagalive.kr/d/~~~new_musicmaster&fonttype=%EB%82%98%EB%88%94%EA%B3%A0%EB%94%95&fontcolor=00000&fontlarge=true&position=2");
 
             update_check(); //assert() 처럼 업데이트 조건이 만족되지 않으면 폼을 종료시키는 기능이 있다.
@@ -82,7 +91,7 @@ namespace BGMSTORE
             //----------------------------------
 
             //데이터 불러오기
-            bgm_manager.get_main_bgm_data(listView1);
+            bgm_manager.get_main_data(listView1);
 
             timer1.Enabled = true;
 
@@ -99,7 +108,7 @@ namespace BGMSTORE
 
         private void write_default_ini()
         {
-            if (File.Exists(ini_path) == false)
+            if (File.Exists(Utility.config_path) == false)
             {
                 ini_writer.Write("설정", "다운로드", "Mp3");
                 ini_writer.Write("설정", "더블클릭", "music");
@@ -141,11 +150,11 @@ namespace BGMSTORE
             }
 
             // 특정 글자수 넘으면 잘라버리고 뒤는 ...으로 처리
-            int title_limit = 40;
+            const int title_limit = 40;
             if (title.Length > title_limit)
             {
                 title = title.Substring(0, title_limit);
-                title = title + "...";
+                title += "...";
             }
             playtext.Text = title;
         }
@@ -195,7 +204,7 @@ namespace BGMSTORE
             }
             else if ((WMPLib.WMPPlayState)new_state == WMPLib.WMPPlayState.wmppsPlaying)
             {
-                playbar.Maximum = (int)(player.currentMedia.duration);
+                playbar.Maximum = (int)player.currentMedia.duration;
 
                 playbar.Enabled = true;
                 MediaPlay.Enabled = true;
@@ -219,7 +228,7 @@ namespace BGMSTORE
 
             if (ini_writer.Read("설정", "더블클릭") == "music")
             {
-                if (bgm_manager.is_play)
+                if (!bgm_manager.is_play)
                 {
                     if (ini_writer.Read("설정", "미리듣기") == "Mp3")
                     {
@@ -241,40 +250,13 @@ namespace BGMSTORE
             {
                 System.Diagnostics.Process.Start("https://bgmstore.net/" + data);
             }
-
-
-
-
-
         }
-
-        public void listview_check_all_data(ListView lv, bool val)
-        {
-            if (val)
-            {
-                for (int index = 0; index <= lv.Items.Count - 1; ++index)
-                {
-                    if (!lv.Items[index].Checked)
-                        lv.Items[index].Checked = true;
-                }
-            }
-            else
-            {
-                for (int index = 0; index <= lv.Items.Count - 1; ++index)
-                {
-                    if (lv.Items[index].Checked)
-                        lv.Items[index].Checked = false;
-                }
-            }
-        }
-
-
 
         private void btn_Search_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(SearchTitle.Text))
             {
-                bgm_manager.get_main_bgm_data(listView1);
+                bgm_manager.get_main_data(listView1);
             }
             else
             {
@@ -287,28 +269,33 @@ namespace BGMSTORE
             // 검색어가 없는 상태서 더보기를 누르면 모든 카테고리를 불러오고 그 중 일부를 추가로 리스트에 추가함
             if (string.IsNullOrWhiteSpace(SearchTitle.Text))
             {
-                bgm_manager.more_load(BGMManager.Mode.Main, listView1, "none");
+                bgm_manager.more_load(SearchMode.Main, listView1, "none");
             }
             // 검색을 한 상태일 경우 (검색어가 입력된 상태일 경우) 검색어를 기준으로 더 불러옴
             else
             {
-                bgm_manager.more_load(BGMManager.Mode.Search, listView1, SearchTitle.Text);
+                bgm_manager.more_load(SearchMode.Search, listView1, SearchTitle.Text);
             }
         }
 
 
         private void btn_AllCheck_Click(object sender, EventArgs e)
         {
-            listview_check_all_data(listView1, true);
+            Utility.check_all_data(listView1, true);
         }
 
         private void btn_NoCheck_Click(object sender, EventArgs e)
         {
-            listview_check_all_data(listView1, false);
+            Utility.check_all_data(listView1, false);
         }
 
 
         private void btn_Download_Click(object sender, EventArgs e)
+        {
+            music_download();
+        }
+
+        private void music_download()
         {
             //Early Return Pattern
             if (listView1.CheckedItems.Count == 0)
@@ -337,6 +324,7 @@ namespace BGMSTORE
                     idx++;
                 }
 
+                /*
                 foreach (var item in download_idxs)
                 {
                     Console.WriteLine(item);
@@ -346,81 +334,33 @@ namespace BGMSTORE
                 {
                     Console.WriteLine(item);
                 }
+                */
 
                 bgm_manager.download_bgm_async(download_idxs, titles, download_count); // 인덱스값을 다시 DownloadBGM 메서드로 옮긴다.
             }
 
-
         }
-
-
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
             NowTime.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
-
-
-        public Form is_dup_form(string form_title)
-        {
-            foreach (Form frm in Application.OpenForms)
-                if (frm.Name == form_title)
-                    return frm;
-
-            return null;
-        }
-
-
-
-
         private void 설정ToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-
-            if (is_dup_form("OptionPage") == null)
+            if (Utility.is_dup_form("OptionPage") == null)
             {
                 OptionPage opt = new OptionPage();
                 opt.Show();
             }
-
-
         }
 
 
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (listView1.CheckedItems.Count != 0)
-            {
-                if (MessageBox.Show("선택하신 음악은 " + listView1.CheckedItems.Count + "개 입니다." + Environment.NewLine + "다운로드를 진행하시겠습니까?", "알림", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                {
-                    int idx = 0;
-                    int[] i = new int[listView1.CheckedItems.Count];
-                    string[] context = new string[listView1.CheckedItems.Count];
+            music_download();
 
-                    foreach (int indexChecked in listView1.CheckedIndices)
-                    {
-                        i[idx] = indexChecked; //리스트뷰 인덱스값을 i에 넘긴다
-                        idx++;
-                    }
-
-                    idx = 0;
-                    foreach (ListViewItem item in listView1.CheckedItems)
-                    {
-                        string input = context[idx] = item.SubItems[1].Text;
-                        idx++;
-
-                    }
-
-                    bgm_manager.download_bgm_async(i, context, download_count); // 인덱스값을 다시 DownloadBGM 메서드로 옮긴다.
-                }
-
-
-            }
-            else
-            {
-                MessageBox.Show("다운로드할 음악을 선택해주세요", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
         }
 
 
@@ -460,7 +400,7 @@ namespace BGMSTORE
 
         private void 설정ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (is_dup_form("OptionPage") == null)
+            if (Utility.is_dup_form("OptionPage") == null)
             {
                 OptionPage opt = new OptionPage();
                 opt.Show();
@@ -524,7 +464,7 @@ namespace BGMSTORE
 
         private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (is_dup_form("About") == null)
+            if (Utility.is_dup_form("About") == null)
             {
                 About sfrm = new About();
                 sfrm.Show();
@@ -533,7 +473,7 @@ namespace BGMSTORE
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (is_dup_form("About") == null) //창이 이미 떠있지 않으면
+            if (Utility.is_dup_form("About") == null) //창이 이미 떠있지 않으면
             {
                 About sfrm = new About();
                 sfrm.Show();
@@ -557,11 +497,8 @@ namespace BGMSTORE
             }
             catch
             {
-
+                // ignored
             }
-
-
-
         }
 
         private void MediaPlay_Tick(object sender, EventArgs e)
@@ -584,13 +521,11 @@ namespace BGMSTORE
         private void stop_Click(object sender, EventArgs e)
         {
 
-            if (PlayList.is_play == true)
+            if (PlayList.is_play)
             {
 
                 PlayList.is_play = false;
                 stop_play();
-
-
             }
             else
             {
@@ -609,8 +544,9 @@ namespace BGMSTORE
             }
             catch
             {
-
+                //ignore
             }
+
 
 
 
@@ -646,14 +582,16 @@ namespace BGMSTORE
                     items[2] = ld.SubItems[2].Text; //재생시간
                     items[3] = ld.SubItems[3].Text; // 추천수
 
-                    ListViewItem lv = new ListViewItem(items);
+                    ListViewItem lv = new ListViewItem(items)
+                    {
+                        ForeColor = ColorTranslator.FromHtml("#4285F4")
+                    };
 
 
-                    lv.ForeColor = ColorTranslator.FromHtml("#4285F4");
                     lv.SubItems[2].ForeColor = ColorTranslator.FromHtml("#4285F4");
                     lv.UseItemStyleForSubItems = false;
 
-                    if (bgm_manager.find_item(player_list.plist, items[1]) == false)
+                    if (Utility.find_item(player_list.plist, items[1]) == false)
                     {
 
                         player_list.plist.Items.Add(lv);

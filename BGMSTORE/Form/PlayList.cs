@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using BGMSTORE.Module;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -210,7 +211,7 @@ namespace BGMSTORE
                         listViewItem.SubItems[2].ForeColor = ColorTranslator.FromHtml("#4285F4");
                         listViewItem.UseItemStyleForSubItems = false;
 
-                        if (jsonParser.find_item(plist, items[1]) == false)
+                        if (Utility.find_item(plist, items[1]) == false)
                         {
                             plist.Items.Add(listViewItem);
                             titleid[items[1]] = jts["keyVal"].ToString(); //딕셔너리 추가
@@ -423,7 +424,7 @@ namespace BGMSTORE
                         listViewItem.SubItems[2].ForeColor = ColorTranslator.FromHtml("#4285F4");
                         listViewItem.UseItemStyleForSubItems = false;
 
-                        if (jsonParser.find_item(plist, items[1]) == false)
+                        if (Utility.find_item(plist, items[1]) == false)
                         {
                             titleid.Add(items[1], items[4]);
                             plist.Items.Add(listViewItem);
