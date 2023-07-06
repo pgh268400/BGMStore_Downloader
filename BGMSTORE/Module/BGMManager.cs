@@ -1,6 +1,7 @@
 ﻿
 using BGMSTORE.Module;
 using Microsoft.WindowsAPICodePack.Dialogs;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,11 @@ using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -137,13 +141,55 @@ namespace BGMSTORE
             return result;
         }
 
+        public static async Task<string> get_json_async(string url)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                // 헤더 추가
+                client.DefaultRequestHeaders.Add("User-Agent",
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
+                client.DefaultRequestHeaders
+                    .Accept
+                    .Add(new MediaTypeWithQualityHeaderValue("application/json"));//ACCEPT header
+
+                HttpResponseMessage response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+
+                string result = await response.Content.ReadAsStringAsync();
+                return result;
+            }
+        }
+
+        public static async Task<string> post_json_async(string url, string post_data)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                // 헤더 추가
+                client.DefaultRequestHeaders.Add("User-Agent",
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
+                client.DefaultRequestHeaders
+                    .Accept
+                    .Add(new MediaTypeWithQualityHeaderValue("application/json"));//ACCEPT header
+
+                StringContent content = new StringContent(post_data, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await client.PostAsync(url, content);
+                response.EnsureSuccessStatusCode();
+
+                string result = await response.Content.ReadAsStringAsync();
+                return result;
+            }
+        }
+
         private static bool AcceptAllCertifications(object sender, X509Certificate certificate, X509Chain chain,
             SslPolicyErrors sslPolicyErrors)
         {
             return true;
         }
 
-        public void get_main_data(ListView lv)
+        //async void = 실행하고 잊어버리는거
+        //async task = 결과를 추적할 수 있고, await 로 기다릴 수 있는거
+        public async Task get_main_data_async(ListView lv)
         {
             //새로운 BGM
             /*
@@ -155,16 +201,16 @@ namespace BGMSTORE
             */
 
             title_id.Clear();
-            lv.BeginUpdate(); //리스트뷰 업데이트 시작
             lv.Items.Clear();
 
-            string json_data = get_json("https://bgmstore.net/_next/data/NRby6RQn-S2B-4dIMnJZC/index.json");
+            //string json_data = get_json("https://bgmstore.net/_next/data/NRby6RQn-S2B-4dIMnJZC/index.json");
+
+            string json_data = await get_json_async("https://bgmstore.net/_next/data/NRby6RQn-S2B-4dIMnJZC/index.json");
 
             var bgm_data = bgm_parse_from_json(json_data, Mode.Main);
             //받아온 데이터 리스트뷰에 삽입
             add_bgm_data_to_listview(bgm_data, lv);
 
-            lv.EndUpdate(); //리스트뷰 업데이트 완료
         }
 
 
@@ -221,26 +267,32 @@ namespace BGMSTORE
 
         public BGMDocuments get_random_bgm()
         {
-            //API 활용하여 1개 랜덤으로 뽑아옴
-            string post_data = @"
-                        {
-	                        ""operationName"": ""bgmDocuments"",
-	                        ""variables"": {
-		                        ""separator"": ""RANDOM"",
-		                        ""limit"": 1,
-		                        ""page"": 0,
-		                        ""isComposition"": false
-	                        },
-	                        ""query"": ""query bgmDocuments($separator: String!, $category: String, $limit: Int!, $page: Int!, $searchQuery: String, $searchQueryType: String, $userId: String, $isComposition: Boolean, $sortBy: String, $sortOrder: Int) {\n  bgmDocuments(\n    separator: $separator\n    category: $category\n    limit: $limit\n    page: $page\n    searchQuery: $searchQuery\n    searchQueryType: $searchQueryType\n    userId: $userId\n    isComposition: $isComposition\n    sortBy: $sortBy\n    sortOrder: $sortOrder\n  ) {\n    _id\n    keyVal\n    user {\n      _id\n      email\n      nickname\n      signature\n      point\n      profileImageUrl\n      profileIconUrl\n      __typename\n    }\n    title\n    content\n    filename\n    category\n    upVoteCnt\n    commentCnt\n    isProcessing\n    queueJobProgress\n    albumartImageUrl\n    isComposition\n    ccl\n    duration\n    __typename\n  }\n}""
-                        }";
+            PostData post_data = new PostData
+            {
+                operationName = "bgmDocuments",
+                variables = new Variables
+                {
+                    separator = "RANDOM",
+                    limit = 1, //API 활용하여 1개 랜덤으로 뽑아옴
+                    page = 0,
+                    isComposition = false
+                }
+            };
 
-            string json_data = post_json("https://api.bgmstore.net/graphql", post_data);
-            var bgm_data = bgm_parse_from_json(json_data, Mode.Search);
-            var bgm_item = bgm_data[0];
+            // JSON으로 직렬화하여 저장, NullValue 는 null로 전송하는게 아니라 그냥 무시함.
+            // 없는 데이터들은 같이 전송하지 않겠다는 뜻.
+            string json_post_data = JsonConvert.SerializeObject(post_data, new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            });
+
+            string json_data = post_json("https://api.bgmstore.net/graphql", json_post_data);
+            List<BGMDocuments> bgm_data = bgm_parse_from_json(json_data, Mode.Search);
+            BGMDocuments bgm_item = bgm_data[0];
             return bgm_item;
         }
 
-        public void search_bgm(ListView lv, string keyword, string mode)
+        public async Task search_bgm_async(ListView lv, string keyword, string mode)
         {
             try
             {
@@ -268,6 +320,7 @@ namespace BGMSTORE
                 title_id.Clear(); //검색시 리스트 초기화
 
                 current_page = 0;
+                /*
                 string post_data = @"
                     {""operationName"": ""bgmDocuments"",
                         ""variables"": {
@@ -279,10 +332,30 @@ namespace BGMSTORE
                         },
                         ""query"": ""query bgmDocuments($separator: String!, $category: String, $limit: Int!, $page: Int!, $searchQuery: String, $searchQueryType: String, $userId: String, $isComposition: Boolean, $sortBy: String, $sortOrder: Int) {\n  bgmDocuments(\n    separator: $separator\n    category: $category\n    limit: $limit\n    page: $page\n    searchQuery: $searchQuery\n    searchQueryType: $searchQueryType\n    userId: $userId\n    isComposition: $isComposition\n    sortBy: $sortBy\n    sortOrder: $sortOrder\n  ) {\n    _id\n    keyVal\n    user {\n      _id\n      email\n      nickname\n      signature\n      point\n      profileImageUrl\n      profileIconUrl\n      __typename\n    }\n    title\n    content\n    filename\n    category\n    upVoteCnt\n    commentCnt\n    isProcessing\n    queueJobProgress\n    albumartImageUrl\n    isComposition\n    ccl\n    duration\n    __typename\n  }\n}""
                     }".Replace("SEARCHQUERY", keyword);
+                */
+
+                PostData post_data = new PostData
+                {
+                    operationName = "bgmDocuments",
+                    variables = new Variables
+                    {
+                        separator = "SEARCH",
+                        limit = 20,
+                        searchQuery = keyword,
+                        searchQueryType = "total",
+                        page = 0
+                    }
+                };
+
+                // JSON으로 직렬화하여 저장, NullValue 는 null로 전송하는게 아니라 그냥 무시함.
+                // 없는 데이터들은 같이 전송하지 않겠다는 뜻.
+                string json_post_data = JsonConvert.SerializeObject(post_data, new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore
+                });
 
 
-
-                string json_data = post_json("https://api.bgmstore.net/graphql", post_data);
+                string json_data = await post_json_async("https://api.bgmstore.net/graphql", json_post_data);
                 var bgm_data = bgm_parse_from_json(json_data, Mode.Search);
                 //받아온 데이터 리스트뷰에 삽입
                 add_bgm_data_to_listview(bgm_data, lv);
@@ -308,18 +381,18 @@ namespace BGMSTORE
             foreach (var bgm in bgm_data)
             {
                 string[] items = { bgm.category, bgm.title, bgm.duration, bgm.vote_cnt };
-                ListViewItem listViewItem = new ListViewItem(items)
+                ListViewItem listview_item = new ListViewItem(items)
                 {
                     ForeColor = ColorTranslator.FromHtml("#4285F4")
                 };
 
-                listViewItem.SubItems[2].ForeColor = ColorTranslator.FromHtml("#4285F4");
-                listViewItem.UseItemStyleForSubItems = false;
+                listview_item.SubItems[2].ForeColor = ColorTranslator.FromHtml("#4285F4");
+                listview_item.UseItemStyleForSubItems = false;
 
                 if (Utility.find_item(lv, items[1]) == false)
                 {
                     title_id.Add(bgm.title, bgm.keyVal);
-                    lv.Items.Add(listViewItem);
+                    lv.Items.Add(listview_item);
                 }
             }
 
@@ -331,7 +404,7 @@ namespace BGMSTORE
         //현재 검색 페이지를 기억하고 있는 멤버 변수
         private int current_page = 0;
 
-        public void more_load(Mode mode, ListView lv, string keyword)
+        public async Task more_load_async(Mode mode, ListView lv, string keyword)
         {
             current_page += 1;
             if (mode == Mode.Search)
@@ -340,6 +413,7 @@ namespace BGMSTORE
                 Console.WriteLine("검색 더보기");
                 try
                 {
+                    /*
                     string post_data = @"
                     {""operationName"": ""bgmDocuments"",
                         ""variables"": {
@@ -351,8 +425,29 @@ namespace BGMSTORE
                         },
                         ""query"": ""query bgmDocuments($separator: String!, $category: String, $limit: Int!, $page: Int!, $searchQuery: String, $searchQueryType: String, $userId: String, $isComposition: Boolean, $sortBy: String, $sortOrder: Int) {\n  bgmDocuments(\n    separator: $separator\n    category: $category\n    limit: $limit\n    page: $page\n    searchQuery: $searchQuery\n    searchQueryType: $searchQueryType\n    userId: $userId\n    isComposition: $isComposition\n    sortBy: $sortBy\n    sortOrder: $sortOrder\n  ) {\n    _id\n    keyVal\n    user {\n      _id\n      email\n      nickname\n      signature\n      point\n      profileImageUrl\n      profileIconUrl\n      __typename\n    }\n    title\n    content\n    filename\n    category\n    upVoteCnt\n    commentCnt\n    isProcessing\n    queueJobProgress\n    albumartImageUrl\n    isComposition\n    ccl\n    duration\n    __typename\n  }\n}""
                     }".Replace("SEARCHQUERY", keyword).Replace("PAGE", current_page.ToString());
+                    */
 
-                    string json_data = post_json("https://api.bgmstore.net/graphql", post_data);
+                    PostData post_data = new PostData
+                    {
+                        operationName = "bgmDocuments",
+                        variables = new Variables
+                        {
+                            separator = "SEARCH",
+                            limit = 20,
+                            searchQuery = keyword,
+                            searchQueryType = "total",
+                            page = current_page,
+                        }
+                    };
+
+                    // JSON으로 직렬화하여 저장, NullValue 는 null로 전송하는게 아니라 그냥 무시함.
+                    // 없는 데이터들은 같이 전송하지 않겠다는 뜻.
+                    string json_post_data = JsonConvert.SerializeObject(post_data, new JsonSerializerSettings
+                    {
+                        NullValueHandling = NullValueHandling.Ignore
+                    });
+
+                    string json_data = await post_json_async("https://api.bgmstore.net/graphql", json_post_data);
                     var bgm_data = bgm_parse_from_json(json_data, Mode.Search);
                     if (bgm_data.Count == 0)
                     {
@@ -375,19 +470,23 @@ namespace BGMSTORE
                 Console.WriteLine("메인 더보기");
 
                 //API 활용하여 20개 랜덤으로 뽑아옴
-                string post_data = @"
-                        {
-	                        ""operationName"": ""bgmDocuments"",
-	                        ""variables"": {
-		                        ""separator"": ""RANDOM"",
-		                        ""limit"": 20,
-		                        ""page"": 0,
-		                        ""isComposition"": false
-	                        },
-	                        ""query"": ""query bgmDocuments($separator: String!, $category: String, $limit: Int!, $page: Int!, $searchQuery: String, $searchQueryType: String, $userId: String, $isComposition: Boolean, $sortBy: String, $sortOrder: Int) {\n  bgmDocuments(\n    separator: $separator\n    category: $category\n    limit: $limit\n    page: $page\n    searchQuery: $searchQuery\n    searchQueryType: $searchQueryType\n    userId: $userId\n    isComposition: $isComposition\n    sortBy: $sortBy\n    sortOrder: $sortOrder\n  ) {\n    _id\n    keyVal\n    user {\n      _id\n      email\n      nickname\n      signature\n      point\n      profileImageUrl\n      profileIconUrl\n      __typename\n    }\n    title\n    content\n    filename\n    category\n    upVoteCnt\n    commentCnt\n    isProcessing\n    queueJobProgress\n    albumartImageUrl\n    isComposition\n    ccl\n    duration\n    __typename\n  }\n}""
-                        }";
+                PostData post_data = new PostData
+                {
+                    operationName = "bgmDocuments",
+                    variables = new Variables
+                    {
+                        separator = "RANDOM",
+                        limit = 20,
+                        page = 0,
+                        isComposition = false
+                    }
+                };
+                string json_post_data = JsonConvert.SerializeObject(post_data, new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore
+                });
 
-                string json_data = post_json("https://api.bgmstore.net/graphql", post_data);
+                string json_data = await post_json_async("https://api.bgmstore.net/graphql", json_post_data);
                 var bgm_data = bgm_parse_from_json(json_data, Mode.Search);
 
                 //받아온 데이터 리스트뷰에 삽입
@@ -455,80 +554,6 @@ namespace BGMSTORE
             {
                 MessageBox.Show(ex.ToString(), "알림", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
-        }
-
-        /*
-        public void download_cancle()
-        {
-            web_client.Dispose();
-            is_download = false;
-            sprogress(0);
-            is_downloader_stop = true;
-        }
-        */
-
-
-        public async void play_bgm_async(AxWMPLib.AxWindowsMediaPlayer wmp)
-        {
-            int count = 0;
-
-            foreach (string element in favorite_list)
-            {
-                InIWriter inIWriter = new InIWriter(Utility.config_path);
-
-                string download_mode = "/mp3/Untitled1";
-                if (inIWriter.Read("설정", "미리듣기") == "Mp3")
-                {
-                    download_mode = "/mp3/Untitled1";
-                }
-                else //Mp4면
-                {
-                    download_mode = "/mp4/Untitled1";
-                }
-
-
-                string url = "http://dl.bgms.kr/download/" + element.Replace("/view/", "") + download_mode;
-                wmp.URL = url;
-                is_play = true;
-
-
-                while (is_play) // Play = true
-                {
-                    if (is_player_stop)
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        await Task.Delay(1000);
-                    }
-
-
-                }
-
-
-                if (is_player_stop)
-                {
-                    wmp.Ctlcontrols.stop();
-                    is_play = false;
-                    is_player_stop = false;
-                    break;
-                }
-
-                count++;
-
-                if (favorite_list.Count == count)
-                {
-                    MessageBox.Show("재생이 끝났습니다");
-                    is_play = false;
-
-                }
-            }
-
-        }
-        public void stop_bgm()
-        {
-            is_player_stop = true; //일괄재생 종료
         }
     }
 }

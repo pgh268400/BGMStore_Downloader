@@ -110,6 +110,7 @@
     <Compile Include="Form\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="Module\APIData.cs" />
     <Compile Include="Module\Extension.cs" />
     <Compile Include="Module\FTP.cs" />
     <Compile Include="Module\BGMManager.cs" />

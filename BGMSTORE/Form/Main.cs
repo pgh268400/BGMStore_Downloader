@@ -65,7 +65,7 @@ namespace BGMSTORE
         //더블버퍼링을 위한 가상함수 덮어 쓰기
         protected virtual bool DoubleBuffered { get; set; }
 
-        private void Main_Load(object sender, EventArgs e)
+        private async void Main_Load(object sender, EventArgs e)
         {
             //더블 버퍼링 활성화로 리스트뷰 깜빡임 최소화
             listView1.DoubleBuffered(true);
@@ -85,7 +85,7 @@ namespace BGMSTORE
             //----------------------------------
 
             //데이터 불러오기
-            bgm_manager.get_main_data(listView1);
+            await bgm_manager.get_main_data_async(listView1);
 
             timer1.Enabled = true;
 
@@ -249,30 +249,34 @@ namespace BGMSTORE
             }
         }
 
-        private void btn_Search_Click_1(object sender, EventArgs e)
+        private async void btn_Search_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txt_search.Text))
             {
-                bgm_manager.get_main_data(listView1);
+                await bgm_manager.get_main_data_async(listView1);
             }
             else
             {
-                bgm_manager.search_bgm(listView1, txt_search.Text, search_option_a.Text + "|" + search_option_b.Text);
+                await bgm_manager.search_bgm_async(listView1, txt_search.Text, search_option_a.Text + "|" + search_option_b.Text);
             }
         }
 
-        private void btn_Moreload_Click(object sender, EventArgs e)
+        private async void btn_Moreload_Click(object sender, EventArgs e)
         {
+            btn_more_load.Enabled = false;
+
             // 검색어가 없는 상태서 더보기를 누르면 모든 카테고리를 불러오고 그 중 일부를 추가로 리스트에 추가함
             if (string.IsNullOrWhiteSpace(txt_search.Text))
             {
-                bgm_manager.more_load(Mode.Main, listView1, "None");
+                await bgm_manager.more_load_async(Mode.Main, listView1, "None");
             }
             // 검색을 한 상태일 경우 (검색어가 입력된 상태일 경우) 검색어를 기준으로 더 불러옴
             else
             {
-                bgm_manager.more_load(Mode.Search, listView1, txt_search.Text);
+                await bgm_manager.more_load_async(Mode.Search, listView1, txt_search.Text);
             }
+
+            btn_more_load.Enabled = true;
         }
 
 
