@@ -144,7 +144,7 @@ namespace BGMSTORE
             }
 
             // 특정 글자수 넘으면 잘라버리고 뒤는 ...으로 처리
-            const int title_limit = 40;
+            const int title_limit = 35;
             if (title.Length > title_limit)
             {
                 title = title.Substring(0, title_limit);
@@ -266,7 +266,7 @@ namespace BGMSTORE
             // 검색어가 없는 상태서 더보기를 누르면 모든 카테고리를 불러오고 그 중 일부를 추가로 리스트에 추가함
             if (string.IsNullOrWhiteSpace(txt_search.Text))
             {
-                bgm_manager.more_load(Mode.Main, listView1, "none");
+                bgm_manager.more_load(Mode.Main, listView1, "None");
             }
             // 검색을 한 상태일 경우 (검색어가 입력된 상태일 경우) 검색어를 기준으로 더 불러옴
             else
@@ -608,7 +608,11 @@ namespace BGMSTORE
 
         private void btn_Random_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("미구현입니다.");
+            //MessageBox.Show("미구현입니다.");
+            var random_bgm = bgm_manager.get_random_bgm();
+            string url = "https://media1.bgmstore.net/mp3/" + random_bgm.keyVal + ".mp3";
+            string title = random_bgm.title;
+            play_mp3_from_url(url, title);
         }
 
         private void playtime_Click(object sender, EventArgs e)

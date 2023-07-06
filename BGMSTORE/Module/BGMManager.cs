@@ -219,6 +219,27 @@ namespace BGMSTORE
             return result;
         }
 
+        public BGMDocuments get_random_bgm()
+        {
+            //API 활용하여 1개 랜덤으로 뽑아옴
+            string post_data = @"
+                        {
+	                        ""operationName"": ""bgmDocuments"",
+	                        ""variables"": {
+		                        ""separator"": ""RANDOM"",
+		                        ""limit"": 1,
+		                        ""page"": 0,
+		                        ""isComposition"": false
+	                        },
+	                        ""query"": ""query bgmDocuments($separator: String!, $category: String, $limit: Int!, $page: Int!, $searchQuery: String, $searchQueryType: String, $userId: String, $isComposition: Boolean, $sortBy: String, $sortOrder: Int) {\n  bgmDocuments(\n    separator: $separator\n    category: $category\n    limit: $limit\n    page: $page\n    searchQuery: $searchQuery\n    searchQueryType: $searchQueryType\n    userId: $userId\n    isComposition: $isComposition\n    sortBy: $sortBy\n    sortOrder: $sortOrder\n  ) {\n    _id\n    keyVal\n    user {\n      _id\n      email\n      nickname\n      signature\n      point\n      profileImageUrl\n      profileIconUrl\n      __typename\n    }\n    title\n    content\n    filename\n    category\n    upVoteCnt\n    commentCnt\n    isProcessing\n    queueJobProgress\n    albumartImageUrl\n    isComposition\n    ccl\n    duration\n    __typename\n  }\n}""
+                        }";
+
+            string json_data = post_json("https://api.bgmstore.net/graphql", post_data);
+            var bgm_data = bgm_parse_from_json(json_data, Mode.Search);
+            var bgm_item = bgm_data[0];
+            return bgm_item;
+        }
+
         public void search_bgm(ListView lv, string keyword, string mode)
         {
             try
@@ -373,8 +394,6 @@ namespace BGMSTORE
                 add_bgm_data_to_listview(bgm_data, lv);
 
             }
-
-
         }
 
         public async void download_bgm_async(int[] url, string[] title, Label lb)
