@@ -265,7 +265,7 @@ namespace BGMSTORE
             return result;
         }
 
-        public BGMDocuments get_random_bgm()
+        public async Task<BGMDocuments> get_random_bgm_async()
         {
             PostData post_data = new PostData
             {
@@ -286,7 +286,7 @@ namespace BGMSTORE
                 NullValueHandling = NullValueHandling.Ignore
             });
 
-            string json_data = post_json("https://api.bgmstore.net/graphql", json_post_data);
+            string json_data = await post_json_async("https://api.bgmstore.net/graphql", json_post_data);
             List<BGMDocuments> bgm_data = bgm_parse_from_json(json_data, Mode.Search);
             BGMDocuments bgm_item = bgm_data[0];
             return bgm_item;

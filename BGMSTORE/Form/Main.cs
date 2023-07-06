@@ -610,13 +610,17 @@ namespace BGMSTORE
             }
         }
 
-        private void btn_Random_Click(object sender, EventArgs e)
+        private async void btn_Random_Click(object sender, EventArgs e)
         {
+            btn_random.Enabled = false;
+
             //MessageBox.Show("미구현입니다.");
-            var random_bgm = bgm_manager.get_random_bgm();
+            var random_bgm = await bgm_manager.get_random_bgm_async();
             string url = "https://media1.bgmstore.net/mp3/" + random_bgm.keyVal + ".mp3";
             string title = random_bgm.title;
             play_mp3_from_url(url, title);
+
+            btn_random.Enabled = true;
         }
 
         private void playtime_Click(object sender, EventArgs e)
