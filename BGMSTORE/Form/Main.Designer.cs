@@ -47,9 +47,9 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.playctime = new MetroFramework.Controls.MetroLabel();
-            this.pause = new System.Windows.Forms.Label();
-            this.stop = new System.Windows.Forms.Label();
-            this.play = new System.Windows.Forms.Label();
+            this.txt_pause = new System.Windows.Forms.Label();
+            this.txt_stop = new System.Windows.Forms.Label();
+            this.txt_play = new System.Windows.Forms.Label();
             this.playtime = new MetroFramework.Controls.MetroLabel();
             this.playtext = new MetroFramework.Controls.MetroLabel();
             this.playbar = new MetroFramework.Controls.MetroTrackBar();
@@ -191,9 +191,9 @@
             this.MainPanel.Controls.Add(this.metroButton1);
             this.MainPanel.Controls.Add(this.pictureBox1);
             this.MainPanel.Controls.Add(this.playctime);
-            this.MainPanel.Controls.Add(this.pause);
-            this.MainPanel.Controls.Add(this.stop);
-            this.MainPanel.Controls.Add(this.play);
+            this.MainPanel.Controls.Add(this.txt_pause);
+            this.MainPanel.Controls.Add(this.txt_stop);
+            this.MainPanel.Controls.Add(this.txt_play);
             this.MainPanel.Controls.Add(this.playtime);
             this.MainPanel.Controls.Add(this.playtext);
             this.MainPanel.Controls.Add(this.playbar);
@@ -248,44 +248,44 @@
             this.playctime.TabIndex = 39;
             this.playctime.Text = "00:00";
             // 
-            // pause
+            // txt_pause
             // 
-            this.pause.AutoSize = true;
-            this.pause.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pause.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.pause.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.pause.Location = new System.Drawing.Point(182, 688);
-            this.pause.Name = "pause";
-            this.pause.Size = new System.Drawing.Size(24, 21);
-            this.pause.TabIndex = 38;
-            this.pause.Text = "❚❚";
-            this.pause.Click += new System.EventHandler(this.pause_Click);
+            this.txt_pause.AutoSize = true;
+            this.txt_pause.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txt_pause.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txt_pause.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.txt_pause.Location = new System.Drawing.Point(182, 688);
+            this.txt_pause.Name = "txt_pause";
+            this.txt_pause.Size = new System.Drawing.Size(24, 21);
+            this.txt_pause.TabIndex = 38;
+            this.txt_pause.Text = "❚❚";
+            this.txt_pause.Click += new System.EventHandler(this.pause_Click);
             // 
-            // stop
+            // txt_stop
             // 
-            this.stop.AutoSize = true;
-            this.stop.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.stop.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.stop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.stop.Location = new System.Drawing.Point(153, 688);
-            this.stop.Name = "stop";
-            this.stop.Size = new System.Drawing.Size(28, 21);
-            this.stop.TabIndex = 37;
-            this.stop.Text = "■";
-            this.stop.Click += new System.EventHandler(this.stop_Click);
+            this.txt_stop.AutoSize = true;
+            this.txt_stop.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txt_stop.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txt_stop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.txt_stop.Location = new System.Drawing.Point(153, 688);
+            this.txt_stop.Name = "txt_stop";
+            this.txt_stop.Size = new System.Drawing.Size(28, 21);
+            this.txt_stop.TabIndex = 37;
+            this.txt_stop.Text = "■";
+            this.txt_stop.Click += new System.EventHandler(this.stop_Click);
             // 
-            // play
+            // txt_play
             // 
-            this.play.AutoSize = true;
-            this.play.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.play.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.play.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.play.Location = new System.Drawing.Point(127, 688);
-            this.play.Name = "play";
-            this.play.Size = new System.Drawing.Size(28, 21);
-            this.play.TabIndex = 36;
-            this.play.Text = "▶";
-            this.play.Click += new System.EventHandler(this.play_Click);
+            this.txt_play.AutoSize = true;
+            this.txt_play.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txt_play.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txt_play.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.txt_play.Location = new System.Drawing.Point(127, 688);
+            this.txt_play.Name = "txt_play";
+            this.txt_play.Size = new System.Drawing.Size(28, 21);
+            this.txt_play.TabIndex = 36;
+            this.txt_play.Text = "▶";
+            this.txt_play.Click += new System.EventHandler(this.play_Click);
             // 
             // playtime
             // 
@@ -575,9 +575,9 @@
         private System.Windows.Forms.Timer MediaPlay;
         private System.Windows.Forms.Panel MainPanel;
         private MetroFramework.Controls.MetroLabel playctime;
-        private System.Windows.Forms.Label pause;
-        private System.Windows.Forms.Label stop;
-        private System.Windows.Forms.Label play;
+        private System.Windows.Forms.Label txt_pause;
+        private System.Windows.Forms.Label txt_stop;
+        private System.Windows.Forms.Label txt_play;
         private MetroFramework.Controls.MetroLabel playtime;
         private MetroFramework.Controls.MetroTrackBar playbar;
         private MetroFramework.Controls.MetroTile btn_random;

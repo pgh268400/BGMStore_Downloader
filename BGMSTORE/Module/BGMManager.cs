@@ -524,9 +524,9 @@ namespace BGMSTORE
 
                     string download_mode = ".mp3"; //default(ini 파일이 없는 오류방지)
 
-                    InIWriter iniwriter = new InIWriter(Application.StartupPath + "\\Configuration.ini");
+                    InIWriter ini_writer = new InIWriter(Application.StartupPath + "\\Configuration.ini");
 
-                    if (iniwriter.Read("설정", "다운로드") == "Mp3")
+                    if (ini_writer.Read("설정", "다운로드") == "Mp3")
                     {
                         download_mode = ".mp3";
                     }

@@ -520,6 +520,7 @@ namespace BGMSTORE
         private void play_Click(object sender, EventArgs e)
         {
             player.controls.play();
+
         }
 
         private void stop_Click(object sender, EventArgs e)
