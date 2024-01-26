@@ -14,6 +14,7 @@ using System.Net.Http.Headers;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -141,6 +142,7 @@ namespace BGMSTORE
             return result;
         }
 
+        // GET 요청 & Json 전용 비동기 함수
         public static async Task<string> get_json_async(string url)
         {
             using (HttpClient client = new HttpClient())
@@ -159,6 +161,24 @@ namespace BGMSTORE
                 return result;
             }
         }
+
+        // GET 요청 비동기 함수
+        public static async Task<string> get_async(string url)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                // 헤더 추가
+                client.DefaultRequestHeaders.Add("User-Agent",
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
+
+                HttpResponseMessage response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+
+                string result = await response.Content.ReadAsStringAsync();
+                return result;
+            }
+        }
+
 
         public static async Task<string> post_json_async(string url, string post_data)
         {
@@ -205,9 +225,18 @@ namespace BGMSTORE
 
             //string json_data = get_json("https://bgmstore.net/_next/data/NRby6RQn-S2B-4dIMnJZC/index.json");
 
-            string json_data = await get_json_async("https://bgmstore.net/_next/data/NRby6RQn-S2B-4dIMnJZC/index.json");
+            // 브금 저장소 메인 홈페이지에서 build id 가져오기
+            // ex) "buildId": "2yPAe8-E_WsnZiFIbc6m-", -> 2yPAe8-E_WsnZiFIbc6m-
 
-            var bgm_data = bgm_parse_from_json(json_data, Mode.Main);
+            string main_data = await get_async("https://bgmstore.net");
+            //Console.WriteLine(main_data);
+            string build_id = Regex.Match(main_data, "\\\"buildId\\\"\\s*:\\s*\\\"(.*?)\\\"").Groups[1].Value;
+            Console.WriteLine("build id : " + build_id);
+
+
+            string index_json_data = await get_json_async($"https://bgmstore.net/_next/data/{build_id}/index.json");
+
+            var bgm_data = bgm_parse_from_json(index_json_data, Mode.Main);
             //받아온 데이터 리스트뷰에 삽입
             add_bgm_data_to_listview(bgm_data, lv);
 

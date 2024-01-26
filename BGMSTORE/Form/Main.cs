@@ -28,7 +28,7 @@ namespace BGMSTORE
         // 메인폼 실행시 업데이트 체크용도로 사용하는 함수
         private void update_check()
         {
-            //pastebin 에 가서 요청을 보낸 후 응답 데이터를 string 값으로 저장
+            // pastebin 에 가서 요청을 보낸 후 응답 데이터를 string 값으로 저장
             var update_check_url = "https://pastebin.com/raw/mQBQX95E";
             var web_client = new WebClient();
             var html = web_client.DownloadString(update_check_url);
